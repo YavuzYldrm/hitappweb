@@ -1,0 +1,58 @@
+<main>
+    <section>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-8">
+                    <form class="bg-white shadow-sm p-5" role="form" action="/register" method="post">
+                        <h2 class="text-center font-unica text-uppercase mb-4">Kayıt Ol</h2>
+                        <div class="form-group">
+                            <input class="form-control rounded-0 font-karla bg-light" type="text" name="username"
+                                placeholder="Kullanıcı Adı" required autofocus="autofocus" />
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control rounded-0 font-karla bg-light" type="number" min="1900"
+                                name="birthYear" placeholder="Doğum Tarihi" required ng-model="RegisterCtrl.birthyear"
+                                ng-change="RegisterCtrl.checkBirthYear()" />
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control rounded-0 font-karla bg-light" name="locale"
+                                aria-describedby="localeHelp" placeholder="Locale" ng-model="RegisterCtrl.locale"
+                                ng-options="x for x in RegisterCtrl.keys.locale">
+                                <option value="" disabled selected>Lokasyon</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control rounded-0 font-karla bg-light" name="gender"
+                                placeholder="Gender" ng-model="RegisterCtrl.gender"
+                                ng-options="x for x in RegisterCtrl.keys.gender">
+                            <option value="" disabled selected>Cinsiyet</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control rounded-0 font-karla bg-light" name="location"
+                                placeholder="Location" ng-model="RegisterCtrl.location"
+                                ng-options="x for x in RegisterCtrl.keys.location">
+                            <option value="" disabled selected>Lokasyon</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control rounded-0 font-karla bg-light" name="timezone"
+                                placeholder="Timezone" ng-model="RegisterCtrl.timezone"
+                                ng-options="x for x in RegisterCtrl.keys.timezone">
+                            <option value="" disabled selected>Zaman Dilimi</option>
+                            </select>
+                        </div>
+                        <button
+                            class="btn btn-primary submit-btn rounded-0 font-karla text-uppercase btn-block mt-4 p-2"
+                            type="submit">Kayıt</button>
+                        <div class="text-center mt-4">
+                            <a class="submit-text font-karla" href="/login">
+                                <p>Giriş</p>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

@@ -1,0 +1,165 @@
+body {
+  margin-top: 70px;
+}
+
+.row {
+  margin: 0px;
+}
+
+.section-title > h1{
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: 36px;
+  font-size: 2.5em;
+  text-align: center;
+  color: #323C5A;
+  position: relative;
+}
+
+.section-title > h1::after {
+  content: "";
+  background-color: #F89A1D;
+  position: absolute;
+  height: 6px;
+  right: 48%;
+  bottom: -20px;
+  width: 48px;
+}
+
+.section-desc-content {
+  font-family: Work Sans;
+  font-weight: 300;
+  line-height: 1.5em;
+  font-size: 1.1em;
+  text-align: center;
+  color: #323C5A;
+  padding: 0px 100px;
+  padding-top: 50px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.section-3-img {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.predict-main-sec {
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #C4E2F3;
+  background-repeat: no-repeat;
+}
+
+.ng-touched .ng-valid {
+  border: 2px green solid;
+}
+
+.ng-touched .ng-invalid {
+  border: 2px red solid;
+}
+
+.my-loader {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  z-index: 1000;
+  width: 95vw;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+}
+.my-loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #323C5A; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ********************************************************** */
+/* Responsive view styling starts */
+
+/***###*** MEDIA QUERIES ***###***/
+
+/********** Large devices only **********/
+@media (min-width: 1200px) {
+}
+
+/********** Medium devices only **********/
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/********** Small devices only **********/
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/********** Extra small devices only **********/
+@media (max-width: 767px) {
+  .section-title > h1 {
+    font-size: 1.6em;
+  }
+
+}
+
+@media (max-width: 577px) {
+
+}
+
+/********** Large Mobile devices only **********/
+@media (max-width: 450px) {
+}
+
+/********** Medium Mobile devices only **********/
+@media (max-width: 380px) {
+}
+
+/********** small Mobile devices only (eg: Iphone 4, ) **********/
+@media (max-width: 330px) {
+}
+
+/* Responsive view styling ends */
+/* ********************************************************** */
+
+
+
+/* REGISTER STYLES */
+.font-unica {
+    font-family: 'Unica One', cursive;
+}
+
+.font-karla {
+    font-family: 'Karla', sans-serif;
+}
+
+.submit-btn {
+    background-color: #008575;
+    font-size: 1em;
+    letter-spacing: 0.15em;
+    font-weight: 700;
+}
+
+.submit-text {
+    color: #008575;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}
+
+.footer-link {
+    color: #a0d0de;
+    line-height: 42px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Slabo 27px', serif;
+}
