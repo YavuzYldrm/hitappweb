@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="MainApp">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hitsoft</title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Unica+One" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet" />
+</head>
+
+<body class="predict-main-sec">
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" ng-href="/#!/home">
+                <span>Hitsoft</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" ng-href="/#!/login">Giriş Yap<span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref="contact">İletişim</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <ng-view></ng-view>
+    <footer></footer>
+
+    <script src="scripts/bundle.js"></script>
+</body>
+
+</html>
