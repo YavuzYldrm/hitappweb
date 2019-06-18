@@ -12,16 +12,22 @@
                                         <span class="mr-auto p-1 flex-column">
                                             <div class="p-2 lead">{{x}}</div>
                                         </span>
-                                        <button class="btn btn-outline-secondary h-100 mr-2" ng-model="EventCtrl.state"
-                                            value=1>Yes</button>
-                                        <button class="btn btn-outline-secondary h-100 mr-2" ng-model="EventCtrl.state"
-                                            value=2>Maybe</button>
-                                        <button class="btn btn-outline-secondary h-100 mr-2" ng-model="EventCtrl.state"
-                                            value=3>No</button>
+                                        <select class="form-control rounded-0 font-karla bg-light w-25 mr-2" required ng-model="EventCtrl.attend[y]" ng-init="EventCtrl.attend[y] = '1'">
+                                            <option value=2>Yes</option>
+                                            <option value=1>Maybe</option>
+                                            <option value=0>No</option>
+                                        </select>
                                         <div class="bg-dark mr-2" style="width:1px;height:40px;"></div>
-                                        <button class="btn btn-outline-secondary h-100">Invited</button>
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck{{y}}" ng-model="EventCtrl.interest[y]" ng-init="EventCtrl.interest[y] = false">
+                                            <label class="custom-control-label" for="customCheck{{y}}">Interested</label>
+                                        </div>
                                 </li>
                             </ul>
+                            <button
+                                class="btn btn-primary submit-btn rounded-0 font-karla text-uppercase btn-block mt-4 p-2"
+                                type="submit" ng-click="EventCtrl.submit();">Kayıt
+                            </button>
                         </div>
                     </div>
                 </div>
