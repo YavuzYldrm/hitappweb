@@ -6,7 +6,7 @@ export default (app) =>
 
     require('../controllers/Event/EventAttendController').default(app);
     require('../controllers/Event/EventPredictController').default(app);
-    require('../controllers/Event/EventRegisterController').default(app);
+    require('../controllers/Event/EventCreateController').default(app);
 }
 
 
