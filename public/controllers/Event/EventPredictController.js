@@ -1,5 +1,4 @@
 export default (app) => {
-
     app.controller('EventPredictController', PredictController);
 
     PredictController.$inject = ['EventPredictService', '$window'];
