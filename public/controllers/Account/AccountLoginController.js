@@ -1,9 +1,9 @@
 export default (app) => {
     app.controller('AccountLoginController', LoginController);
 
-    LoginController.$inject = ['$window'];
-    function LoginController($window) {
-        const LoginCtrl = this;
+    LoginController.$inject = ['AccountLoginService', '$window'];
+    function LoginController(AccountLoginService,$window) {
+        const AccountCtrl = this;
 
         const users = {
             "ALİ": 151534919,
@@ -19,13 +19,38 @@ export default (app) => {
             "CANLI": 2664817652
         };
 
-        LoginCtrl.username = null;
+        AccountCtrl.user = {
+            username: null,
+            password: null,
+        };
 
-        LoginCtrl.login = function () {
-            if (LoginCtrl.username in users)
-                window.location.replace("http://localhost:3000/#!/predict?username=" + LoginCtrl.username);
-            else
-                alert("Geçersiz Kullanıcı.");
-        }
+        AccountCtrl.loginStatus = {
+            failed: false,
+            message: null
+        };
+
+        AccountCtrl.login = function () {
+            AccountCtrl.loginStatus.failed = false;
+
+            AccountCtrl.response = AccountLoginService.getLoginResult(AccountCtrl.user);
+            AccountCtrl.response.then((response) => {
+                console.log(response);
+                if(response.data && response.data.success)
+                {
+                    AccountCtrl.loginStatus.message = response.data.message
+                }
+                else
+                {
+                    AccountCtrl.loginStatus.failed = true
+                    AccountCtrl.loginStatus.message = response.data.message
+                }
+            });
+
+            // if (AccountCtrl.username in users)
+            //     window.location.replace("http://localhost:3000/#!/predict?username=" + AccountCtrl.username);
+            // else
+            //     alert("Geçersiz Kullanıcı.");
+        };
+
     };
 };
