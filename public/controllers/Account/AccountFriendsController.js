@@ -1,69 +1,70 @@
 export default (app) => {
-    
+
     app.controller('AccountFriendsController', AccountFriendsController);
 
     AccountFriendsController.$inject = ['$window'];
     function AccountFriendsController($window) {
-        const EventCtrl = this;
+        const AccountCtrl = this;
 
         const keys = {
-            "events": {
-                "SPA": 1361307272,
-                "HAVUZ": 955398943,
-                "KAYAK": 1600413013,
-                "BİNİCİLİK": 2877501688,
-                "GOLF": 2529072432,
-                "ATV TURU": 3583332424,
-                "TELEFERİK": 907302600,
-                "HAMAM": 507707719,
-                "LUNAPARK": 1927775201,
-                "BASKETBOL": 1532377761
+            "users": {
+                "ALİ": 151534919,
+                "VELİ": 265212492,
+                "CEMİL": 2238882361,
+                "AHMET": 1776192,
+                "BÜLENT": 23465780,
+                "TAHA": 20018153,
+                "ŞAFAK": 15390083,
+                "BERKAY": 7514340,
+                "FATİH": 50521271,
+                "MAHMUT": 2034510440,
+                "CANLI": 2664817652
             }
         };
 
-        EventCtrl.keys = keys;
+        AccountCtrl.keys = keys;
 
-        EventCtrl.eventName = null;
-        EventCtrl.userName = null;
-        EventCtrl.startTime = null;
-        EventCtrl.city = null;
-        EventCtrl.state = null;
-        EventCtrl.zip = null;
-        EventCtrl.country = null;
-        EventCtrl.lat = null;
-        EventCtrl.long = null;
-        EventCtrl.description = null;
+        AccountCtrl.toggleFriend = (key) => {
+            var el = $(event.target);
+            console.log(key);
+            var isAdded = el.attr('data-clicked');
+            if (isAdded == "0") {
+                el.text("Çıkar");
+                el.attr('data-clicked', "1");
+                el.addClass("btn-danger");
+                el.removeClass("btn-success");
+                el.addClass("btn-danger");
+            }
+            else {
+                el.text("Ekle");
+                el.attr('data-clicked', "0");
+                el.addClass("btn-success");
+                el.removeClass("btn-danger");
+            }
+        };
+    };
 
-        EventCtrl.checkStartTime = function () {
-            const currentTime = new Date();
-            if (EventCtrl.startTime < currentTime)
-                EventCtrl.startTime = currentTime;
-        }
-
-        EventCtrl.getResult = function () {
-            EventCtrl.rentRange = null;
-            EventCtrl.loader = true;
-            EventCtrl.disableButton = true;
-
-            EventCtrl.response = PredictService.getResult(EventCtrl.detail);
-            EventCtrl.response.then(function (response) {
-                EventCtrl.rentRange = response.data[0];
-                $window.scrollTo(0, 0);
-                EventCtrl.loader = false;
-                EventCtrl.disableButton = false;
-            }, function (response) {
-                console.log(response.status);
-                EventCtrl.loader = false;
-                EventCtrl.disableButton = false;
-            })
-        }
-
-        $('#flatpickr').flatpickr({
-            enableTime: true,
-            dateFormat: "Y-m-d H:i",
-            time_24hr: true,
-            minDate: "today"
-        });
-    }
-
+    app.directive('myPostRepeatDirective', function () {
+        return function (scope, element, attrs) {
+            var el = angular.element(element);
+            // var elements = $('.btn');
+            console.log(el.children());
+            // elements.each(() => {
+            //     var el = $(this);
+            //     var isAdded = el.attr('data-clicked');
+            //     if (isAdded == "0") {
+            //         console.log("asd");
+            //         el.text("Çıkar");
+            //         el.addClass("btn-danger");
+            //         el.removeClass("btn-success");
+            //         el.addClass("btn-danger");
+            //     }
+            //     else {
+            //         el.text("Ekle");
+            //         el.addClass("btn-success");
+            //         el.removeClass("btn-danger");
+            //     }
+            // });
+        };
+    });
 };
