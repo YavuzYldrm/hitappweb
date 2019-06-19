@@ -6,65 +6,54 @@ export default (app) => {
     function AccountFriendsController($window) {
         const AccountCtrl = this;
 
-        const keys = {
-            "users": {
-                "ALİ": 151534919,
-                "VELİ": 265212492,
-                "CEMİL": 2238882361,
-                "AHMET": 1776192,
-                "BÜLENT": 23465780,
-                "TAHA": 20018153,
-                "ŞAFAK": 15390083,
-                "BERKAY": 7514340,
-                "FATİH": 50521271,
-                "MAHMUT": 2034510440,
-                "CANLI": 2664817652
-            }
+        AccountCtrl.users = {
+            151534919: "ALİ",
+            265212492: "VELİ",
+            2238882361: "CEMİL",
+            1776192: "AHMET",
+            23465780: "BÜLENT",
+            20018153: "TAHA",
+            15390083: "ŞAFAK",
+            7514340: "BERKAY",
+            50521271: "FATİH",
+            2034510440: "MAHMUT",
+            2664817652: "CANLI"
         };
 
-        AccountCtrl.keys = keys;
+        AccountCtrl.friends = {};
 
-        AccountCtrl.toggleFriend = (key) => {
+        AccountCtrl.setFriendStatus = () => {
             var el = $(event.target);
-            console.log(key);
-            var isAdded = el.attr('data-clicked');
-            if (isAdded == "0") {
-                el.text("Çıkar");
-                el.attr('data-clicked', "1");
-                el.addClass("btn-danger");
-                el.removeClass("btn-success");
-                el.addClass("btn-danger");
-            }
-            else {
-                el.text("Ekle");
-                el.attr('data-clicked', "0");
-                el.addClass("btn-success");
-                el.removeClass("btn-danger");
-            }
+            console.log(el);
+            el.attr('data-clicked', 1);
+            el.text("Çıkar");
+            el.attr('data-clicked', "1");
+            el.addClass("btn-danger");
+            el.removeClass("btn-success");
+        };
+
+        AccountCtrl.isFriend = (key) => {
+            return AccountCtrl.friends[key] == undefined;
+        }
+
+        AccountCtrl.addFriend = (key) => {
+            AccountCtrl.friends[key] = AccountCtrl.users[key];
+        };
+        AccountCtrl.removeFriend = (key) => {
+            delete AccountCtrl.friends[key];
+        };
+
+        AccountCtrl.searchUser = () => {
+            var result = {};
+            angular.forEach(AccountCtrl.users, (value, key) => {
+                if (AccountCtrl.searchValue == "")
+                    return;
+
+                if (value.includes(AccountCtrl.searchValue)) {
+                    result[key] = value;
+                }
+            });
+            return result;
         };
     };
-
-    app.directive('myPostRepeatDirective', function () {
-        return function (scope, element, attrs) {
-            var el = angular.element(element);
-            // var elements = $('.btn');
-            console.log(el.children());
-            // elements.each(() => {
-            //     var el = $(this);
-            //     var isAdded = el.attr('data-clicked');
-            //     if (isAdded == "0") {
-            //         console.log("asd");
-            //         el.text("Çıkar");
-            //         el.addClass("btn-danger");
-            //         el.removeClass("btn-success");
-            //         el.addClass("btn-danger");
-            //     }
-            //     else {
-            //         el.text("Ekle");
-            //         el.addClass("btn-success");
-            //         el.removeClass("btn-danger");
-            //     }
-            // });
-        };
-    });
 };
