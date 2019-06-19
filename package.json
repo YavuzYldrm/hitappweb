@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "build": "parcel watch ./public/scripts/main.js -d ./public/scripts/ --out-file bundle.js"
+    "build": "parcel watch ./public/scripts/main.js -d ./public/scripts/ --out-file bundle.js",
+    "sync": "browser-sync start --proxy localhost:3000 --files public"
   },
   "dependencies": {
     "@uirouter/angularjs": "^1.0.22",
