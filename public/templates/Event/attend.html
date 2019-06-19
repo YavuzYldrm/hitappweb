@@ -2,37 +2,112 @@
     <section>
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-10">
-                    <div class="bg-white shadow-sm p-5">
-                        <h2 class="text-center font-unica text-uppercase mb-4">Attend Event</h2>
-                        <div class="form-group">
-                            <ul id="listOrg_list" class="list-group">
-                                <li class="list-group-item" ng-repeat="(x,y) in EventCtrl.keys.events">
-                                    <div class="d-flex align-items-center">
-                                        <span class="mr-auto p-1 flex-column">
-                                            <div class="p-2 lead">{{x}}</div>
-                                        </span>
-                                        <select class="form-control rounded-0 font-karla bg-light w-25 mr-2" required ng-model="EventCtrl.attend[y]" ng-init="EventCtrl.attend[y] = '1'">
-                                            <option value=2>Yes</option>
-                                            <option value=1>Maybe</option>
-                                            <option value=0>No</option>
-                                        </select>
-                                        <div class="bg-dark mr-2" style="width:1px;height:40px;"></div>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck{{y}}" ng-model="EventCtrl.interest[y]" ng-init="EventCtrl.interest[y] = false">
-                                            <label class="custom-control-label" for="customCheck{{y}}">Interested</label>
-                                        </div>
-                                </li>
-                            </ul>
-                            <button
-                                class="btn btn-primary submit-btn rounded-0 font-karla text-uppercase btn-block mt-4 p-2"
-                                type="submit" ng-click="EventCtrl.submit();">Kayıt
-                            </button>
+                <div class="col-10 bg-white shadow-sm p-5">
+                    <h2 class="text-center font-unica text-uppercase mb-4">Etkinlik Katılım</h2>
+                    <div class="form-group w-50 mx-auto">
+                        <div class="position-relative">
+                            <input class="form-control rounded-1 p-3 font-karla bg-light" type="text" name="search"
+                                placeholder="Arama" ng-model="EventCtrl.searchValue" />
+                            <img src="/images/icons/search.png" class="input-icon position-absolute my-auto"
+                                style="right: 5%; top: 25%;">
                         </div>
+                        <div class="d-flex flex-column pt-3 text-center font-italic">
+                            Sonuçlar:
+                            <hr>
+                            <span ng-repeat="(x,y) in EventCtrl.searchEvent()">{{y}}</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <h4 class="mt-5 font-karla">Mevcut Etkinlikler</h4>
+                        <hr>
+                        <ul class="list-group">
+                            <li class="list-group-item" ng-repeat="(x,y) in EventCtrl.searchEvent()">
+                                <div class="d-flex align-items-center">
+                                    <span class="mr-auto p-1 flex-column">
+                                        <div class="p-2 lead">{{y}}</div>
+                                    </span>
+                                    <select class="form-control rounded-0 font-karla bg-light w-25 mr-2" required
+                                        ng-model="EventCtrl.attendDetailStatus[x]"
+                                        ng-init="EventCtrl.attendDetailStatus[x] = '3'">
+                                        <option value=3>Görüş Durumu</option>
+                                        <option value=2>Yes</option>
+                                        <option value=1>Maybe</option>
+                                        <option value=0>No</option>
+                                    </select>
+                                    <select multiple class="form-control rounded-0 font-karla bg-light w-25 mr-2"
+                                        required ng-model="EventCtrl.attendDetailInvited[x]"
+                                        ng-options="item for item in EventCtrl.users">
+                                    </select>
+                                    <div class="bg-dark mr-2" style="width:1px;height:40px;"></div>
+                                    <div class="custom-control custom-checkbox mr-2">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck{{x}}"
+                                            ng-model="EventCtrl.attendDetailInterest[x]"
+                                            ng-init="EventCtrl.attendDetailInterest[x] = false">
+                                        <label class="custom-control-label" for="customCheck{{x}}">Interested</label>
+                                    </div>
+                                    <div class="bg-dark mr-2" style="width:1px;height:40px;"></div>
+                                    <button class="btn btn-success h-100 mr-2" ng-if="!EventCtrl.isAttending(x)"
+                                        ng-click="EventCtrl.attendEvent(x)">Ekle</button>
+                                    <button class="btn btn-danger h-100 mr-2" ng-if="EventCtrl.isAttending(x)"
+                                        ng-click="EventCtrl.unattendEvent(x)">Çıkar</button>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="col-12 bg-white shadow-sm p-5 my-4">
+                    <h2 class="text-center font-unica text-uppercase mb-4">Etkinliklerim</h2>
+                    <div class="form-group">
+                        <!-- <ul class="list-group">
+                            <li class="list-group-item" ng-repeat="x in EventCtrl.attend">
+                                <div class="d-flex align-items-center">
+                                    <span class="mr-auto p-1 flex-column">
+                                        <div class="p-2 lead">{{EventCtrl.events[x]}}</div>
+                                    </span>
+                                    <select class="form-control rounded-0 font-karla bg-light w-25 mr-2" disabled>
+                                        <option selected disabled>{{EventCtrl.attendStatusOptions[EventCtrl.attendDetailStatus[x]]}}</option>
+                                    </select>
+                                    <select multiple class="form-control rounded-0 font-karla bg-light w-25 mr-2">
+                                        <option ng-repeat="invited in EventCtrl.attendDetailInvited[x]">{{invited}}</option>                                    
+                                    </select>
+                                    <div class="bg-dark mr-2" style="width:1px;height:40px;"></div>
+                                    <div class="custom-control custom-checkbox mr-2">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck2{{x}}"
+                                            ng-model="EventCtrl.attendDetailInterest[x]" disabled>
+                                        <label class="custom-control-label" for="customCheck2{{x}}">Interested</label>
+                                    </div>
+                                    <div class="bg-dark mr-2" style="width:1px;height:40px;"></div>
+                                    <button class="btn btn-danger h-100 mr-2" ng-if="EventCtrl.isAttending(x)"
+                                        ng-click="EventCtrl.unattendEvent(x)">Çıkar</button>
+                            </li>
+                        </ul> -->
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Etkinlik</th>
+                                    <th scope="col">Görüş Durumu</th>
+                                    <th scope="col">Davet Edilenler</th>
+                                    <th scope="col">İlgi Durumu</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="x in EventCtrl.attend">
+                                    <td scope="row">Basketbol</td>
+                                    <td>{{EventCtrl.attendDetailStatus[x]}}</td>
+                                    <td>
+                                        <table>
+                                            <tr ng-repeat="inv in EventCtrl.attendDetailInvited[x]">
+                                                <td>{{inv}}</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>{{EventCtrl.attendDetailInterest[x]}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
 </main>
