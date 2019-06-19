@@ -163,3 +163,12 @@ input[type=number]::-webkit-outer-spin-button {
     font-weight: 600;
     font-family: 'Slabo 27px', serif;
 }
+
+.input-icon {
+    width:1.1em;
+    height:1.1em;
+}
+
+.rounded-1 {
+    border-radius: 1em;
+}
