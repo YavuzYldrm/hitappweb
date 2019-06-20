@@ -32,23 +32,20 @@ export default (app) => {
             2664817652: "CANLI"
         };
 
-        const attendStatusOptions = {
-            0: "No",
-            1: "Maybe",
-            2: "Yes"
-        }
-
-        EventCtrl.events = events;
+        //EventCtrl.events = events;
         EventCtrl.users = users;
-        EventCtrl.attendStatusOptions = attendStatusOptions;
 
-        EventCtrl.attend = {};
+        EventCtrl.events = {};
+        EventCtrl.form = {};
+        EventCtrl.form.invited = {};
 
         EventCtrl.searchValue = "";
-        EventCtrl.searchEvent = () => {
+        EventCtrl.searchEvent = (combo) => {
             var result = {};
-            angular.forEach(EventCtrl.events, (value, key) => {
-                if (value.includes(EventCtrl.searchValue) || EventCtrl.searchValue == "") {
+            angular.forEach(events, (value, key) => {
+                if (combo && EventCtrl.searchValue == "")
+                    return;
+                if (value.includes(EventCtrl.searchValue)) {
                     result[key] = value;
                 }
             });
@@ -56,25 +53,52 @@ export default (app) => {
         };
 
         EventCtrl.isAttending = (key) => {
-            return EventCtrl.attend[key] != undefined;
+            return EventCtrl.events[key] != undefined;
         };
 
         EventCtrl.attendEvent = (key) => {
-            EventCtrl.attend[key] = key;
-            console.log(EventCtrl.attendDetailInvited[key]);
+            EventCtrl.events[key] = {
+                name: events[EventCtrl.form.eventId],
+                status: EventCtrl.form.opinion,
+                interest: EventCtrl.form.interest == true ? "İlgili" : "İlgili Değil",
+                invited: EventCtrl.form.invited,
+            };
+
+            // Clear form
+            EventCtrl.form.event = null;
+            EventCtrl.form.opinion = null;
+            EventCtrl.form.interest = null;
+            EventCtrl.form.invited = {};
         };
+     
         EventCtrl.unattendEvent = (key) => {
-            delete EventCtrl.attend[key];
-            delete EventCtrl.attendDetailInterest[key];
-            delete EventCtrl.attendDetailStatus[key];
+            delete EventCtrl.events[key];
         };
 
+        EventCtrl.showSearchResults = (array) => {
+            if (Object.keys(array).length == 0)
+                return false;
+            else
+                return true;
+        };
+
+        EventCtrl.invite = (userId) => {
+            EventCtrl.form.invited[userId] = users[userId];
+        };
+
+        EventCtrl.uninvite = (userId) => {
+            delete EventCtrl.form.invited[userId];
+        };
+        
+        EventCtrl.isInvited = (userId) => {
+            return EventCtrl.form.invited[userId] != undefined;
+        };
 
         EventCtrl.submit = () => {
             EventCtrl.loader = true;
             EventCtrl.disableButton = true;
 
-            console.log(EventCtrl.attend);
+            console.log(EventCtrl.events);
         };
     };
 }
