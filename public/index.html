@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html ng-app="MainApp">
+<html ng-app="MainApp" ng-init="checkAuth()">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Hitsoft</title>
-    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
 
@@ -27,22 +28,27 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" ng-href="/#!/attend">Etkinlik Katıl<span class="sr-only"></span></a>
+                        <a class="nav-link" ng-href="/#!/attend" ng-if="isAuthenticated">Etkinlik Katıl<span
+                                class="sr-only"></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" ng-href="/#!/friends">Arkadaşlar<span class="sr-only"></span></a>
+                        <a class="nav-link" ng-href="/#!/create" ng-if="isAuthenticated">Etkinlik Oluştur<span
+                                class="sr-only"></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" ng-href="/#!/create">Etkinlik Oluştur<span class="sr-only"></span></a>
+                        <a class="nav-link" ng-href="/#!/friends" ng-if="isAuthenticated">Arkadaşlar<span
+                                class="sr-only"></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" ng-href="/#!/login">Giriş Yap<span class="sr-only"></span></a>
+                        <a class="nav-link" ng-href="/#!/login" ng-if="!isAuthenticated">Giriş Yap<span
+                                class="sr-only"></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" ng-href="/#!/register">Kayıt Ol<span class="sr-only"></span></a>
+                        <a class="nav-link" ng-if="isAuthenticated" ng-click="logout()">Çıkış Yap<span class="sr-only"></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" ui-sref="contact">İletişim</a>
+                        <a class="nav-link" ng-href="/#!/register" ng-if="!isAuthenticated">Kayıt Ol<span
+                                class="sr-only"></span></a>
                     </li>
                 </ul>
             </div>
