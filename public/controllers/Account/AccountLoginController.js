@@ -1,8 +1,8 @@
 export default (app) => {
     app.controller('AccountLoginController', LoginController);
 
-    LoginController.$inject = ['AccountLoginService', '$window'];
-    function LoginController(AccountLoginService,$window) {
+    LoginController.$inject = ['AccountLoginService', '$window', '$cookies'];
+    function LoginController(AccountLoginService, $window, $cookies) {
         const AccountCtrl = this;
 
         const users = {
@@ -29,27 +29,24 @@ export default (app) => {
             message: null
         };
 
-        AccountCtrl.login = function () {
+        AccountCtrl.login = () => {
             AccountCtrl.loginStatus.failed = false;
 
-            AccountCtrl.response = AccountLoginService.getLoginResult(AccountCtrl.user);
-            AccountCtrl.response.then((response) => {
-                console.log(response);
-                if(response.data && response.data.success)
-                {
+            AccountLoginService.getLoginResult(AccountCtrl.user).then((response) => {
+                if (response.data && response.data.success) {
                     AccountCtrl.loginStatus.message = response.data.message
+                    
+                    // Token expiration
+                    var date = new Date();
+                    date.setDate(date.getDate() + 1);
+                    $cookies.put('token', response.data.data.token, { 'expires': date });
+                    $window.location.href = '/';
                 }
-                else
-                {
+                else {
                     AccountCtrl.loginStatus.failed = true
                     AccountCtrl.loginStatus.message = response.data.message
                 }
             });
-
-            // if (AccountCtrl.username in users)
-            //     window.location.replace("http://localhost:3000/#!/predict?username=" + AccountCtrl.username);
-            // else
-            //     alert("Geçersiz Kullanıcı.");
         };
 
     };
