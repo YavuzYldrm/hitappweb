@@ -1,3 +1,28 @@
+html,
+body {
+    font-size: 16px;
+    margin: auto;
+    height: 100%;
+}
+
+html {
+    position: relative;
+    scroll-behavior: smooth;
+    /* font-size: 62.5%; */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F9FAFF;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: 'Nunito', sans-serif !important;
+}
+
 body {
   margin-top: 70px;
 }
@@ -171,4 +196,410 @@ input[type=number]::-webkit-outer-spin-button {
 
 .rounded-1 {
     border-radius: 1em;
+}
+
+
+
+/* --------------------------------------------------- */
+
+/* navigation bar */
+.navbar {
+    overflow: hidden;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    background-color: rgba(249, 250, 255, 0);
+    background-image: linear-gradient(135deg, #604AE6  0%, #E73D59  100%);
+    transition: background-color 1s ease 0s;
+    color: white;
+    font-weight: 600;
+}
+
+
+.nav-link {
+    margin-left: 1.2rem;
+    font-size: 0.65em;
+}
+
+.scrolled-nav-bar {
+    background-color: rgba(249, 250, 255, 1);
+} 
+
+.container .navbar-toggler {
+    font-size: 2rem
+}
+
+#sign-in {
+    margin-right: 1.5rem;
+    color:white;
+}
+
+/* navigation button */
+/* .btn {
+    position: relative;
+    border-radius: 1.2rem;
+    font-size: 1.4rem;
+    border-color: #5AADDD;
+    font-weight: 600;
+}
+
+.btn-outline-primary {
+    color: #8446C0 !important;
+    background-color: white !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: #8446C0 !important;
+    color: white !important;
+}
+
+.btn:active {
+    top: 0.2rem;
+} */
+
+
+#home {
+    background-image: url('../images/home/bg hs8.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* slider */
+.carousel-item {
+    height: 100vh;
+    min-height: 35rem;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-image: url('../images/home/ml ill@4x.png')
+    
+}
+
+.carousel-caption {
+    left: 20%;
+    top: 30%;
+}
+
+/* body */
+h1 {
+    font-size: 3.2rem;
+}
+
+#about {
+    padding-top: 6.5%;
+   
+}
+
+.vision{
+    margin-top: 19px;
+}
+
+#contact {
+    padding-top: 6.5%;
+}
+
+#projects {
+    padding-top: 6.5%;
+
+}
+.box-about {
+    background: #ffffff;
+    border-radius: 1.5rem;
+    padding: 6rem 3rem;
+}
+
+.box:hover {
+    -webkit-animation: bounce-top 1.9s both;
+    animation: bounce-top 1.9s both;
+}
+
+
+@-webkit-keyframes bounce-top {
+    0% {
+        -webkit-transform: translateY(-45px);
+        transform: translateY(-45px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+        opacity: 1;
+    }
+
+    24% {
+        opacity: 1;
+    }
+
+    40% {
+        -webkit-transform: translateY(-24px);
+        transform: translateY(-24px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    65% {
+        -webkit-transform: translateY(-12px);
+        transform: translateY(-12px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    82% {
+        -webkit-transform: translateY(-6px);
+        transform: translateY(-6px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    93% {
+        -webkit-transform: translateY(-4px);
+        transform: translateY(-4px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    25%,
+    55%,
+    75%,
+    87% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    100% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+        opacity: 1;
+    }
+}
+
+@keyframes bounce-top {
+    0% {
+        -webkit-transform: translateY(-45px);
+        transform: translateY(-45px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+        opacity: 1;
+    }
+
+    24% {
+        opacity: 1;
+    }
+
+    40% {
+        -webkit-transform: translateY(-24px);
+        transform: translateY(-24px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    65% {
+        -webkit-transform: translateY(-12px);
+        transform: translateY(-12px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    82% {
+        -webkit-transform: translateY(-6px);
+        transform: translateY(-6px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    93% {
+        -webkit-transform: translateY(-4px);
+        transform: translateY(-4px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    25%,
+    55%,
+    75%,
+    87% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    100% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+        opacity: 1;
+    }
+}
+
+
+
+.line {
+    background-image: linear-gradient(135deg, #E73D59 0%, #604AE6 100%);
+    height: 0.2rem;
+    width: 5rem;
+    margin-bottom: 5rem;
+    display: inline-block;
+}
+
+.my-col {
+    border: .2rem solid #FFFFFF;
+    
+    background-color: #FFFFFF;
+
+}
+
+.box {
+    background: #ffffff;
+    border-radius: 1.5rem;
+    padding: 6rem 3rem;
+    transition: all .4s ease-in-out;
+
+}
+
+.box h2 {
+    font-size: 2rem;
+    color: #3b566e;
+    font-weight: 600;
+    margin: 2.5rem 0 1.5rem;
+    padding: 0;
+}
+
+.box p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #919aaf;
+    line-height: 2.6rem;
+}
+
+.projects h2 {
+    color: #3b566e;
+}
+
+
+
+.anailetisim {
+    background: #F9FAFF;
+    border-top: 6px solid #F9FAFF;
+    color: #496379;
+}
+
+.anailetisim h2 {
+    font: 300 3rem 'Nunito Sans', sans-serif;
+}
+
+.anailetisim .iletisimform input {
+    color: #795548;
+    font: 300 'Nunito Sans', sans-serif;
+    /* 1.6rem */
+    padding: 12px 18px;
+    border-radius: 8px;
+}
+
+.anailetisim .iletisimform select {
+    background: #fff right 4px center no-repeat;
+    color: #496379;
+    font: 300 1.6rem 'Nunito Sans', sans-serif;
+    padding: 12px 18px;
+    border-radius: 8px;
+    -webkit-appearance: inherit;
+}
+
+.anailetisim .iletisimbilgi table td {
+    vertical-align: top;
+    color: #496379;
+    font-weight: 300;
+    padding: 0 12px 40px 12px;
+}
+
+.anailetisim h4 {
+    margin-bottom: 4.5rem;
+    /* font-size: 2.2rem; */
+}
+
+/* .form-control {
+    font-size: 1.6rem;
+} */
+
+#btn-demo{
+    margin-top: 150px;
+    margin-left: 60px;
+    text-transform: uppercase;
+    font-size: 2rem;
+    padding: 7px 25px;
+    border: 1px solid #5C12E7;
+    background-color: white;
+    color: #5C12E7;
+}
+
+#btn-demo:hover{
+    background-color: #634AE4 !important;
+    color: white;
+}
+
+.btn-gonder {
+    border-color: #5AADDD;
+    background-color: #95CB0E;
+    margin-top: 2rem;
+
+
+}
+
+.btn-gonder:hover {
+    background-color: #5AADDD;
+    transition: background-color .5s ease 0s;
+}
+
+
+footer {
+    background-color: #5AADDD;
+    color: rgb(255, 255, 255);
+    font-size: 1.6rem;
+    padding: 3.5rem 0;
+
+}
+
+.footer-header {
+    font-size: 1.6rem;
+}
+
+#logo-footer {
+    height: 50%;
+    width: 50%;
+}
+
+@media only screen and (max-width: 480px) {}
+
+@media only screen and (max-width: 768px) {
+    .img-responsive {
+        display: none;
+    }
+    .btn-gonder{
+        margin-bottom: 2rem;
+    }
+}
+
+@media only screen and (max-width: 1024px) {}
+
+@media only screen and (max-width: 1600px) {}
+
+@media only screen and (min-width: 1601px) {}
+
+@media (min-width: 768px) {}
+
+@media (max-width: 767.98px) {
+    .box {
+        margin-bottom: 30px;
+    }
+    #vision{
+        margin-right: 13px;
+    }
+}
+
+#homePage p {
+    font-size: 1em !important; 
 }
