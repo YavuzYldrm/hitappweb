@@ -4,58 +4,96 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>Hitsoft</title>
     <link rel="stylesheet" type="text/css"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
 
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,400i,600,600i,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Unica+One" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet" />
 </head>
 
-<body class="predict-main-sec">
-    <header>
-        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" ng-href="/#!/home">
-                <span>Hitsoft</span>
+<body>
+<section class="navigation-bar">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/home/hitarge 3@4x.png" width="300" height="80" class="d-inline-block align-top" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle Navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" ng-href="/#!/attend" ng-if="isAuthenticated">Etkinlik Katıl<span
-                                class="sr-only"></span></a>
+
+
+            <div class="navbar-collapse collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav mx-auto nav-items">
+                    <li class="nav-item ">
+                        <a class="nav-link" style="color: rgba(255, 255, 255,1);" ng-href="#home">Anasayfa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" ng-href="/#!/create" ng-if="isAuthenticated">Etkinlik Oluştur<span
-                                class="sr-only"></span></a>
+                        <a class="nav-link " style="color: rgba(255, 255, 255,1);" href="#about">Hakkımızda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" ng-href="/#!/friends" ng-if="isAuthenticated">Arkadaşlar<span
-                                class="sr-only"></span></a>
+                        <a class="nav-link" style="color: rgba(255, 255, 255,1);" href="#projects">Çalışmalarımız</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" ng-href="/#!/login" ng-if="!isAuthenticated">Giriş Yap<span
-                                class="sr-only"></span></a>
+                        <a class="nav-link" style="color: rgba(255, 255, 255,1);" href="#contact">İletişim</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" ng-if="isAuthenticated" ng-click="logout()">Çıkış Yap<span class="sr-only"></span></a>
+                        <a class="nav-link" style="color: rgba(255, 255, 255,1);" ng-href="/#!/attend" ng-if="isAuthenticated">Etkinlik Katıl</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" ng-href="/#!/register" ng-if="!isAuthenticated">Kayıt Ol<span
-                                class="sr-only"></span></a>
+                        <a class="nav-link" style="color: rgba(255, 255, 255,1);" ng-href="/#!/create" ng-if="isAuthenticated">Etkinlik Oluştur</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: rgba(255, 255, 255,1);" ng-href="/#!/friends" ng-if="isAuthenticated">Arkadaşlar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: rgba(255, 255, 255,1);" ng-href="/#!/login" ng-if="!isAuthenticated">Giriş</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: rgba(255, 255, 255,1);" ng-if="isAuthenticated" ng-click="logout()">Çıkış Yap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: rgba(255, 255, 255,1);" ng-href="/#!/register" ng-if="!isAuthenticated">Kayıt</a>
                     </li>
                 </ul>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</section>
+    <div style="min-height: 50px"></div>
+
     <ng-view></ng-view>
-    <footer></footer>
+    <footer id="footer" class="container-fluid d-none">
+        <div class="container pt-4 ">
+            <div class="row text-center">
+                <div class="col-md-4 ">
+                    <a href="#home">
+                        <img id="logo-footer" src="images/home/hitarge 3@4x.png">
+                    </a>
+                    <p class="font-weight d-inline ">
+                        <br>&copy; Hitsoft ArGe 2019
+                    </p>
+                </div>
+                <div class="col-md-4 ">
+                    <h6 class="font-weight-bold footer-header">Adres:</h6>
+                    <p>Defterdar Mahallesi, Kar Plaza, Otakçılar Cd. No:80, 34050 Eyüp/İstanbul</p>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="font-weight-bold footer-header">İletişim Bilgileri:</h4>
+                    <p><span class="font-weight-bold">Telefon:</span> +90 (212) 483 74 16</p>
+                    <p><span class="font-weight-bold">Mail:</span> info@hitsoft.com.tr</p>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="scripts/bundle.js"></script>
 </body>
 
