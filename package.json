@@ -10,10 +10,12 @@
   "dependencies": {
     "@uirouter/angularjs": "^1.0.22",
     "angular": "1.7.8",
+    "angular-cookies": "^1.7.8",
     "angular-route": "^1.7.8",
     "bootstrap": "^4.3.1",
     "compression": "^1.7.4",
     "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "flatpickr": "^4.6.1",
