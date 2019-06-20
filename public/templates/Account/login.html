@@ -4,7 +4,7 @@
             <div class="row justify-content-center">
                 <div class="col-8">
                     <form class="bg-white shadow-sm p-5">
-                        <h2 class="text-center font-unica text-uppercase mb-4">Kayıt Ol</h2>
+                        <h2 class="text-center font-unica text-uppercase mb-4">Giriş Yap</h2>
                         <div class="form-group">
                             <input class="form-control rounded-0 font-karla bg-light" type="text" name="username"
                                 placeholder="Kullanıcı Adı" required autofocus="autofocus"
@@ -19,6 +19,11 @@
                             class="btn btn-primary submit-btn rounded-0 font-karla text-uppercase btn-block mt-4 p-2"
                             type="submit" ng-click="AccountCtrl.login();">Giriş
                         </button>
+                        <div class="text-center mt-4">
+                            <a class="submit-text font-karla" ng-href="/#!/register">
+                                <p>Kayıt</p>
+                            </a>
+                        </div>
                         <div class="p-2 pl-3 mt-4 bg-danger text-white rounded shadow-sm"
                             ng-if="AccountCtrl.loginStatus.failed">{{AccountCtrl.loginStatus.message}}</div>
                 </div>
