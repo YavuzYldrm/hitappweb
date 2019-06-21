@@ -8,7 +8,7 @@ body {
 html {
     position: relative;
     scroll-behavior: smooth;
-    /* font-size: 62.5%; */
+    
 }
 
 * {
@@ -27,9 +27,7 @@ body {
   margin-top: 70px;
 }
 
-.row {
-  margin: 0px;
-}
+
 
 .section-title > h1{
   font-family: Poppins;
@@ -203,21 +201,24 @@ input[type=number]::-webkit-outer-spin-button {
 /* --------------------------------------------------- */
 
 /* navigation bar */
-.navbar {
+#my-navbar {
     overflow: hidden;
-    font-size: 1.5rem;
-    padding: 1rem 0;
+    padding: 0.6rem 0;
     background-color: rgba(249, 250, 255, 0);
     background-image: linear-gradient(135deg, #604AE6  0%, #E73D59  100%);
     transition: background-color 1s ease 0s;
     color: white;
     font-weight: 600;
+    font-size: 15px;
 }
 
+#my-h1{
+    font-size: rem;
+}
 
-.nav-link {
+.nav-sections {
     margin-left: 1.2rem;
-    font-size: 0.65em;
+    
 }
 
 .scrolled-nav-bar {
@@ -281,10 +282,12 @@ input[type=number]::-webkit-outer-spin-button {
     left: 20%;
     top: 30%;
 }
-
+#my-slider-h2{
+    font-size: 2.2rem;
+}
 /* body */
-h1 {
-    font-size: 3.2rem;
+#my-h1 {
+    font-size: 10px !important;
 }
 
 #about {
@@ -456,13 +459,13 @@ h1 {
 .box {
     background: #ffffff;
     border-radius: 1.5rem;
-    padding: 6rem 3rem;
+    padding: 3.75rem 1.875rem;
     transition: all .4s ease-in-out;
 
 }
 
 .box h2 {
-    font-size: 2rem;
+    font-size: 1.25rem;
     color: #3b566e;
     font-weight: 600;
     margin: 2.5rem 0 1.5rem;
@@ -470,14 +473,33 @@ h1 {
 }
 
 .box p {
-    font-size: 1.5rem;
+    font-size: 0.94rem;
     font-weight: 400;
     color: #919aaf;
-    line-height: 2.6rem;
+    line-height: 1.625rem;
 }
 
 .projects h2 {
     color: #3b566e;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
+.btn-circle.btn-xl {
+    width: 95px;
+    height: 95px;
+    padding: 10px 16px;
+    border-radius: 60px;
+    font-size: 1rem;
+    line-height: 1.33;
+    font-weight: 600;
 }
 
 
@@ -529,7 +551,7 @@ h1 {
     margin-top: 150px;
     margin-left: 60px;
     text-transform: uppercase;
-    font-size: 2rem;
+    font-size: 1.25rem;
     padding: 7px 25px;
     border: 1px solid #5C12E7;
     background-color: white;
@@ -596,10 +618,7 @@ footer {
         margin-bottom: 30px;
     }
     #vision{
-        margin-right: 13px;
+      
     }
 }
 
-#homePage p {
-    font-size: 1em !important; 
-}
