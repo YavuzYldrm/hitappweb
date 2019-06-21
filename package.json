@@ -8,8 +8,6 @@
     "scripts": {
         "start": "nodemon ./bin/www",
         "build": "./node_modules/.bin/parcel build ./public/scripts/main.js -d ./public/scripts/ --no-source-maps --out-file bundle.js",
-        "parcel_watch": "parcel watch ./public/scripts/main.js -d ./public/scripts/ --no-source-maps --out-file bundle.js",
-        "sync": "browser-sync start --proxy localhost:3000 --files public"
     },
     "dependencies": {
         "angular": "1.7.8",
