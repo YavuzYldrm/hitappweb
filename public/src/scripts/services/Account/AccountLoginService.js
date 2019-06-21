@@ -7,7 +7,7 @@ export default (app) => {
     function AccountLoginService($http) {
         const LoginSrvc = this;
 
-        LoginSrvc.baseUrl = 'http://localhost:5000/api/v1';
+        LoginSrvc.baseUrl = 'https://ml-tbt-hitappengine-api.herokuapp.com/api/v1';
 
         LoginSrvc.getLoginResult = function (user, response) {
             return $http({
