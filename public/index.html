@@ -114,7 +114,7 @@
     <ng-view></ng-view>
     <!-- suggestion button -->
     <button type="button" class="btn btn-primary btn-circle btn-xl position-fixed" style="right: 60px; bottom:40px; " data-toggle="modal"
-        data-target="#exampleModalCenter">
+        data-target="#exampleModalCenter" ng-if="isAuthenticated">
         Öneri al
     </button>
     <!----------------------------------------->
