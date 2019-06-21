@@ -7,7 +7,7 @@ export default (app) => {
     function EventPredictService($http) {
         const PredictSrvc = this;
 
-        PredictSrvc.baseUrl = 'http://127.0.0.1:5000/api/v1';
+        PredictSrvc.baseUrl = 'https://ml-tbt-hitappengine-api.herokuapp.com/api/v1';
 
         PredictSrvc.getResult = function (features,model, response) {
             return $http({
