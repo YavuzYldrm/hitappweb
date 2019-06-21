@@ -7,8 +7,8 @@
     },
     "scripts": {
         "start": "nodemon ./bin/www",
-        "build": "parcel build ./public/scripts/main.js -d ./public/scripts/ --no-source-maps --out-file bundle.js",
-        "parcel": "parcel watch ./public/scripts/main.js -d ./public/scripts/ --no-source-maps --out-file bundle.js",
+        "build": "./node_modules/.bin/parcel build ./public/scripts/main.js -d ./public/scripts/ --no-source-maps --out-file bundle.js",
+        "parcel_watch": "parcel watch ./public/scripts/main.js -d ./public/scripts/ --no-source-maps --out-file bundle.js",
         "sync": "browser-sync start --proxy localhost:3000 --files public"
     },
     "dependencies": {
@@ -28,6 +28,7 @@
         "popper.js": "^1.14.7"
     },
     "devDependencies": {
-        "nodemon": "^1.19.1"
+        "nodemon": "^1.19.1",
+        "parcel-bundler": "^1.12.3"
     }
 }
