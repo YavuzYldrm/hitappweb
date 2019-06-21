@@ -1,0 +1,64 @@
+<main>
+    <section>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-8">
+                    <form class="bg-white shadow-sm p-5" role="form" action="/register" method="post">
+                        <h2 class="text-center font-unica text-uppercase mb-4">Etkinlik Oluştur</h2>
+                        <div class="form-group">
+                            <input class="form-control rounded-0 font-karla bg-light" type="text" name="eventName"
+                                placeholder="Etkinlik Adı" required ng-model="EventCtrl.eventName" />
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control rounded-0 font-karla bg-light" type="text" name="userName"
+                                placeholder="Kullanıcı Adı" required ng-model="EventCtrl.userName" />
+                        </div>
+                        <div class="form-group">
+                            <input id="flatpickr" class="form-control rounded-0 font-karla bg-light flatpickr"
+                                name="startTime" placeholder="Başlangıç Tarihi" required
+                                ng-model="EventCtrl.startTime" />
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control rounded-0 font-karla bg-light" name="city" placeholder="Şehir"
+                                ng-model="EventCtrl.city" ng-options="x for x in EventCtrl.keys.city">
+                                <option value="" disabled selected>Şehir</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control rounded-0 font-karla bg-light" name="state" placeholder="Eyalet"
+                                ng-model="EventCtrl.state" ng-options="x for x in EventCtrl.keys.state">
+                                <option value="" disabled selected>Eyalet</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control rounded-0 font-karla bg-light" type="number" name="zip"
+                                placeholder="Zip" required ng-model="EventCtrl.zip" />
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control rounded-0 font-karla bg-light" name="state" placeholder="Ülke"
+                                ng-model="EventCtrl.country" ng-options="x for x in EventCtrl.keys.country">
+                                <option value="" disabled selected>Ülke</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control rounded-0 font-karla bg-light" type="number" name="lat"
+                                placeholder="Enlem" required ng-model="EventCtrl.lat" />
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control rounded-0 font-karla bg-light" type="number" name="long"
+                                placeholder="Boylam" required ng-model="EventCtrl.long" />
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control rounded-0 font-karla bg-light" name="desc"
+                                placeholder="Açıklama" required ng-model="EventCtrl.description"></textarea>
+                        </div>
+                        <button
+                            class="btn btn-primary submit-btn rounded-0 font-karla text-uppercase btn-block mt-4 p-2"
+                            type="submit">Kayıt</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>

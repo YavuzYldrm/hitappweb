@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../../../../../../AppData/Local/Yarn/Data/global/node_modules/process/browser.js":[function(require,module,exports) {
+})({"FT5O":[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {}; // cached from whatever global is present so that test runners that stub it
@@ -326,7 +326,7 @@ process.chdir = function (dir) {
 process.umask = function () {
   return 0;
 };
-},{}],"../../node_modules/jquery/dist/jquery.js":[function(require,module,exports) {
+},{}],"lwLq":[function(require,module,exports) {
 var global = arguments[3];
 var process = require("process");
 var define;
@@ -10929,7 +10929,7 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-},{"process":"../../../../../../AppData/Local/Yarn/Data/global/node_modules/process/browser.js"}],"../../node_modules/angular/angular.js":[function(require,module,exports) {
+},{"process":"FT5O"}],"VyJj":[function(require,module,exports) {
 /**
  * @license AngularJS v1.7.8
  * (c) 2010-2018 Google, Inc. http://angularjs.org
@@ -47365,11 +47365,11 @@ $provide.value("$locale", {
 })(window);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-},{}],"../../node_modules/angular/index.js":[function(require,module,exports) {
+},{}],"9Ktz":[function(require,module,exports) {
 require('./angular');
 module.exports = angular;
 
-},{"./angular":"../../node_modules/angular/angular.js"}],"../../node_modules/angular-route/angular-route.js":[function(require,module,exports) {
+},{"./angular":"VyJj"}],"XMav":[function(require,module,exports) {
 /**
  * @license AngularJS v1.7.8
  * (c) 2010-2018 Google, Inc. http://angularjs.org
@@ -48637,11 +48637,11 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 
 })(window, window.angular);
 
-},{}],"../../node_modules/angular-route/index.js":[function(require,module,exports) {
+},{}],"r9SO":[function(require,module,exports) {
 require('./angular-route');
 module.exports = 'ngRoute';
 
-},{"./angular-route":"../../node_modules/angular-route/angular-route.js"}],"../../node_modules/angular-cookies/angular-cookies.js":[function(require,module,exports) {
+},{"./angular-route":"XMav"}],"I7sz":[function(require,module,exports) {
 /**
  * @license AngularJS v1.7.8
  * (c) 2010-2018 Google, Inc. http://angularjs.org
@@ -48896,11 +48896,11 @@ angular.module('ngCookies').provider('$$cookieWriter', /** @this */ function $$C
 
 })(window, window.angular);
 
-},{}],"../../node_modules/angular-cookies/index.js":[function(require,module,exports) {
+},{}],"S9c2":[function(require,module,exports) {
 require('./angular-cookies');
 module.exports = 'ngCookies';
 
-},{"./angular-cookies":"../../node_modules/angular-cookies/angular-cookies.js"}],"../../node_modules/popper.js/dist/esm/popper.js":[function(require,module,exports) {
+},{"./angular-cookies":"I7sz"}],"Hfmr":[function(require,module,exports) {
 var global = arguments[3];
 "use strict";
 
@@ -51508,9 +51508,10 @@ var Popper = function () {
 Popper.Utils = (typeof window !== 'undefined' ? window : global).PopperUtils;
 Popper.placements = placements;
 Popper.Defaults = Defaults;
-var _default = Popper;
+var _default = Popper; //# sourceMappingURL=popper.js.map
+
 exports.default = _default;
-},{}],"../../node_modules/bootstrap/dist/js/bootstrap.js":[function(require,module,exports) {
+},{}],"DSFU":[function(require,module,exports) {
 var define;
 var global = arguments[3];
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function (obj) { return typeof obj; }; } else { _typeof = function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -55938,7 +55939,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     value: true
   });
 });
-},{"jquery":"../../node_modules/jquery/dist/jquery.js","popper.js":"../../node_modules/popper.js/dist/esm/popper.js"}],"layout.js":[function(require,module,exports) {
+},{"jquery":"lwLq","popper.js":"Hfmr"}],"C3c2":[function(require,module,exports) {
 window.onscroll = function () {
   navbarScroll();
 }; // OnScroll Navbar event
@@ -55955,7 +55956,7 @@ function navbarScroll() {
 }
 
 ;
-},{}],"../controllers/Account/AccountLoginController.js":[function(require,module,exports) {
+},{}],"5qtx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -56015,7 +56016,7 @@ var _default = function _default(app) {
 };
 
 exports.default = _default;
-},{}],"../controllers/Account/AccountRegisterController.js":[function(require,module,exports) {
+},{}],"7QK2":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -56073,7 +56074,7 @@ var _default = function _default(app) {
 };
 
 exports.default = _default;
-},{}],"../controllers/Account/AccountFriendsController.js":[function(require,module,exports) {
+},{}],"j7DO":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -56083,9 +56084,9 @@ exports.default = void 0;
 
 var _default = function _default(app) {
   app.controller('AccountFriendsController', AccountFriendsController);
-  AccountFriendsController.$inject = ['$window', '$cookies'];
+  AccountFriendsController.$inject = ['$window'];
 
-  function AccountFriendsController($window, $cookies) {
+  function AccountFriendsController($window) {
     var AccountCtrl = this;
     AccountCtrl.users = {
       151534919: "ALİ",
@@ -56141,114 +56142,7 @@ var _default = function _default(app) {
 };
 
 exports.default = _default;
-},{}],"../controllers/Event/EventAttendController.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _default = function _default(app) {
-  app.controller('EventAttendController', EventAttendController);
-  EventAttendController.$inject = ['$window'];
-
-  function EventAttendController($window) {
-    var EventCtrl = this;
-    var events = {
-      1361307272: "SPA",
-      955398943: "HAVUZ",
-      1600413013: "KAYAK",
-      2877501688: "BİNİCİLİK",
-      2529072432: "GOLF",
-      3583332424: "ATV",
-      907302600: "TELEFERİK",
-      507707719: "HAMAM",
-      1927775201: "LUNAPARK",
-      1532377761: "BASKETBOL"
-    };
-    var users = {
-      151534919: "ALİ",
-      265212492: "VELİ",
-      2238882361: "CEMİL",
-      1776192: "AHMET",
-      23465780: "BÜLENT",
-      20018153: "TAHA",
-      15390083: "ŞAFAK",
-      7514340: "BERKAY",
-      50521271: "FATİH",
-      2034510440: "MAHMUT",
-      2664817652: "CANLI"
-    }; //EventCtrl.events = events;
-
-    EventCtrl.users = users;
-    EventCtrl.events = {};
-    EventCtrl.form = {};
-    EventCtrl.form.invited = {};
-    EventCtrl.searchValue = "";
-
-    EventCtrl.searchEvent = function (combo) {
-      var result = {};
-      angular.forEach(events, function (value, key) {
-        if (combo && EventCtrl.searchValue == "") return;
-
-        if (value.includes(EventCtrl.searchValue)) {
-          result[key] = value;
-        }
-      });
-      return result;
-    };
-
-    EventCtrl.isAttending = function (key) {
-      return EventCtrl.events[key] != undefined;
-    };
-
-    EventCtrl.attendEvent = function (key) {
-      EventCtrl.events[key] = {
-        name: events[EventCtrl.form.eventId],
-        status: EventCtrl.form.opinion,
-        interest: EventCtrl.form.interest == true ? "İlgili" : "İlgili Değil",
-        invited: EventCtrl.form.invited
-      }; // Clear form
-
-      EventCtrl.form.event = null;
-      EventCtrl.form.opinion = null;
-      EventCtrl.form.interest = null;
-      EventCtrl.form.invited = {};
-    };
-
-    EventCtrl.unattendEvent = function (key) {
-      delete EventCtrl.events[key];
-    };
-
-    EventCtrl.showSearchResults = function (array) {
-      if (Object.keys(array).length == 0) return false;else return true;
-    };
-
-    EventCtrl.invite = function (userId) {
-      EventCtrl.form.invited[userId] = users[userId];
-    };
-
-    EventCtrl.uninvite = function (userId) {
-      delete EventCtrl.form.invited[userId];
-    };
-
-    EventCtrl.isInvited = function (userId) {
-      return EventCtrl.form.invited[userId] != undefined;
-    };
-
-    EventCtrl.submit = function () {
-      EventCtrl.loader = true;
-      EventCtrl.disableButton = true;
-      console.log(EventCtrl.events);
-    };
-  }
-
-  ;
-};
-
-exports.default = _default;
-},{}],"../controllers/Event/EventPredictController.js":[function(require,module,exports) {
+},{}],"9uBR":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -56325,7 +56219,7 @@ var _default = function _default(app) {
 };
 
 exports.default = _default;
-},{}],"../../node_modules/flatpickr/dist/flatpickr.js":[function(require,module,exports) {
+},{}],"MYS0":[function(require,module,exports) {
 var define;
 var global = arguments[3];
 /* flatpickr v4.6.1, @license MIT */
@@ -58871,7 +58765,7 @@ var global = arguments[3];
 
   return flatpickr;
 });
-},{}],"../controllers/Event/EventCreateController.js":[function(require,module,exports) {
+},{}],"YXlL":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -58940,7 +58834,7 @@ var _default = function _default(app) {
 };
 
 exports.default = _default;
-},{"flatpickr":"../../node_modules/flatpickr/dist/flatpickr.js"}],"controllers.js":[function(require,module,exports) {
+},{"flatpickr":"MYS0"}],"Uvjg":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -58949,21 +58843,128 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _default = function _default(app) {
-  require('../controllers/Account/AccountLoginController').default(app);
+  app.controller('EventAttendController', EventAttendController);
+  EventAttendController.$inject = ['$window'];
 
-  require('../controllers/Account/AccountRegisterController').default(app);
+  function EventAttendController($window) {
+    var EventCtrl = this;
+    var events = {
+      1361307272: "SPA",
+      955398943: "HAVUZ",
+      1600413013: "KAYAK",
+      2877501688: "BİNİCİLİK",
+      2529072432: "GOLF",
+      3583332424: "ATV",
+      907302600: "TELEFERİK",
+      507707719: "HAMAM",
+      1927775201: "LUNAPARK",
+      1532377761: "BASKETBOL"
+    };
+    var users = {
+      151534919: "ALİ",
+      265212492: "VELİ",
+      2238882361: "CEMİL",
+      1776192: "AHMET",
+      23465780: "BÜLENT",
+      20018153: "TAHA",
+      15390083: "ŞAFAK",
+      7514340: "BERKAY",
+      50521271: "FATİH",
+      2034510440: "MAHMUT",
+      2664817652: "CANLI"
+    }; //EventCtrl.events = events;
 
-  require('../controllers/Account/AccountFriendsController').default(app);
+    EventCtrl.users = users;
+    EventCtrl.events = {};
+    EventCtrl.form = {};
+    EventCtrl.form.invited = {};
+    EventCtrl.searchValue = "";
 
-  require('../controllers/Event/EventAttendController').default(app);
+    EventCtrl.searchEvent = function (combo) {
+      var result = {};
+      angular.forEach(events, function (value, key) {
+        if (combo && EventCtrl.searchValue == "") return;
 
-  require('../controllers/Event/EventPredictController').default(app);
+        if (value.includes(EventCtrl.searchValue)) {
+          result[key] = value;
+        }
+      });
+      return result;
+    };
 
-  require('../controllers/Event/EventCreateController').default(app);
+    EventCtrl.isAttending = function (key) {
+      return EventCtrl.events[key] != undefined;
+    };
+
+    EventCtrl.attendEvent = function (key) {
+      EventCtrl.events[key] = {
+        name: events[EventCtrl.form.eventId],
+        status: EventCtrl.form.opinion,
+        interest: EventCtrl.form.interest == true ? "İlgili" : "İlgili Değil",
+        invited: EventCtrl.form.invited
+      }; // Clear form
+
+      EventCtrl.form.event = null;
+      EventCtrl.form.opinion = null;
+      EventCtrl.form.interest = null;
+      EventCtrl.form.invited = {};
+    };
+
+    EventCtrl.unattendEvent = function (key) {
+      delete EventCtrl.events[key];
+    };
+
+    EventCtrl.showSearchResults = function (array) {
+      if (Object.keys(array).length == 0) return false;else return true;
+    };
+
+    EventCtrl.invite = function (userId) {
+      EventCtrl.form.invited[userId] = users[userId];
+    };
+
+    EventCtrl.uninvite = function (userId) {
+      delete EventCtrl.form.invited[userId];
+    };
+
+    EventCtrl.isInvited = function (userId) {
+      return EventCtrl.form.invited[userId] != undefined;
+    };
+
+    EventCtrl.submit = function () {
+      EventCtrl.loader = true;
+      EventCtrl.disableButton = true;
+      console.log(EventCtrl.events);
+    };
+  }
+
+  ;
 };
 
 exports.default = _default;
-},{"../controllers/Account/AccountLoginController":"../controllers/Account/AccountLoginController.js","../controllers/Account/AccountRegisterController":"../controllers/Account/AccountRegisterController.js","../controllers/Account/AccountFriendsController":"../controllers/Account/AccountFriendsController.js","../controllers/Event/EventAttendController":"../controllers/Event/EventAttendController.js","../controllers/Event/EventPredictController":"../controllers/Event/EventPredictController.js","../controllers/Event/EventCreateController":"../controllers/Event/EventCreateController.js"}],"../services/Event/EventPredictService.js":[function(require,module,exports) {
+},{}],"4J0q":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _default = function _default(app) {
+  require('./controllers/Account/AccountLoginController').default(app);
+
+  require('./controllers/Account/AccountRegisterController').default(app);
+
+  require('./controllers/Account/AccountFriendsController').default(app);
+
+  require('./controllers/Event/EventPredictController').default(app);
+
+  require('./controllers/Event/EventCreateController').default(app);
+
+  require('./controllers/Event/EventAttendController').default(app);
+};
+
+exports.default = _default;
+},{"./controllers/Account/AccountLoginController":"5qtx","./controllers/Account/AccountRegisterController":"7QK2","./controllers/Account/AccountFriendsController":"j7DO","./controllers/Event/EventPredictController":"9uBR","./controllers/Event/EventCreateController":"YXlL","./controllers/Event/EventAttendController":"Uvjg"}],"1d7p":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -58977,16 +58978,13 @@ var _default = function _default(app) {
 
   function EventPredictService($http) {
     var PredictSrvc = this;
-    PredictSrvc.baseUrl = 'http://127.0.0.1:5000/api/v1';
+    PredictSrvc.baseUrl = 'http://localhost:5000/api';
 
-    PredictSrvc.getResult = function (features, model, response) {
+    PredictSrvc.getResult = function (item, response) {
       return $http({
         method: 'POST',
         url: PredictSrvc.baseUrl + '/predict',
-        data: {
-          features: features,
-          model: "event"
-        }
+        data: item
       });
     };
   }
@@ -58995,7 +58993,7 @@ var _default = function _default(app) {
 };
 
 exports.default = _default;
-},{}],"../services/Account/AccountLoginService.js":[function(require,module,exports) {
+},{}],"czjS":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -59009,7 +59007,7 @@ var _default = function _default(app) {
 
   function AccountLoginService($http) {
     var LoginSrvc = this;
-    LoginSrvc.baseUrl = 'http://127.0.0.1:5000/api/v1';
+    LoginSrvc.baseUrl = 'http://localhost:5000/api/v1';
 
     LoginSrvc.getLoginResult = function (user, response) {
       return $http({
@@ -59024,7 +59022,7 @@ var _default = function _default(app) {
 };
 
 exports.default = _default;
-},{}],"services.js":[function(require,module,exports) {
+},{}],"+F1g":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -59033,13 +59031,13 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _default = function _default(app) {
-  require('../services/Event/EventPredictService').default(app);
+  require('./services/Event/EventPredictService').default(app);
 
-  require('../services/Account/AccountLoginService').default(app);
+  require('./services/Account/AccountLoginService').default(app);
 };
 
 exports.default = _default;
-},{"../services/Event/EventPredictService":"../services/Event/EventPredictService.js","../services/Account/AccountLoginService":"../services/Account/AccountLoginService.js"}],"main.js":[function(require,module,exports) {
+},{"./services/Event/EventPredictService":"1d7p","./services/Account/AccountLoginService":"czjS"}],"epB2":[function(require,module,exports) {
 'use strict';
 
 var _jquery = _interopRequireDefault(require("jquery"));
@@ -59165,208 +59163,4 @@ $.urlParam = function (name) {
 
   return decodeURI(results[1]) || 0;
 };
-},{"jquery":"../../node_modules/jquery/dist/jquery.js","angular":"../../node_modules/angular/index.js","angular-route":"../../node_modules/angular-route/index.js","angular-cookies":"../../node_modules/angular-cookies/index.js","bootstrap":"../../node_modules/bootstrap/dist/js/bootstrap.js","./layout":"layout.js","./controllers":"controllers.js","./services":"services.js"}],"../../../../../../AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
-var global = arguments[3];
-var OVERLAY_ID = '__parcel__error__overlay__';
-var OldModule = module.bundle.Module;
-
-function Module(moduleName) {
-  OldModule.call(this, moduleName);
-  this.hot = {
-    data: module.bundle.hotData,
-    _acceptCallbacks: [],
-    _disposeCallbacks: [],
-    accept: function (fn) {
-      this._acceptCallbacks.push(fn || function () {});
-    },
-    dispose: function (fn) {
-      this._disposeCallbacks.push(fn);
-    }
-  };
-  module.bundle.hotData = null;
-}
-
-module.bundle.Module = Module;
-var checkedAssets, assetsToAccept;
-var parent = module.bundle.parent;
-
-if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
-  var hostname = "" || location.hostname;
-  var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54455" + '/');
-
-  ws.onmessage = function (event) {
-    checkedAssets = {};
-    assetsToAccept = [];
-    var data = JSON.parse(event.data);
-
-    if (data.type === 'update') {
-      var handled = false;
-      data.assets.forEach(function (asset) {
-        if (!asset.isNew) {
-          var didAccept = hmrAcceptCheck(global.parcelRequire, asset.id);
-
-          if (didAccept) {
-            handled = true;
-          }
-        }
-      }); // Enable HMR for CSS by default.
-
-      handled = handled || data.assets.every(function (asset) {
-        return asset.type === 'css' && asset.generated.js;
-      });
-
-      if (handled) {
-        console.clear();
-        data.assets.forEach(function (asset) {
-          hmrApply(global.parcelRequire, asset);
-        });
-        assetsToAccept.forEach(function (v) {
-          hmrAcceptRun(v[0], v[1]);
-        });
-      } else {
-        window.location.reload();
-      }
-    }
-
-    if (data.type === 'reload') {
-      ws.close();
-
-      ws.onclose = function () {
-        location.reload();
-      };
-    }
-
-    if (data.type === 'error-resolved') {
-      console.log('[parcel] ✨ Error resolved');
-      removeErrorOverlay();
-    }
-
-    if (data.type === 'error') {
-      console.error('[parcel] 🚨  ' + data.error.message + '\n' + data.error.stack);
-      removeErrorOverlay();
-      var overlay = createErrorOverlay(data);
-      document.body.appendChild(overlay);
-    }
-  };
-}
-
-function removeErrorOverlay() {
-  var overlay = document.getElementById(OVERLAY_ID);
-
-  if (overlay) {
-    overlay.remove();
-  }
-}
-
-function createErrorOverlay(data) {
-  var overlay = document.createElement('div');
-  overlay.id = OVERLAY_ID; // html encode message and stack trace
-
-  var message = document.createElement('div');
-  var stackTrace = document.createElement('pre');
-  message.innerText = data.error.message;
-  stackTrace.innerText = data.error.stack;
-  overlay.innerHTML = '<div style="background: black; font-size: 16px; color: white; position: fixed; height: 100%; width: 100%; top: 0px; left: 0px; padding: 30px; opacity: 0.85; font-family: Menlo, Consolas, monospace; z-index: 9999;">' + '<span style="background: red; padding: 2px 4px; border-radius: 2px;">ERROR</span>' + '<span style="top: 2px; margin-left: 5px; position: relative;">🚨</span>' + '<div style="font-size: 18px; font-weight: bold; margin-top: 20px;">' + message.innerHTML + '</div>' + '<pre>' + stackTrace.innerHTML + '</pre>' + '</div>';
-  return overlay;
-}
-
-function getParents(bundle, id) {
-  var modules = bundle.modules;
-
-  if (!modules) {
-    return [];
-  }
-
-  var parents = [];
-  var k, d, dep;
-
-  for (k in modules) {
-    for (d in modules[k][1]) {
-      dep = modules[k][1][d];
-
-      if (dep === id || Array.isArray(dep) && dep[dep.length - 1] === id) {
-        parents.push(k);
-      }
-    }
-  }
-
-  if (bundle.parent) {
-    parents = parents.concat(getParents(bundle.parent, id));
-  }
-
-  return parents;
-}
-
-function hmrApply(bundle, asset) {
-  var modules = bundle.modules;
-
-  if (!modules) {
-    return;
-  }
-
-  if (modules[asset.id] || !bundle.parent) {
-    var fn = new Function('require', 'module', 'exports', asset.generated.js);
-    asset.isNew = !modules[asset.id];
-    modules[asset.id] = [fn, asset.deps];
-  } else if (bundle.parent) {
-    hmrApply(bundle.parent, asset);
-  }
-}
-
-function hmrAcceptCheck(bundle, id) {
-  var modules = bundle.modules;
-
-  if (!modules) {
-    return;
-  }
-
-  if (!modules[id] && bundle.parent) {
-    return hmrAcceptCheck(bundle.parent, id);
-  }
-
-  if (checkedAssets[id]) {
-    return;
-  }
-
-  checkedAssets[id] = true;
-  var cached = bundle.cache[id];
-  assetsToAccept.push([bundle, id]);
-
-  if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
-    return true;
-  }
-
-  return getParents(global.parcelRequire, id).some(function (id) {
-    return hmrAcceptCheck(global.parcelRequire, id);
-  });
-}
-
-function hmrAcceptRun(bundle, id) {
-  var cached = bundle.cache[id];
-  bundle.hotData = {};
-
-  if (cached) {
-    cached.hot.data = bundle.hotData;
-  }
-
-  if (cached && cached.hot && cached.hot._disposeCallbacks.length) {
-    cached.hot._disposeCallbacks.forEach(function (cb) {
-      cb(bundle.hotData);
-    });
-  }
-
-  delete bundle.cache[id];
-  bundle(id);
-  cached = bundle.cache[id];
-
-  if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
-    cached.hot._acceptCallbacks.forEach(function (cb) {
-      cb();
-    });
-
-    return true;
-  }
-}
-},{}]},{},["../../../../../../AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","main.js"], null)
-//# sourceMappingURL=/bundle.js.map
+},{"jquery":"lwLq","angular":"9Ktz","angular-route":"r9SO","angular-cookies":"S9c2","bootstrap":"DSFU","./layout":"C3c2","./controllers":"4J0q","./services":"+F1g"}]},{},["epB2"], null)
