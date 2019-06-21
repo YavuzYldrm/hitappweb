@@ -6,10 +6,10 @@
         "node": "10.x"
     },
     "scripts": {
-        "start": "nodemon ./bin/www",
+        "start": "./node_modules/.bin/nodemon ./bin/www",
         "build": "./node_modules/.bin/parcel build ./public/scripts/main.js -d ./public/scripts/ --no-source-maps --out-file bundle.js",
-        "parcel_watch": "parcel watch ./public/scripts/main.js -d ./public/scripts/ --no-source-maps --out-file bundle.js",
-        "sync": "browser-sync start --proxy localhost:3000 --files public"
+        "parcel_watch": "./node_modules/.bin/parcel watch ./public/scripts/main.js -d ./public/scripts/ --no-source-maps --out-file bundle.js",
+        "sync": "./node_modules/.bin/browser-sync start --proxy localhost:3000 --files public"
     },
     "dependencies": {
         "angular": "1.7.8",
