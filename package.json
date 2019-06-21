@@ -7,8 +7,8 @@
     },
     "scripts": {
         "start": "./node_modules/.bin/nodemon ./bin/www",
-        "build": "./node_modules/.bin/parcel build ./public/scripts/main.js -d ./public/scripts/ --no-source-maps --out-file bundle.js",
-        "parcel_watch": "./node_modules/.bin/parcel watch ./public/scripts/main.js -d ./public/scripts/ --no-source-maps --out-file bundle.js",
+        "build": "./node_modules/.bin/parcel build ./public/src/scripts/main.js -d ./public/dist/scripts --no-source-maps --no-minify --out-file bundle.js",
+        "parcel_watch": "./node_modules/.bin/parcel watch ./public/src/scripts/main.js -d ./public/dist/scripts/ --no-source-maps --out-file bundle.js",
         "sync": "./node_modules/.bin/browser-sync start --proxy localhost:3000 --files public"
     },
     "dependencies": {
@@ -28,8 +28,15 @@
         "popper.js": "^1.14.7"
     },
     "devDependencies": {
+        "browser-sync": "^2.26.7",
+        "gulp": "^4.0.2",
+        "gulp-clean": "^0.4.0",
+        "gulp-exec": "^3.0.2",
+        "gulp-image": "^5.1.0",
+        "gulp-newer": "^1.4.0",
+        "gulp-nodemon": "^2.4.2",
+        "gulp-run": "^1.7.1",
         "nodemon": "^1.19.1",
-        "parcel-bundler": "^1.12.3",
-        "browser-sync": "^2.26.7"
+        "parcel-bundler": "^1.12.3"
     }
 }
