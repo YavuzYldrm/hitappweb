@@ -6,7 +6,7 @@
         "node": "10.x"
     },
     "scripts": {
-        "start": "./node_modules/.bin/nodemon ./bin/www",
+        "start": "node ./bin/www",
         "build": "./node_modules/.bin/parcel build ./public/scripts/main.js -d ./public/scripts/ --no-source-maps --out-file bundle.js"
     },
     "dependencies": {
