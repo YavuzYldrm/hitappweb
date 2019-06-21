@@ -22,4 +22,11 @@ npm run build
 veya
 ```
 npm run watch // JS Dosyalarındaki değişimlerde otomatik günceller
+```
+
+## Başlatma
+
+```
+npm start
+```
 
