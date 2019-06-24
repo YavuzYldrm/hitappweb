@@ -1,8 +1,8 @@
 <main id="homePage">
     <!-- home- carousel-->
-    <section id="home" class=" slider d-flex align-items-center ">
+    <section id="home" class=" slider d-flex align-items-center">
 
-        <div id="carouselExampleIndicators" class="carousel slide container pb-4" data-ride="carousel">
+        <div id="carouselExampleIndicators " class="carousel slide container pb-4" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -10,17 +10,17 @@
             </ol>
             <div class="carousel-inner" role="listbox">
                 <!-- Slide One - Set the background image for this slide in the line below   !!!!!!!!!!!!!!!!!!!!!!!! 2 satır altı-->
-                <div class="carousel-item active" style="background-image: url('images/home/reisler il1.png')">
+                <div class="carousel-item active" id="my-carousel" style="background-image: url('images/home/reisler il1.png')">
                     <div class="carousel-caption d-none text-left d-md-block">
                         <h2 class="display-4" id="my-slider-h2">Hitsoft ArGe</h2>
-                        <p class="">This is a description for the first slide.</p>
+                       <!-- <p class="">This is a description for the first slide.</p> -->
                     </div>
                 </div>
 
-                <div class="carousel-item" style="background-image: url('images/home/ml il4.png')">
+                <div class="carousel-item" id="my-carousel" style="background-image: url('images/home/ml il4.png')">
                     <div class="carousel-caption d-none text-left d-md-block">
                         <h2 class="display-4"id="my-slider-h2">Yapay zeka</h2>
-                        <p class="lead">This is a description for the second slide.</p>
+                      <!--  <p class="lead">This is a description for the second slide.</p> --> 
                         <a href="#">
                             <a class="btn btn-success btn-rounded shadow" id="btn-demo" ng-href="/#!/predict">
                                 Demo
@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <!--   Slide three 
-            <div class="carousel-item" style="background-image: url('bc il3.png')">
+            <div class="carousel-item" id="my-carousel" style="background-image: url('bc il3.png')">
               <div class="carousel-caption d-none text-left d-md-block">
                 <h2 class="display-4" id="my-slider-h2">Blockchain</h2>
                 <p class="lead">This is a description for the third slide.</p>
@@ -83,7 +83,7 @@
                             Bunların
                             yanında Yapay Zeka ve Block Zinciri alanında hazırlanmış ve geliştirmeye geçecek projeler
                             bulunmaktadır.
-                            <br><br><br>
+                            <br><br><br><br>
                         </p>
 
                     </div>
@@ -101,7 +101,7 @@
                                 yenilikçi teknolojiler ve ürünler geliştirmek.</p>
 
                         </div>
-                        <div class="box my-col shadow-lg bounce-top vision">
+                        <div class="box my-col shadow-lg bounce-top vision mt-1">
 
                             <h2>Vizyonumuz:</h2>
                             <p class="text-left">Yapay zeka ve Blockchain vb. yenilikçi teknolojilere hızlı adaptasyon
@@ -130,7 +130,7 @@
                         <h2>Yapay zeka </h2>
                         <p></p>
                         <div class="col text-center">
-                            <a href="#"> <button type="button" class="btn btn-outline-info btn-lg ">Projelerimiz</button></a>
+                            <a href="#"> <button type="button" id="btn-projects" class="btn btn-outline-info btn-lg ">Projelerimiz</button></a>
                         </div>
                     </div>
                 </div>
@@ -142,7 +142,7 @@
                         <h2>Blockchain</h2>
                         <p></p>
                         <div class="col text-center">
-                            <a href="#"> <button type="button" class="btn btn-outline-info btn-lg ">Projelerimiz</button></a>
+                            <a href="#"> <button type="button" id="btn-projects" class="btn btn-outline-info btn-lg ">Projelerimiz</button></a>
                         </div>
                     </div>
                 </div>
@@ -154,7 +154,7 @@
                         <h2>Danışmanlık</h2>
                         <p></p>
                         <div class="col text-center">
-                            <a href="#"> <button type="button" class="btn btn-outline-info btn-lg ">Bize Ulaşın</button></a>
+                            <a href="#contact"> <button type="button" id="btn-projects"class="btn btn-outline-info btn-lg ">Bize Ulaşın</button></a>
                         </div>
                     </div>
                 </div>
