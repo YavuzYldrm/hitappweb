@@ -49,7 +49,7 @@ export default (app) => {
                 if (AccountCtrl.searchValue == "")
                     return;
 
-                if (value.includes(AccountCtrl.searchValue)) {
+                if (value.includes(String(AccountCtrl.searchValue).toUpperCase())) {
                     result[key] = value;
                 }
             });

@@ -45,7 +45,7 @@ export default (app) => {
             angular.forEach(events, (value, key) => {
                 if (combo && EventCtrl.searchValue == "")
                     return;
-                if (value.includes(EventCtrl.searchValue)) {
+                if (value.includes(String(EventCtrl.searchValue).toUpperCase())) {
                     result[key] = value;
                 }
             });
