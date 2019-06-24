@@ -212,9 +212,6 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 15px;
 }
 
-#my-h1{
-    font-size: rem;
-}
 
 .nav-sections {
     margin-left: 1.2rem;
@@ -235,14 +232,14 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 /* navigation button */
-/* .btn {
+ .my-btn {
     position: relative;
-    border-radius: 1.2rem;
-    font-size: 1.4rem;
+    border-radius: 0.75rem;
+    font-size: 0.88rem;
     border-color: #5AADDD;
     font-weight: 600;
-}
-
+}   
+/*
 .btn-outline-primary {
     color: #8446C0 !important;
     background-color: white !important;
@@ -286,9 +283,6 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 2.2rem;
 }
 /* body */
-#my-h1 {
-    font-size: 10px !important;
-}
 
 #about {
     padding-top: 6.5%;
@@ -577,16 +571,16 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 
-footer {
+#my-footer {
     background-color: #5AADDD;
     color: rgb(255, 255, 255);
-    font-size: 1.6rem;
-    padding: 3.5rem 0;
+    font-size: 1rem;
+    padding: 1.4rem 0;
 
 }
 
 .footer-header {
-    font-size: 1.6rem;
+    font-size: 1rem;
 }
 
 #logo-footer {
@@ -601,7 +595,7 @@ footer {
         display: none;
     }
     .btn-gonder{
-        margin-bottom: 2rem;
+        margin-bottom: 1.25rem;
     }
 }
 
