@@ -1,4 +1,31 @@
 <main>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Sizin için önerilenler:</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">1 - Hamam</li>
+                        <li class="list-group-item">2- Spa </li>
+                        <li class="list-group-item"></li>
+                        <li class="list-group-item"></li>
+                        <li class="list-group-item"></li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
@@ -50,14 +77,14 @@
 
                     <form>
                         <div class="form-group">
-                            <label for="eventName" class="col-form-label">Etkinlik</label>
+                            <label for="eventName" class="col-form-label">Otel Etkinlik Listesi</label>
                             <select id="eventName" class="form-control rounded-0 font-karla bg-light" required
                                 ng-model="EventCtrl.form.eventId">
                                 <option ng-repeat="(x,y) in EventCtrl.searchEvent(false)" value="{{x}}">{{y}}</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="eventOpinion" class="col-form-label">Görüş Durumu</label>
+                            <label for="eventOpinion" class="col-form-label">Katılım Durumu</label>
                             <select class="form-control rounded-0 font-karla bg-light" required
                                 ng-model="EventCtrl.form.opinion" ng-init="EventCtrl.form.opinion = 0">
                                 <option>Evet</option>
@@ -66,23 +93,23 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="eventInvited" class="col-form-label">Davetliler</label>
+                            <label for="eventInvited" class="col-form-label">Davet ettiğim arkadaşlar</label>
                             <select multiple disabled class="form-control rounded-0 font-karla bg-light"
                                 ng-model="EventCtrl.form.invited">
                                 <option ng-repeat="(x,y) in EventCtrl.form.invited">{{y}}</option>
                             </select>
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <div class="custom-control form-control-lg custom-checkbox mr-2">
                                 <input type="checkbox" class="custom-control-input" id="interest"
                                     ng-model="EventCtrl.form.interest"
                                     ng-init="EventCtrl.form.interest = false">
                                 <label class="custom-control-label" for="interest">İlgili</label>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="text-right">
                             <button type="button" class="btn btn-info h-100 ml-auto" data-toggle="modal"
-                                data-target="#exampleModalCenter">Davet ekle</button>
+                                data-target="#exampleModalCenter">Arkadaşıma bilgi ver</button>
                             <button class="btn btn-success h-100 ml-auto"
                                 ng-click="EventCtrl.attendEvent(EventCtrl.form.eventId)">Etkinlik Kayıt</button>
                         </div>
@@ -95,10 +122,10 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th scope="col">Etkinlik</th>
-                                    <th scope="col">Görüş Durumu</th>
-                                    <th scope="col">Davet Edilenler</th>
-                                    <th scope="col">İlgi Durumu</th>
+                                    <th scope="col">Otel Etkinlik Listesi</th>
+                                    <th scope="col">Katılım Durumu</th>
+                                    <th scope="col">Davet Ettiğim Arkadaşlar</th>
+                                    <!-- <th scope="col">İlgi Durumu</th> -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -120,4 +147,9 @@
                 </div>
             </div>
     </section>
+        <!-- suggestion button -->
+        <button type="button" class="btn btn-primary btn-circle btn-xl position-fixed" style="right: 60px; bottom:40px; "
+            data-toggle="modal" data-target="#exampleModalCenter" ng-if="isAuthenticated">
+            Öneri al
+        </button>
 </main>

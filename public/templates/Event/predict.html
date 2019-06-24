@@ -10,7 +10,7 @@
             </div>
             <div class="predict-form-div pt-5 pb-5">
                 <div class="row">
-                    <div class="col-12 col-md-8">
+                    <div class="col-6 col-md-8">
                         <div class="form-detail bg-light card">
                             <div class="card-body">
                                 <form name="PredictForm">
@@ -80,11 +80,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6">
-                        <div class="card bg-light" ng-if="EventCtrl.rentRange">
+                    <div class="col-6 col-md-4" ng-if="EventCtrl.showResult == true">
+                        <div class="card bg-light">
                             <div class="card-body">
                                 <h2>
-                                    Sonuç: {{ EventCtrl.prediction | number: 0 }}.
+                                    Tahmin: {{ EventCtrl.prediction}}
                                 </h2>
                             </div>
                         </div>

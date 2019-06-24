@@ -23,8 +23,8 @@ masterService(app);
 // Configure Routes
 app.config(['$routeProvider', '$locationProvider', ($routeProvider, $locationProvider) => {
     $routeProvider
-        .when("/", { redirectTo: "/home" })
-        .when("/home", { templateUrl: "/templates/home.html" })
+        .when("/", { templateUrl: "/templates/home.html" })
+        // .when("/home", { templateUrl: "/templates/home.html" })
         .when("/login", { templateUrl: "/templates/Account/login.html", controller: "AccountLoginController as AccountCtrl" })
         .when("/register", { templateUrl: "/templates/Account/register.html", controller: "AccountRegisterController as AccountCtrl" })
         .when("/friends", { 
@@ -58,23 +58,25 @@ app.config(['$routeProvider', '$locationProvider', ($routeProvider, $locationPro
             templateUrl: "/templates/Event/predict.html", 
             controller: "EventPredictController as EventCtrl"
         })
-        .otherwise({ redirectTo: "/home" });
-}]);
+        .otherwise({ redirectTo: "/" });
+}]).run(routeStart);
 
 function routeStart($rootScope, $location, $route, $cookies) {
     $rootScope.$on('$routeChangeStart', (event, next, current) => {
         if (next.restrictions.ensureAuthenticated) {
             if (!$cookies.get('token')) {
+                console.log("Redirect to login");
                 $location.path('/login');
             }
         }
         if (next.restrictions.loginRedirect) {
-            if ($cookies.get('token')) {
-                $location.path('/');
+            if (!$cookies.get('token')) {
+                console.log("Redirect to login2");
+                $location.path('/login');
             }
         }
     });
-}
+};
 
 
 app.config(['$httpProvider', function ($httpProvider) {
@@ -82,7 +84,7 @@ app.config(['$httpProvider', function ($httpProvider) {
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
 }]);
 
-app.run(function ($rootScope, $window, $http, $cookies) {
+app.run(function ($rootScope, $window, $location, $http, $cookies) {
     $rootScope.isAuthenticated = null;
     $rootScope.checkAuth = () => {
         var token = $cookies.get('token');
@@ -92,7 +94,7 @@ app.run(function ($rootScope, $window, $http, $cookies) {
         else {
             $http.defaults.headers.common['Authorization'] = 'Bearer ' + token;
 
-            const url = 'http://localhost:5000/api/v1/authenticate';
+            const url = 'http://192.168.5.55:5000/api/v1/authenticate';
             $http({
                 method: 'GET',
                 url: url
@@ -104,6 +106,8 @@ app.run(function ($rootScope, $window, $http, $cookies) {
     };
     $rootScope.logout = () => {
         $cookies.remove('token');
+        var token = $cookies.get('token');
+        console.log(token);
         $window.location.href = '/';
     };
 });

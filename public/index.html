@@ -19,35 +19,8 @@
     <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet" />
 </head>
 
-<body class="d-flex flex-column">
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Sizin için önerilenler:</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                        <ul class="list-group">
-                                <li class="list-group-item">1 - Hamam</li>
-                                <li class="list-group-item">2- Spa </li>
-                                <li class="list-group-item"></li>
-                                <li class="list-group-item"></li>
-                                <li class="list-group-item"></li>
-                              </ul>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <section class="navigation-bar content">
+<body>
+    <section class="navigation-bar">
         <nav class="navbar navbar-expand-lg navbar-light fixed-top " id="my-navbar">
             <div class="container">
                 <a class="navbar-brand" href="#">
@@ -82,26 +55,26 @@
                             <a class="nav-link nav-sections" style="color: rgba(255, 255, 255,1);" ng-href="/#!/attend"
                                 ng-if="isAuthenticated">Etkinlik Katıl</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link nav-sections" style="color: rgba(255, 255, 255,1);" ng-href="/#!/create"
                                 ng-if="isAuthenticated">Etkinlik Oluştur</a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a class="nav-link nav-sections" style="color: rgba(255, 255, 255,1);" ng-href="/#!/friends"
                                 ng-if="isAuthenticated">Arkadaşlar</a>
                         </li>
-                        <li class="nav-item">
+                        <!--<li class="nav-item">
                             <a class="nav-link nav-sections" style="color: rgba(255, 255, 255,1);" ng-href="/#!/login"
                                 ng-if="!isAuthenticated">Giriş</a>
-                        </li>
+                        </li>-->
                         <li class="nav-item">
                             <a class="nav-link nav-sections" style="color: rgba(255, 255, 255,1);"
                                 ng-if="isAuthenticated" ng-click="logout()">Çıkış Yap</a>
                         </li>
-                        <li class="nav-item">
+                        <!--<li class="nav-item">
                             <a class="nav-link nav-sections" style="color: rgba(255, 255, 255,1);"
                                 ng-href="/#!/register" ng-if="!isAuthenticated">Kayıt</a>
-                        </li>
+                        </li>-->
                     </ul>
                 </div>
             </div>
@@ -112,11 +85,7 @@
     <div style="min-height: 39px"></div>
 
     <ng-view></ng-view>
-    <!-- suggestion button -->
-    <button type="button" class="btn btn-primary btn-circle btn-xl position-fixed" style="right: 60px; bottom:40px; " data-toggle="modal"
-        data-target="#exampleModalCenter">
-        Öneri al
-    </button>
+
     <!----------------------------------------->
     <footer id="my-footer" class="container-fluid d-flex justify-content-center align-items-center sticky-bottom">
         <div class="container pt-4 ">
