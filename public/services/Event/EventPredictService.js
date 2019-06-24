@@ -7,7 +7,7 @@ export default (app) => {
     function EventPredictService($http) {
         const PredictSrvc = this;
 
-        PredictSrvc.baseUrl = 'http://localhost:5000/api/v1';
+        PredictSrvc.baseUrl = 'http://192.168.5.55:5000/api/v1';
 
         PredictSrvc.getResult = function (features,model, response) {
             return $http({
