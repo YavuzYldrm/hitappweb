@@ -27,8 +27,6 @@ body {
   margin-top: 70px;
 }
 
-
-
 .section-title > h1{
   font-family: Poppins;
   font-weight: 600;
@@ -102,6 +100,7 @@ input[type=number]::-webkit-outer-spin-button {
   height: 120px;
   animation: spin 0.8s linear infinite;
 }
+
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
@@ -214,7 +213,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 .nav-sections {
-    margin-left: 1.2rem;
+    margin-left: 1.88rem;
     
 }
 
@@ -239,6 +238,14 @@ input[type=number]::-webkit-outer-spin-button {
     border-color: #5AADDD;
     font-weight: 600;
 }   
+
+#btn-projects{position: relative;
+    border-radius: 1.2rem;
+    font-size: 0.8rem;
+    border-color: #5AADDD;
+    font-weight: 600;
+
+}
 /*
 .btn-outline-primary {
     color: #8446C0 !important;
@@ -260,6 +267,9 @@ input[type=number]::-webkit-outer-spin-button {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+}
+#my-carousel{
+    height: 100vh;
 }
 
 /* slider */
@@ -561,8 +571,7 @@ input[type=number]::-webkit-outer-spin-button {
     border-color: #5AADDD;
     background-color: #95CB0E;
     margin-top: 2rem;
-
-
+    border-radius: 1.2rem;
 }
 
 .btn-gonder:hover {
