@@ -24,11 +24,10 @@ masterService(app);
 app.config(['$routeProvider', '$locationProvider', ($routeProvider, $locationProvider) => {
     $routeProvider
         .when("/", { templateUrl: "/templates/home.html" })
-        // .when("/home", { templateUrl: "/templates/home.html" })
         .when("/login", { templateUrl: "/templates/Account/login.html", controller: "AccountLoginController as AccountCtrl" })
         .when("/register", { templateUrl: "/templates/Account/register.html", controller: "AccountRegisterController as AccountCtrl" })
-        .when("/friends", { 
-            templateUrl: "/templates/Account/friends.html", 
+        .when("/friends", {
+            templateUrl: "/templates/Account/friends.html",
             controller: "AccountFriendsController as AccountCtrl",
             restrictions: {
                 ensureAuthenticated: true,
@@ -36,43 +35,45 @@ app.config(['$routeProvider', '$locationProvider', ($routeProvider, $locationPro
             }
         })
 
-        .when("/attend", { 
-            templateUrl: "/templates/Event/attend.html", 
+        .when("/attend", {
+            templateUrl: "/templates/Event/attend.html",
             controller: "EventAttendController as EventCtrl",
             restrictions: {
                 ensureAuthenticated: true,
                 loginRedirect: true
             }
         })
-        .when("/create", 
-        { 
-            templateUrl: "/templates/Event/create.html", 
-            controller: "EventCreateController as EventCtrl",
-            restrictions: {
-                ensureAuthenticated: true,
-                loginRedirect: true
-            } 
-        })
-        .when("/predict", 
-        { 
-            templateUrl: "/templates/Event/predict.html", 
-            controller: "EventPredictController as EventCtrl"
-        })
+        .when("/create",
+            {
+                templateUrl: "/templates/Event/create.html",
+                controller: "EventCreateController as EventCtrl",
+                restrictions: {
+                    ensureAuthenticated: true,
+                    loginRedirect: true
+                }
+            })
+        .when("/predict",
+            {
+                templateUrl: "/templates/Event/predict.html",
+                controller: "EventPredictController as EventCtrl"
+            })
         .otherwise({ redirectTo: "/" });
 }]).run(routeStart);
 
 function routeStart($rootScope, $location, $route, $cookies) {
     $rootScope.$on('$routeChangeStart', (event, next, current) => {
-        if (next.restrictions.ensureAuthenticated) {
-            if (!$cookies.get('token')) {
-                console.log("Redirect to login");
-                $location.path('/login');
+        if (next.restrictions) {
+            if (next.restrictions.ensureAuthenticated) {
+                if (!$cookies.get('token')) {
+                    console.log("Redirect to login");
+                    $location.path('/');
+                }
             }
-        }
-        if (next.restrictions.loginRedirect) {
-            if (!$cookies.get('token')) {
-                console.log("Redirect to login2");
-                $location.path('/login');
+            if (next.restrictions.loginRedirect) {
+                if (!$cookies.get('token')) {
+                    console.log("Redirect to login2");
+                    $location.path('/login');
+                }
             }
         }
     });
