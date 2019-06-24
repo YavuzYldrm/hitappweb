@@ -3,7 +3,7 @@ export default (app) => {
 
     PredictController.$inject = ['EventPredictService', '$window'];
     function PredictController(EventPredictService, $window) {
-        const PredictCtrl = this;
+        const EventCtrl = this;
 
         const events = {
             "SPA": 1361307272,
@@ -18,12 +18,12 @@ export default (app) => {
             "BASKETBOL": 1532377761
         };
 
-        PredictCtrl.rentRange = null;
-        PredictCtrl.loader = false;
-        PredictCtrl.disableButton = false;
+        EventCtrl.rentRange = null;
+        EventCtrl.loader = false;
+        EventCtrl.disableButton = false;
 
 
-        PredictCtrl.detail = {
+        EventCtrl.detail = {
             invited: 1,
             userReco: 0,
             userPopularity: null,
@@ -32,40 +32,43 @@ export default (app) => {
 
         // ***************************************************************************
         // EVENT NAME
-        PredictCtrl.eventName = null;
-        PredictCtrl.eventNameDetail = {};
-        PredictCtrl.eventNameValue = {};
+        EventCtrl.eventName = null;
+        EventCtrl.eventNameDetail = {};
+        EventCtrl.eventNameValue = {};
 
         for (let key in events)
-            PredictCtrl.eventNameValue[key] = key;
+            EventCtrl.eventNameValue[key] = key;
 
-        PredictCtrl.setEventNameValue = function () {
+        EventCtrl.setEventNameValue = function () {
             for (let key in events) {
-                PredictCtrl.eventNameDetail[key] = +(PredictCtrl.eventName === key);
+                EventCtrl.eventNameDetail[key] = +(EventCtrl.eventName === key);
             }
-            //Object.assign(PredictCtrl.detail, PredictCtrl.eventNameDetail);
+            //Object.assign(EventCtrl.detail, EventCtrl.eventNameDetail);
         }
 
         // ***************************************************************************
-        // USER NAME
-        var user = $.urlParam('username');
-        PredictCtrl.username = user;
 
-        PredictCtrl.getResult = function () {
-            PredictCtrl.loader = true;
-            PredictCtrl.disableButton = true;
-            
-            PredictCtrl.response = EventPredictService.getResult(PredictCtrl.detail);
-            PredictCtrl.response.then(function (response) {
-                PredictCtrl.prediction = response.data[0];
+        EventCtrl.getResult = function () {
+            EventCtrl.loader = true;
+            EventCtrl.disableButton = true;
+            EventCtrl.showResult = false;
 
+            EventCtrl.response = EventPredictService.getResult(EventCtrl.detail);
+            EventCtrl.response.then(function (response) {
+                console.log(response.data.data);
+                EventCtrl.prediction = response.data.data;
                 $window.scrollTo(0, 0);
-                PredictCtrl.loader = false;
-                PredictCtrl.disableButton = false;
+                EventCtrl.loader = false;
+                EventCtrl.disableButton = false;
+                EventCtrl.showResult = true;
             }, function (response) {
-                PredictCtrl.loader = false;
-                PredictCtrl.disableButton = false;
+                console.log('2nd');
+                console.log(response);
+                EventCtrl.prediction = response.data.data;
+                EventCtrl.loader = false;
+                EventCtrl.disableButton = false;
+                EventCtrl.showResult = false;
             });
-        };        
+        };
     };
 };
