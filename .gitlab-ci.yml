@@ -1,0 +1,42 @@
+image: node:latest
+
+stages:
+  - build
+  - test
+  - deploy
+
+cache:
+  paths:
+    - node_modules/
+
+build:
+  stage: build
+  script:
+    - npm install
+  artifacts:
+    paths:
+      - node_modules/
+
+test:
+  stage: test
+  script: npm test
+
+staging:
+  stage: deploy
+  script:
+  - apt-get update -qy
+  - apt-get install -y ruby-dev
+  - gem install dpl
+  - dpl --provider=heroku --app=ml-tbt-hitappengine-api --api-key=$HEROKU_PRODUCTION_API_KEY
+  only:
+  - develop
+
+# production:
+#   stage: deploy
+#   script:
+#   - apt-get update -qy
+#   - apt-get install -y ruby-dev
+#   - gem install dpl
+#   - dpl --provider=heroku app=ml-tbt-hitappengine-api — api-key=$71c18078-d44e-4bb2-9a22-55c7d195eccc
+#   only:
+#   - tags
