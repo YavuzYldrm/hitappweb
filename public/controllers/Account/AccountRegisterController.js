@@ -9,8 +9,7 @@ export default (app) => {
         const keys = {
             "locale": ["id_ID", "en_US", "ka_GE", "es_LA", "fr_FR", "ar_AR", "en_GB", "pt_BR", "th_TH", "vi_VN"],
             "location": ["Medan Indonesia", "Stratford Ontario", "Tehran Iran", "Phnom Penh", "Djokja Yogyakarta Indonesia", "Triolet Mauritius", "Surabaya Indonesia", "Plaine Des Papayes Pamplemousses Mauritius", "Tbilisi Georgia", "Jombang Jawa Timur Indonesia"],
-            "gender": ["Male", "Female"],
-            "timezone": [0, 30, -30, 60, -60, 90, -90, 120, -120, 150]
+            "gender": ["Erkek", "Kadın"]
         };
 
         RegisterCtrl.keys = keys;
@@ -23,7 +22,6 @@ export default (app) => {
         RegisterCtrl.gender = null;
         RegisterCtrl.registerDate = null;
         RegisterCtrl.location = null;
-        RegisterCtrl.timezone = null;
 
         RegisterCtrl.checkBirthYear = function () {
             const currentYear = new Date().getFullYear();
