@@ -620,13 +620,13 @@ input[type=number]::-webkit-outer-spin-button {
     .box {
         margin-bottom: 30px;
     }
-    #vision{
+   /* #vision{
       
-    }
-}
+    }   */
 
 [ng-click],
 [data-ng-click],
 [x-ng-click] {
     cursor: pointer;
+}
 }
