@@ -1,8 +1,8 @@
 export default (app) => {
     app.controller('AccountLoginController', LoginController);
 
-    LoginController.$inject = ['AccountLoginService', '$window', '$cookies'];
-    function LoginController(AccountLoginService, $window, $cookies) {
+    //LoginController.$inject = ['AccountLoginService', '$window', '$location', '$cookies', 'loginRedirectUrl'];
+    function LoginController(AccountLoginService,$rootScope, $window, $location, $cookies, loginRedirectUrl) {
         const AccountCtrl = this;
 
         const users = {
@@ -35,12 +35,17 @@ export default (app) => {
             AccountLoginService.getLoginResult(AccountCtrl.user).then((response) => {
                 if (response.data && response.data.success) {
                     AccountCtrl.loginStatus.message = response.data.message
-                    
+
                     // Token expiration
                     var date = new Date();
                     date.setDate(date.getDate() + 1);
                     $cookies.put('token', response.data.data.token, { 'expires': date });
-                    $window.location.href = '/';
+                    $rootScope.isAuthenticated = true;
+                    
+                    if ($rootScope.url)
+                        $location.path($rootScope.url);
+                    else
+                        $location.path('/');
                 }
                 else {
                     AccountCtrl.loginStatus.failed = true
