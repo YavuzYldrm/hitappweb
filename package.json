@@ -9,7 +9,8 @@
         "start": "./node_modules/.bin/nodemon ./bin/www",
         "build": "./node_modules/.bin/parcel build ./public/scripts/main.js -d ./public/scripts/ --no-minify --no-source-maps --out-file bundle.js",
         "watch": "./node_modules/.bin/parcel watch ./public/scripts/main.js -d ./public/scripts/ --out-file bundle.js",
-        "sync": "./node_modules/.bin/browser-sync start --proxy localhost:3000 --files public"
+        "sync": "./node_modules/.bin/browser-sync start --proxy localhost:3000 --files public",
+        "test": "mocha --timeout 10000"
     },
     "dependencies": {
         "angular": "1.7.8",
@@ -29,6 +30,9 @@
     },
     "devDependencies": {
         "browser-sync": "^2.26.7",
+        "chai": "^4.2.0",
+        "chai-http": "^4.3.0",
+        "mocha": "^6.1.4",
         "nodemon": "^1.19.1",
         "parcel-bundler": "^1.12.3"
     }
