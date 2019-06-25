@@ -20,6 +20,8 @@ masterController(app);
 // Initialze services
 masterService(app);
 
+app.value('loginRedirectUrl', '/');
+
 // Configure Routes
 app.config(['$routeProvider', '$locationProvider', ($routeProvider, $locationProvider) => {
     $routeProvider
@@ -29,63 +31,35 @@ app.config(['$routeProvider', '$locationProvider', ($routeProvider, $locationPro
         .when("/friends", {
             templateUrl: "/templates/Account/friends.html",
             controller: "AccountFriendsController as AccountCtrl",
-            restrictions: {
-                ensureAuthenticated: true,
-                loginRedirect: true
-            }
+            needAuthentication: true
         })
 
         .when("/attend", {
             templateUrl: "/templates/Event/attend.html",
             controller: "EventAttendController as EventCtrl",
-            restrictions: {
-                ensureAuthenticated: true,
-                loginRedirect: true
-            }
+            needAuthentication: true
         })
         .when("/create",
             {
                 templateUrl: "/templates/Event/create.html",
                 controller: "EventCreateController as EventCtrl",
-                restrictions: {
-                    ensureAuthenticated: true,
-                    loginRedirect: true
-                }
+                needAuthentication: true
             })
         .when("/predict",
             {
                 templateUrl: "/templates/Event/predict.html",
-                controller: "EventPredictController as EventCtrl"
+                controller: "EventPredictController as EventCtrl",
+                needAuthentication: true
             })
         .otherwise({ redirectTo: "/" });
-}]).run(routeStart);
-
-function routeStart($rootScope, $location, $route, $cookies) {
-    $rootScope.$on('$routeChangeStart', (event, next, current) => {
-        if (next.restrictions) {
-            if (next.restrictions.ensureAuthenticated) {
-                if (!$cookies.get('token')) {
-                    console.log("Redirect to login");
-                    $location.path('/');
-                }
-            }
-            if (next.restrictions.loginRedirect) {
-                if (!$cookies.get('token')) {
-                    console.log("Redirect to login2");
-                    $location.path('/login');
-                }
-            }
-        }
-    });
-};
-
+}])
 
 app.config(['$httpProvider', function ($httpProvider) {
     $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
 }]);
 
-app.run(function ($rootScope, $window, $location, $http, $cookies) {
+app.run(function ($rootScope, $window, $location, $http, $cookies, $route, loginRedirectUrl) {
     $rootScope.isAuthenticated = null;
     $rootScope.checkAuth = () => {
         var token = $cookies.get('token');
@@ -108,9 +82,23 @@ app.run(function ($rootScope, $window, $location, $http, $cookies) {
     $rootScope.logout = () => {
         $cookies.remove('token');
         var token = $cookies.get('token');
-        console.log(token);
         $window.location.href = '/';
     };
+
+    $rootScope.$on('$routeChangeStart', (event, next, current) => {
+        var referrer = next.$$route.originalPath;
+        if (next.needAuthentication && referrer != '/login') {
+            if (!$cookies.get('token')) {
+                // Save referrer
+                // loginRedirectUrl = referrer;
+                $rootScope.url = referrer;
+                console.log('Referrer:' + loginRedirectUrl);
+
+                // Redirect to login page.
+                $location.path('/login');
+            }
+        }
+    });
 });
 
 
