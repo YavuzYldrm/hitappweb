@@ -289,6 +289,8 @@ input[type=number]::-webkit-outer-spin-button {
     left: 20%;
     top: 30%;
 }
+
+
 #my-slider-h2{
     font-size: 2.2rem;
 }
@@ -300,7 +302,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .vision{
-    margin-top: 19px;
+    margin-top: 14px;
 }
 
 #contact {
@@ -313,7 +315,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .box-about {
     background: #ffffff;
-    border-radius: 1.5rem;
+    border-radius: 0.93rem;
     padding: 6rem 3rem;
 }
 
@@ -462,7 +464,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .box {
     background: #ffffff;
-    border-radius: 1.5rem;
+    border-radius: 0.93rem;
     padding: 3.75rem 1.875rem;
     transition: all .4s ease-in-out;
 
