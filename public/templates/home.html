@@ -1,27 +1,27 @@
 <main id="homePage">
     <!-- home- carousel-->
-    <section id="home" class=" slider d-flex align-items-center">
+    <section id="home" class="align-items-center">
 
-        <div id="carouselExampleIndicators" class="carousel slide container pb-4" data-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <!-- <li data-target="#carouselExampleIndicators" data-slide-to="2"></li> -->
             </ol>
-            <div class="carousel-inner" role="listbox">
-                <!-- Slide One - Set the background image for this slide in the line below   !!!!!!!!!!!!!!!!!!!!!!!! 2 satır altı-->
-                <div class="carousel-item active" id="my-carousel" style="background-image: url('images/home/reisler il1.png')">
-                    <div class="carousel-caption text-left d-md-block">
-                        <h2 class="display-4" id="my-slider-h2">Hitsoft ArGe</h2>
+            <div class="carousel-inner">
+                <div class="carousel-item active h-50">
+                    <img src="images/home/slider1.png" class="d-block">
+                    <div class="carousel-caption text-left d-none d-md-block">
+                        <h2 class="display-4">Hitsoft ArGe</h2>
                         <p class="lead">Yapay Zeka, Blockchain ve danışmanlık alanlarında<br> hizmet
                             vermekte olan bir Ar-Ge merkeziyiz.
                         </p>
                     </div>
                 </div>
 
-                <div class="carousel-item" id="my-carousel" style="background-image: url('images/home/ml il4.png')">
-                    <div class="carousel-caption text-left d-md-block">
-                        <h2 class="display-4"id="my-slider-h2">Etkinlik Öneri Sistemi</h2>
+                <div class="carousel-item h-50">
+                    <img src="images/home/slider2.png" class="d-block">
+                    <div class="carousel-caption text-left d-none d-md-block">
+                        <h2 class="display-4">Etkinlik Öneri Sistemi</h2>
                         <p class="lead">Kayıtlı otel müşterilerine en uygun <br>
                             etkinlik öneren uygulamadır.
                         </p>
@@ -55,7 +55,7 @@
     <!-- about-->
     <section class="about min-vh-100" id="about">
         <div class="container text-center ">
-            <div >
+            <div>
                 <h2> Hakkımızda</h2>
             </div>
             <div class="line "></div>
@@ -123,42 +123,45 @@
     <!-- projects part-->
     <section class="projects min-vh-100" id="projects">
         <div class="container my-container text-center">
-            <div >
+            <div>
                 <h2>Çalışmalarımız</h2>
             </div>
             <div class="line "></div>
             <div class="row ">
                 <div class="col-lg-4 col-md-4 col-sm-12">
                     <div class="box my-col shadow bounce-top ">
-                        <div style=" min-height:1.28rem"><img src="images/home/AİİL1-100.jpg" id="ai-img"></div>
+                        <div style=" min-height:1.28rem"><img src="images/home/img3.jpg" id="ai-img"></div>
                         <h2>Yapay zeka </h2>
                         <p></p>
                         <div class="col text-center">
-                            <a href="#"> <button type="button" id="btn-projects" class="btn btn-outline-info btn-lg ">Projelerimiz</button></a>
+                            <a href="#"> <button type="button" id="btn-projects"
+                                    class="btn btn-outline-info btn-lg ">Projelerimiz</button></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 ">
                     <div class="box my-col shadow bounce-top ">
                         <div style="min-height:1.28rem">
-                            <img src="images/home/il2-100.jpg" alt="feature-huobi" id="blockchain-img">
+                            <img src="images/home/img2.jpg" alt="feature-huobi" id="blockchain-img">
                         </div>
                         <h2>Blockchain</h2>
                         <p></p>
                         <div class="col text-center">
-                            <a href="#"> <button type="button" id="btn-projects" class="btn btn-outline-info btn-lg ">Projelerimiz</button></a>
+                            <a href="#"> <button type="button" id="btn-projects"
+                                    class="btn btn-outline-info btn-lg ">Projelerimiz</button></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 ">
                     <div class="box my-col shadow bounce-top ">
                         <div style="min-height:1.28rem">
-                            <img src="images/home/il1-100.jpg" alt="feature-huobi" id="consulting-img">
+                            <img src="images/home/img1.jpg" alt="feature-huobi" id="consulting-img">
                         </div>
                         <h2>Danışmanlık</h2>
                         <p></p>
                         <div class="col text-center">
-                            <a href="#contact"> <button type="button" id="btn-projects"class="btn btn-outline-info btn-lg ">Bize Ulaşın</button></a>
+                            <a href="#contact"> <button type="button" id="btn-projects"
+                                    class="btn btn-outline-info btn-lg ">Bize Ulaşın</button></a>
                         </div>
                     </div>
                 </div>
@@ -169,7 +172,7 @@
     <!-- contact -->
     <section class="contact min-vh-100" id="contact">
         <div class="container ">
-            <div class="text-center" >
+            <div class="text-center">
                 <h2>İletişim</h2>
 
                 <div class="line "></div>
@@ -224,8 +227,8 @@
                         </div>
                     </div>
                     <div class="col-md-1 text-center aralik1 hidden-xs">
-                        <img class="img-responsive"
-                            src="http://erkankaratas.com.tr/wp-content/themes/drerkan/resimler/aralik1.png" alt="">
+                        <!-- <img class="img-responsive"
+                            src="http://erkankaratas.com.tr/wp-content/themes/drerkan/resimler/aralik1.png" alt=""> -->
                     </div>
                     <div class="col-md-5 iletisimbilgi">
                         <h4 class="text-center"> İletişim Bilgilerimiz </h4>
