@@ -7,8 +7,9 @@
     },
     "scripts": {
         "start": "./node_modules/.bin/nodemon ./bin/www",
-        "build": "./node_modules/.bin/parcel build ./public/scripts/main.js -d ./public/scripts/ --no-minify --no-source-maps --out-file bundle.js",
-        "watch": "./node_modules/.bin/parcel watch ./public/scripts/main.js -d ./public/scripts/ --out-file bundle.js",
+        "build": "./node_modules/.bin/parcel build ./public/recommendation/scripts/main.js -d ./public/recommendation/scripts/ --no-minify --no-source-maps --out-file bundle.js",
+        "watch": "./node_modules/.bin/parcel watch ./public/recommendation/scripts/main.js -d ./public/recommendation/scripts/ --out-file bundle.js",
+        "watch_game": "./node_modules/.bin/parcel watch ./public/game/scripts/main.js -d ./public/game/scripts/ --out-file bundle.js",
         "sync": "./node_modules/.bin/browser-sync start --proxy localhost:3000 --files public"
     },
     "dependencies": {

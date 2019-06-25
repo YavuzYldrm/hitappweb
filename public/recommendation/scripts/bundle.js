@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../../../../../../AppData/Local/Yarn/Data/global/node_modules/process/browser.js":[function(require,module,exports) {
+})({"../../../node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {}; // cached from whatever global is present so that test runners that stub it
@@ -326,7 +326,7 @@ process.chdir = function (dir) {
 process.umask = function () {
   return 0;
 };
-},{}],"../../node_modules/jquery/dist/jquery.js":[function(require,module,exports) {
+},{}],"../../../node_modules/jquery/dist/jquery.js":[function(require,module,exports) {
 var global = arguments[3];
 var process = require("process");
 var define;
@@ -10929,7 +10929,7 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-},{"process":"../../../../../../AppData/Local/Yarn/Data/global/node_modules/process/browser.js"}],"../../node_modules/angular/angular.js":[function(require,module,exports) {
+},{"process":"../../../node_modules/process/browser.js"}],"../../../node_modules/angular/angular.js":[function(require,module,exports) {
 /**
  * @license AngularJS v1.7.8
  * (c) 2010-2018 Google, Inc. http://angularjs.org
@@ -47365,11 +47365,11 @@ $provide.value("$locale", {
 })(window);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-},{}],"../../node_modules/angular/index.js":[function(require,module,exports) {
+},{}],"../../../node_modules/angular/index.js":[function(require,module,exports) {
 require('./angular');
 module.exports = angular;
 
-},{"./angular":"../../node_modules/angular/angular.js"}],"../../node_modules/angular-route/angular-route.js":[function(require,module,exports) {
+},{"./angular":"../../../node_modules/angular/angular.js"}],"../../../node_modules/angular-route/angular-route.js":[function(require,module,exports) {
 /**
  * @license AngularJS v1.7.8
  * (c) 2010-2018 Google, Inc. http://angularjs.org
@@ -48637,11 +48637,11 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 
 })(window, window.angular);
 
-},{}],"../../node_modules/angular-route/index.js":[function(require,module,exports) {
+},{}],"../../../node_modules/angular-route/index.js":[function(require,module,exports) {
 require('./angular-route');
 module.exports = 'ngRoute';
 
-},{"./angular-route":"../../node_modules/angular-route/angular-route.js"}],"../../node_modules/angular-cookies/angular-cookies.js":[function(require,module,exports) {
+},{"./angular-route":"../../../node_modules/angular-route/angular-route.js"}],"../../../node_modules/angular-cookies/angular-cookies.js":[function(require,module,exports) {
 /**
  * @license AngularJS v1.7.8
  * (c) 2010-2018 Google, Inc. http://angularjs.org
@@ -48896,11 +48896,11 @@ angular.module('ngCookies').provider('$$cookieWriter', /** @this */ function $$C
 
 })(window, window.angular);
 
-},{}],"../../node_modules/angular-cookies/index.js":[function(require,module,exports) {
+},{}],"../../../node_modules/angular-cookies/index.js":[function(require,module,exports) {
 require('./angular-cookies');
 module.exports = 'ngCookies';
 
-},{"./angular-cookies":"../../node_modules/angular-cookies/angular-cookies.js"}],"../../node_modules/popper.js/dist/esm/popper.js":[function(require,module,exports) {
+},{"./angular-cookies":"../../../node_modules/angular-cookies/angular-cookies.js"}],"../../../node_modules/popper.js/dist/esm/popper.js":[function(require,module,exports) {
 var global = arguments[3];
 "use strict";
 
@@ -51510,7 +51510,7 @@ Popper.placements = placements;
 Popper.Defaults = Defaults;
 var _default = Popper;
 exports.default = _default;
-},{}],"../../node_modules/bootstrap/dist/js/bootstrap.js":[function(require,module,exports) {
+},{}],"../../../node_modules/bootstrap/dist/js/bootstrap.js":[function(require,module,exports) {
 var define;
 var global = arguments[3];
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function (obj) { return typeof obj; }; } else { _typeof = function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -55938,7 +55938,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     value: true
   });
 });
-},{"jquery":"../../node_modules/jquery/dist/jquery.js","popper.js":"../../node_modules/popper.js/dist/esm/popper.js"}],"layout.js":[function(require,module,exports) {
+},{"jquery":"../../../node_modules/jquery/dist/jquery.js","popper.js":"../../../node_modules/popper.js/dist/esm/popper.js"}],"layout.js":[function(require,module,exports) {
 window.onscroll = function () {
   navbarScroll();
 }; // OnScroll Navbar event
@@ -55964,10 +55964,9 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _default = function _default(app) {
-  app.controller('AccountLoginController', LoginController);
-  LoginController.$inject = ['AccountLoginService', '$window', '$cookies'];
+  app.controller('AccountLoginController', LoginController); //LoginController.$inject = ['AccountLoginService', '$window', '$location', '$cookies', 'loginRedirectUrl'];
 
-  function LoginController(AccountLoginService, $window, $cookies) {
+  function LoginController(AccountLoginService, $rootScope, $window, $location, $cookies, loginRedirectUrl) {
     var AccountCtrl = this;
     var users = {
       "ALİ": 151534919,
@@ -56002,7 +56001,8 @@ var _default = function _default(app) {
           $cookies.put('token', response.data.data.token, {
             'expires': date
           });
-          $window.location.href = '/';
+          $rootScope.isAuthenticated = true;
+          if ($rootScope.url) $location.path($rootScope.url);else $location.path('/');
         } else {
           AccountCtrl.loginStatus.failed = true;
           AccountCtrl.loginStatus.message = response.data.message;
@@ -56032,8 +56032,7 @@ var _default = function _default(app) {
     var keys = {
       "locale": ["id_ID", "en_US", "ka_GE", "es_LA", "fr_FR", "ar_AR", "en_GB", "pt_BR", "th_TH", "vi_VN"],
       "location": ["Medan Indonesia", "Stratford Ontario", "Tehran Iran", "Phnom Penh", "Djokja Yogyakarta Indonesia", "Triolet Mauritius", "Surabaya Indonesia", "Plaine Des Papayes Pamplemousses Mauritius", "Tbilisi Georgia", "Jombang Jawa Timur Indonesia"],
-      "gender": ["Male", "Female"],
-      "timezone": [0, 30, -30, 60, -60, 90, -90, 120, -120, 150]
+      "gender": ["Erkek", "Kadın"]
     };
     RegisterCtrl.keys = keys;
     RegisterCtrl.disableButton = false;
@@ -56043,7 +56042,6 @@ var _default = function _default(app) {
     RegisterCtrl.gender = null;
     RegisterCtrl.registerDate = null;
     RegisterCtrl.location = null;
-    RegisterCtrl.timezone = null;
 
     RegisterCtrl.checkBirthYear = function () {
       var currentYear = new Date().getFullYear();
@@ -56083,9 +56081,9 @@ exports.default = void 0;
 
 var _default = function _default(app) {
   app.controller('AccountFriendsController', AccountFriendsController);
-  AccountFriendsController.$inject = ['$window', '$cookies'];
+  AccountFriendsController.$inject = ['$window'];
 
-  function AccountFriendsController($window, $cookies) {
+  function AccountFriendsController($window) {
     var AccountCtrl = this;
     AccountCtrl.users = {
       151534919: "ALİ",
@@ -56129,7 +56127,7 @@ var _default = function _default(app) {
       angular.forEach(AccountCtrl.users, function (value, key) {
         if (AccountCtrl.searchValue == "") return;
 
-        if (value.includes(AccountCtrl.searchValue)) {
+        if (value.includes(String(AccountCtrl.searchValue).toUpperCase())) {
           result[key] = value;
         }
       });
@@ -56192,7 +56190,7 @@ var _default = function _default(app) {
       angular.forEach(events, function (value, key) {
         if (combo && EventCtrl.searchValue == "") return;
 
-        if (value.includes(EventCtrl.searchValue)) {
+        if (value.includes(String(EventCtrl.searchValue).toUpperCase())) {
           result[key] = value;
         }
       });
@@ -56261,7 +56259,7 @@ var _default = function _default(app) {
   PredictController.$inject = ['EventPredictService', '$window'];
 
   function PredictController(EventPredictService, $window) {
-    var PredictCtrl = this;
+    var EventCtrl = this;
     var events = {
       "SPA": 1361307272,
       "HAVUZ": 955398943,
@@ -56274,10 +56272,10 @@ var _default = function _default(app) {
       "LUNAPARK": 1927775201,
       "BASKETBOL": 1532377761
     };
-    PredictCtrl.rentRange = null;
-    PredictCtrl.loader = false;
-    PredictCtrl.disableButton = false;
-    PredictCtrl.detail = {
+    EventCtrl.rentRange = null;
+    EventCtrl.loader = false;
+    EventCtrl.disableButton = false;
+    EventCtrl.detail = {
       invited: 1,
       userReco: 0,
       userPopularity: null,
@@ -56285,38 +56283,41 @@ var _default = function _default(app) {
       // EVENT NAME
 
     };
-    PredictCtrl.eventName = null;
-    PredictCtrl.eventNameDetail = {};
-    PredictCtrl.eventNameValue = {};
+    EventCtrl.eventName = null;
+    EventCtrl.eventNameDetail = {};
+    EventCtrl.eventNameValue = {};
 
     for (var key in events) {
-      PredictCtrl.eventNameValue[key] = key;
+      EventCtrl.eventNameValue[key] = key;
     }
 
-    PredictCtrl.setEventNameValue = function () {
+    EventCtrl.setEventNameValue = function () {
       for (var _key in events) {
-        PredictCtrl.eventNameDetail[_key] = +(PredictCtrl.eventName === _key);
-      } //Object.assign(PredictCtrl.detail, PredictCtrl.eventNameDetail);
+        EventCtrl.eventNameDetail[_key] = +(EventCtrl.eventName === _key);
+      } //Object.assign(EventCtrl.detail, EventCtrl.eventNameDetail);
 
     }; // ***************************************************************************
-    // USER NAME
 
 
-    var user = $.urlParam('username');
-    PredictCtrl.username = user;
-
-    PredictCtrl.getResult = function () {
-      PredictCtrl.loader = true;
-      PredictCtrl.disableButton = true;
-      PredictCtrl.response = EventPredictService.getResult(PredictCtrl.detail);
-      PredictCtrl.response.then(function (response) {
-        PredictCtrl.prediction = response.data[0];
+    EventCtrl.getResult = function () {
+      EventCtrl.loader = true;
+      EventCtrl.disableButton = true;
+      EventCtrl.showResult = false;
+      EventCtrl.response = EventPredictService.getResult(EventCtrl.detail);
+      EventCtrl.response.then(function (response) {
+        console.log(response.data.data);
+        EventCtrl.prediction = response.data.data;
         $window.scrollTo(0, 0);
-        PredictCtrl.loader = false;
-        PredictCtrl.disableButton = false;
+        EventCtrl.loader = false;
+        EventCtrl.disableButton = false;
+        EventCtrl.showResult = true;
       }, function (response) {
-        PredictCtrl.loader = false;
-        PredictCtrl.disableButton = false;
+        console.log('2nd');
+        console.log(response);
+        EventCtrl.prediction = response.data.data;
+        EventCtrl.loader = false;
+        EventCtrl.disableButton = false;
+        EventCtrl.showResult = false;
       });
     };
   }
@@ -56325,7 +56326,7 @@ var _default = function _default(app) {
 };
 
 exports.default = _default;
-},{}],"../../node_modules/flatpickr/dist/flatpickr.js":[function(require,module,exports) {
+},{}],"../../../node_modules/flatpickr/dist/flatpickr.js":[function(require,module,exports) {
 var define;
 var global = arguments[3];
 /* flatpickr v4.6.1, @license MIT */
@@ -58940,7 +58941,7 @@ var _default = function _default(app) {
 };
 
 exports.default = _default;
-},{"flatpickr":"../../node_modules/flatpickr/dist/flatpickr.js"}],"controllers.js":[function(require,module,exports) {
+},{"flatpickr":"../../../node_modules/flatpickr/dist/flatpickr.js"}],"controllers.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -58973,21 +58974,28 @@ exports.default = void 0;
 
 var _default = function _default(app) {
   app.service('EventPredictService', EventPredictService);
-  EventPredictService.$inject = ['$http'];
+  EventPredictService.$inject = ['$http', '$rootScope', '$cookies'];
 
-  function EventPredictService($http) {
+  function EventPredictService($http, $rootScope, $cookies) {
     var PredictSrvc = this;
-    PredictSrvc.baseUrl = 'http://127.0.0.1:5000/api/v1';
+    PredictSrvc.baseUrl = 'http://192.168.5.55:5000/api/v1';
 
     PredictSrvc.getResult = function (features, model, response) {
-      return $http({
-        method: 'POST',
-        url: PredictSrvc.baseUrl + '/predict',
-        data: {
-          features: features,
-          model: "event"
-        }
-      });
+      console.log(features);
+
+      if ($rootScope.isAuthenticated) {
+        var token = $cookies.get('token');
+        console.log(token);
+        $http.defaults.headers.common['Authorization'] = 'Bearer ' + token;
+        return $http({
+          method: 'POST',
+          url: PredictSrvc.baseUrl + '/predict',
+          data: {
+            features: features,
+            model: "model"
+          }
+        });
+      }
     };
   }
 
@@ -59009,7 +59017,7 @@ var _default = function _default(app) {
 
   function AccountLoginService($http) {
     var LoginSrvc = this;
-    LoginSrvc.baseUrl = 'http://127.0.0.1:5000/api/v1';
+    LoginSrvc.baseUrl = 'http://192.168.5.55:5000/api/v1';
 
     LoginSrvc.getLoginResult = function (user, response) {
       return $http({
@@ -59067,69 +59075,43 @@ var app = _angular.default.module('MainApp', ["ngRoute", "ngCookies"]); // Initi
 
 (0, _controllers.default)(app); // Initialze services
 
-(0, _services.default)(app); // Configure Routes
+(0, _services.default)(app);
+app.value('loginRedirectUrl', '/'); // Configure Routes
 
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
   $routeProvider.when("/", {
-    redirectTo: "/home"
-  }).when("/home", {
-    templateUrl: "/templates/home.html"
+    templateUrl: "recommendation/templates/home.html"
   }).when("/login", {
-    templateUrl: "/templates/Account/login.html",
+    templateUrl: "recommendation/templates/Account/login.html",
     controller: "AccountLoginController as AccountCtrl"
   }).when("/register", {
-    templateUrl: "/templates/Account/register.html",
+    templateUrl: "recommendation/templates/Account/register.html",
     controller: "AccountRegisterController as AccountCtrl"
   }).when("/friends", {
-    templateUrl: "/templates/Account/friends.html",
+    templateUrl: "recommendation/templates/Account/friends.html",
     controller: "AccountFriendsController as AccountCtrl",
-    restrictions: {
-      ensureAuthenticated: true,
-      loginRedirect: true
-    }
+    needAuthentication: true
   }).when("/attend", {
-    templateUrl: "/templates/Event/attend.html",
+    templateUrl: "recommendation/templates/Event/attend.html",
     controller: "EventAttendController as EventCtrl",
-    restrictions: {
-      ensureAuthenticated: true,
-      loginRedirect: true
-    }
+    needAuthentication: true
   }).when("/create", {
-    templateUrl: "/templates/Event/create.html",
+    templateUrl: "recommendation/templates/Event/create.html",
     controller: "EventCreateController as EventCtrl",
-    restrictions: {
-      ensureAuthenticated: true,
-      loginRedirect: true
-    }
+    needAuthentication: true
   }).when("/predict", {
-    templateUrl: "/templates/Event/predict.html",
-    controller: "EventPredictController as EventCtrl"
+    templateUrl: "recommendation/templates/Event/predict.html",
+    controller: "EventPredictController as EventCtrl",
+    needAuthentication: true
   }).otherwise({
-    redirectTo: "/home"
+    redirectTo: "/"
   });
 }]);
-
-function routeStart($rootScope, $location, $route, $cookies) {
-  $rootScope.$on('$routeChangeStart', function (event, next, current) {
-    if (next.restrictions.ensureAuthenticated) {
-      if (!$cookies.get('token')) {
-        $location.path('/login');
-      }
-    }
-
-    if (next.restrictions.loginRedirect) {
-      if ($cookies.get('token')) {
-        $location.path('/');
-      }
-    }
-  });
-}
-
 app.config(['$httpProvider', function ($httpProvider) {
   $httpProvider.defaults.useXDomain = true;
   delete $httpProvider.defaults.headers.common['X-Requested-With'];
 }]);
-app.run(function ($rootScope, $window, $http, $cookies) {
+app.run(function ($rootScope, $window, $location, $http, $cookies, $route, loginRedirectUrl) {
   $rootScope.isAuthenticated = null;
 
   $rootScope.checkAuth = function () {
@@ -59139,7 +59121,7 @@ app.run(function ($rootScope, $window, $http, $cookies) {
       $rootScope.isAuthenticated = false;
     } else {
       $http.defaults.headers.common['Authorization'] = 'Bearer ' + token;
-      var url = 'http://127.0.0.1:5000/api/v1/authenticate';
+      var url = 'http://192.168.5.55:5000/api/v1/authenticate';
       $http({
         method: 'GET',
         url: url
@@ -59152,8 +59134,24 @@ app.run(function ($rootScope, $window, $http, $cookies) {
 
   $rootScope.logout = function () {
     $cookies.remove('token');
+    var token = $cookies.get('token');
     $window.location.href = '/';
   };
+
+  $rootScope.$on('$routeChangeStart', function (event, next, current) {
+    var referrer = next.$$route.originalPath;
+
+    if (next.needAuthentication && referrer != '/login') {
+      if (!$cookies.get('token')) {
+        // Save referrer
+        // loginRedirectUrl = referrer;
+        $rootScope.url = referrer;
+        console.log('Referrer:' + loginRedirectUrl); // Redirect to login page.
+
+        $location.path('/login');
+      }
+    }
+  });
 });
 
 $.urlParam = function (name) {
@@ -59165,7 +59163,7 @@ $.urlParam = function (name) {
 
   return decodeURI(results[1]) || 0;
 };
-},{"jquery":"../../node_modules/jquery/dist/jquery.js","angular":"../../node_modules/angular/index.js","angular-route":"../../node_modules/angular-route/index.js","angular-cookies":"../../node_modules/angular-cookies/index.js","bootstrap":"../../node_modules/bootstrap/dist/js/bootstrap.js","./layout":"layout.js","./controllers":"controllers.js","./services":"services.js"}],"../../../../../../AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"jquery":"../../../node_modules/jquery/dist/jquery.js","angular":"../../../node_modules/angular/index.js","angular-route":"../../../node_modules/angular-route/index.js","angular-cookies":"../../../node_modules/angular-cookies/index.js","bootstrap":"../../../node_modules/bootstrap/dist/js/bootstrap.js","./layout":"layout.js","./controllers":"controllers.js","./services":"services.js"}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -59193,7 +59191,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54455" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50343" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -59368,5 +59366,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../../../AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","main.js"], null)
+},{}]},{},["../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","main.js"], null)
 //# sourceMappingURL=/bundle.js.map

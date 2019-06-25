@@ -1,0 +1,88 @@
+html {
+	 height: 100%;
+	 width: 100%;
+}
+ body {
+	 padding: 0 0 0 0;
+	 margin: 0;
+	 height: 100%;
+	 width: 100%;
+	 z-index: 1;
+}
+ #page-container {
+	 position: relative;
+	 min-height: 120vh;
+}
+ #body-container {
+	 padding-bottom: 675px;
+}
+ @media (max-width: 991.98px) {
+	 #body-container {
+		 padding-bottom: 1350px;
+	}
+	 .d-xs-none {
+		 display: none;
+	}
+}
+ @media (max-width: 767.98px) {
+	 #body-container {
+		 padding-bottom: 1350px;
+	}
+}
+ @media (max-width: 575.98px) {
+	 #body-container {
+		 padding-bottom: 1350px;
+	}
+}
+ .navbar-push {
+	 padding-top: 150px;
+}
+ .body-fill {
+	 min-height: 150px;
+}
+ a {
+	 color: rgba(255,255,255,0.8);
+	 text-decoration: none;
+}
+ a:hover {
+	 color: #ffffff;
+	 text-decoration: none;
+}
+ .invert {
+	 -webkit-filter: invert(1);
+	 filter: invert(1);
+}
+ .footer-push {
+	 margin-bottom: 450px;
+}
+ footer {
+	 position: absolute;
+	 bottom: 0;
+	 min-height: 450px;
+	 width: 100%;
+	 background-color: #262b3a;
+}
+ footer img {
+	 -webkit-filter: invert(1);
+	 filter: invert(1);
+}
+ footer .description {
+	 font-size: 0.85em;
+}
+ footer .category-text {
+	 font-size: 12px;
+	 font-weight: 700;
+	 color: #f4f4f4;
+}
+ footer .category-item-text {
+	 font-size: 14px;
+	 color: rgba(255,255,255,0.8);
+}
+ footer ul > li {
+	 width: 100%;
+}
+ footer ul > li a {
+	 padding-left: -10px;
+	 padding-right: -10px;
+}
+ 
