@@ -69,7 +69,7 @@ app.run(function ($rootScope, $window, $location, $http, $cookies, $route, login
         else {
             $http.defaults.headers.common['Authorization'] = 'Bearer ' + token;
 
-            const url = 'http://192.168.5.55:5000/api/v1/authenticate';
+            const url = 'https://ml-tbt-hitappengine-api.herokuapp.com/api/v1/authenticate';
             $http({
                 method: 'GET',
                 url: url
