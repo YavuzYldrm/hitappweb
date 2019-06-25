@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const cors = require('cors');
 
 var indexRouter = require('./routes/index');
+var gameRouter = require('./routes/game');
 
 var app = express();
 
@@ -15,10 +16,12 @@ app.use(cors())
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/game',express.static(path.join(__dirname,'public','game')));
+app.use('/recommendation',express.static(path.join(__dirname,'public','recommendation')));
 
 // Routers
 app.use('/', indexRouter);
+app.use('/game', gameRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

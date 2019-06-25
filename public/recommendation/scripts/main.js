@@ -25,29 +25,29 @@ app.value('loginRedirectUrl', '/');
 // Configure Routes
 app.config(['$routeProvider', '$locationProvider', ($routeProvider, $locationProvider) => {
     $routeProvider
-        .when("/", { templateUrl: "/templates/home.html" })
-        .when("/login", { templateUrl: "/templates/Account/login.html", controller: "AccountLoginController as AccountCtrl" })
-        .when("/register", { templateUrl: "/templates/Account/register.html", controller: "AccountRegisterController as AccountCtrl" })
+        .when("/", { templateUrl: "recommendation/templates/home.html" })
+        .when("/login", { templateUrl: "recommendation/templates/Account/login.html", controller: "AccountLoginController as AccountCtrl" })
+        .when("/register", { templateUrl: "recommendation/templates/Account/register.html", controller: "AccountRegisterController as AccountCtrl" })
         .when("/friends", {
-            templateUrl: "/templates/Account/friends.html",
+            templateUrl: "recommendation/templates/Account/friends.html",
             controller: "AccountFriendsController as AccountCtrl",
             needAuthentication: true
         })
 
         .when("/attend", {
-            templateUrl: "/templates/Event/attend.html",
+            templateUrl: "recommendation/templates/Event/attend.html",
             controller: "EventAttendController as EventCtrl",
             needAuthentication: true
         })
         .when("/create",
             {
-                templateUrl: "/templates/Event/create.html",
+                templateUrl: "recommendation/templates/Event/create.html",
                 controller: "EventCreateController as EventCtrl",
                 needAuthentication: true
             })
         .when("/predict",
             {
-                templateUrl: "/templates/Event/predict.html",
+                templateUrl: "recommendation/templates/Event/predict.html",
                 controller: "EventPredictController as EventCtrl",
                 needAuthentication: true
             })
