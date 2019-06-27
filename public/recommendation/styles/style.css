@@ -3,12 +3,7 @@ body {
     font-size: 16px;
     margin: auto;
     height: 100%;
-}
-
-html {
-    position: relative;
-    scroll-behavior: smooth;
-    
+    width:100%;
 }
 
 * {
@@ -107,25 +102,6 @@ input[type=number]::-webkit-outer-spin-button {
   100% { transform: rotate(360deg); }
 }
 
-/* ********************************************************** */
-/* Responsive view styling starts */
-
-/***###*** MEDIA QUERIES ***###***/
-
-/********** Large devices only **********/
-@media (min-width: 1200px) {
-}
-
-/********** Medium devices only **********/
-@media (min-width: 992px) and (max-width: 1199px) {
-
-}
-
-/********** Small devices only **********/
-@media (min-width: 768px) and (max-width: 991px) {
-
-}
-
 /********** Extra small devices only **********/
 @media (max-width: 767px) {
   .section-title > h1 {
@@ -133,27 +109,6 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
 }
-
-@media (max-width: 577px) {
-
-}
-
-/********** Large Mobile devices only **********/
-@media (max-width: 450px) {
-}
-
-/********** Medium Mobile devices only **********/
-@media (max-width: 380px) {
-}
-
-/********** small Mobile devices only (eg: Iphone 4, ) **********/
-@media (max-width: 330px) {
-}
-
-/* Responsive view styling ends */
-/* ********************************************************** */
-
-
 
 /* REGISTER STYLES */
 .font-unica {
@@ -274,8 +229,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 /* slider */
 .carousel-item {
-    height: 100vh;
-    min-height: 35rem;
+    min-height: 50rem;
     background: no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -553,12 +507,8 @@ input[type=number]::-webkit-outer-spin-button {
 } */
 
 #btn-demo{
-    margin-top: 150px;
-    margin-left: 60px;
     text-transform: uppercase;
     font-size: 1.1rem;
-   /* padding: 7px 25px; */
-    margin-right: 20px;
     border: 1px solid #5C12E7;
     background-color: white;
     color: #5C12E7;
