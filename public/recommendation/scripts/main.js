@@ -34,39 +34,42 @@ app.config(['$routeProvider', '$locationProvider', ($routeProvider, $locationPro
             needAuthentication: true
         })
 
-        .when("/attend", {
+    .when("/profile", {
+        templateUrl: "recommendation/templates/Account/profile.html",
+        controller: "AccountProfileController as AccountCtrl",
+        needAuthentication: true
+    })
+
+    .when("/attend", {
             templateUrl: "recommendation/templates/Event/attend.html",
             controller: "EventAttendController as EventCtrl",
             needAuthentication: true
         })
-        .when("/create",
-            {
-                templateUrl: "recommendation/templates/Event/create.html",
-                controller: "EventCreateController as EventCtrl",
-                needAuthentication: true
-            })
-        .when("/predict",
-            {
-                templateUrl: "recommendation/templates/Event/predict.html",
-                controller: "EventPredictController as EventCtrl",
-                needAuthentication: true
-            })
+        .when("/create", {
+            templateUrl: "recommendation/templates/Event/create.html",
+            controller: "EventCreateController as EventCtrl",
+            needAuthentication: true
+        })
+        .when("/predict", {
+            templateUrl: "recommendation/templates/Event/predict.html",
+            controller: "EventPredictController as EventCtrl",
+            needAuthentication: true
+        })
         .otherwise({ redirectTo: "/" });
 }])
 
-app.config(['$httpProvider', function ($httpProvider) {
+app.config(['$httpProvider', function($httpProvider) {
     $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
 }]);
 
-app.run(function ($rootScope, $window, $location, $http, $cookies, $route, loginRedirectUrl) {
+app.run(function($rootScope, $window, $location, $http, $cookies, $route, loginRedirectUrl) {
     $rootScope.isAuthenticated = null;
     $rootScope.checkAuth = () => {
         var token = $cookies.get('token');
         if (!token) {
             $rootScope.isAuthenticated = false;
-        }
-        else {
+        } else {
             $http.defaults.headers.common['Authorization'] = 'Bearer ' + token;
 
             const url = 'http://192.168.5.55:5000/api/v1/authenticate';
@@ -102,7 +105,7 @@ app.run(function ($rootScope, $window, $location, $http, $cookies, $route, login
 });
 
 
-$.urlParam = function (name) {
+$.urlParam = function(name) {
     var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
     if (results == null) {
         return null;
