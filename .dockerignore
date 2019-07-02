@@ -1,0 +1,7 @@
+.cache
+node_modules
+.env
+.gitignore
+.gitlab-ci.yml
+npm-debug.log
+README.md
