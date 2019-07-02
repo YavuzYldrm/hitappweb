@@ -72,10 +72,11 @@ app.run(function($rootScope, $window, $location, $http, $cookies, $route, loginR
         } else {
             $http.defaults.headers.common['Authorization'] = 'Bearer ' + token;
 
-            const url = 'http://192.168.5.55:5000/api/v1/authenticate';
+            const url = process.env.API_URL || 'http://192.168.5.55:5000/api/v1'; 
+
             $http({
                 method: 'GET',
-                url: url
+                url: url + "/authenticate"
             }).then((response) => {
                 $rootScope.isAuthenticated = response.data.success;
                 return response.data.success;
