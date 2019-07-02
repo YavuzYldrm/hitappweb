@@ -558,3 +558,27 @@
                 cursor: pointer;
             }
         }
+
+        .pLabel{
+            margin-bottom: 1.6em;
+            
+            
+        }
+        
+        .pInfo{
+            font-style: italic;
+        }
+
+        .pProfile{
+            font-size:1.2em;
+            text-align:left;
+            weight:500px;
+        }
+
+        .pPhone{
+            margin-bottom:2em;
+        }
+
+        .pName{
+            text-align:left;
+        }

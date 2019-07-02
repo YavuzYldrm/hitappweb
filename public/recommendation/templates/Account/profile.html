@@ -4,13 +4,7 @@
             <div class="row justify-content-center ">
                 <div class="col-10">
                     <div class="bg-white shadow-sm p-5">
-                        <h2 class="text-black text-center font-unica text-uppercase mb-4">Arkadaş Ekle</h2>
-                        <div class="form-group w-50 mx-auto">
-                            <div class="position-relative">
-                                <input class="form-control rounded-1 font-karla bg-light" type="text" name="search" placeholder="Arama" ng-model="AccountCtrl.searchValue" />
-                                <img src="/images/icons/search.png" class="input-icon position-absolute my-auto" style="right: 5%; top: 25%;">
-                            </div>
-                        </div>
+                        <h2 class="text-black text-center font-unica text-uppercase mb-4">Profil Bilgileri</h2>
                         <div class="form-group">
                             <ul id="listOrg_list" class="list-group">
                                 <li class="list-group-item" ng-repeat="(x,y) in AccountCtrl.searchUser()">
@@ -28,7 +22,7 @@
 
 
                         <div class="bg-white shadow-sm p-5">
-                            <h2 class="text-black text-center font-unica text-uppercase mb-4">Arkadaşlarım</h2>
+                            <h2 class="text-black text-center font-unica text-uppercase mb-4"></h2>
                             <div class="form-group">
                                 <ul class="list-group">
                                     <li class="list-group-item" ng-repeat="(x,y) in AccountCtrl.friends">
