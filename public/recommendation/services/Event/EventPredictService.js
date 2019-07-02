@@ -7,7 +7,7 @@ export default (app) => {
     function EventPredictService($http, $rootScope, $cookies) {
         const PredictSrvc = this;
 
-        PredictSrvc.baseUrl = 'http://192.168.5.55:5000/api/v1';
+        const url = process.env.API_URL || 'http://192.168.5.55:5000/api/v1'; 
 
         PredictSrvc.getResult = function (features,model, response) {
             console.log(features);
@@ -18,11 +18,15 @@ export default (app) => {
                 $http.defaults.headers.common['Authorization'] = 'Bearer ' + token;
                 return $http({
                     method: 'POST',
-                    url: PredictSrvc.baseUrl + '/predict',
+                    url: url + '/predict',
                     data: {
                         features:features,
                         model:"model"
                     }
+                }).then(response => {
+                    console.log(response);
+                }).catch(err => {
+                    console.error("Prediction failed. " + err);
                 });
             }
         };
