@@ -77,8 +77,14 @@ app.run(function($rootScope, $window, $location, $http, $cookies, $route, loginR
                 method: 'GET',
                 url: url
             }).then((response) => {
-                $rootScope.isAuthenticated = true;
+                $rootScope.isAuthenticated = response.data.success;
                 return response.data.success;
+            })
+            .catch((err) => {
+                console.log(err);
+                $rootScope.isAuthenticated = false;
+                $cookies.remove('token');
+                return false;
             });
         }
     };
