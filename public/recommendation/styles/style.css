@@ -219,269 +219,290 @@
 .btn:active {
     top: 0.2rem;
 } */
-        
-        #home {
-            background-image: url('../images/home/bg1.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-        
-        #my-carousel {
-            height: 100vh;
-        }
-        /* slider */
-        
-        .carousel-item {
-            min-height: 50rem;
-            background: no-repeat center center scroll;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-        }
-        
-        .carousel-caption {
-            left: 20%;
-            top: 30%;
-        }
-        
-        #my-slider-h2 {
-            font-size: 2.2rem;
-        }
-        /* body */
-        
-        #about {
-            padding-top: 6.5%;
-        }
-        
-        .vision {
-            margin-top: 14px;
-        }
-        
-        #contact {
-            padding-top: 6.5%;
-        }
-        
-        #projects {
-            padding-top: 6.5%;
-        }
-        
-        .box-about {
-            background: #ffffff;
-            border-radius: 0.93rem;
-            padding: 6rem 3rem;
-        }
-        
-        .box:hover {
-            -webkit-animation: bounce-top 1.9s both;
-            animation: bounce-top 1.9s both;
-        }
-        
-        @-webkit-keyframes bounce-top {
-            0% {
-                -webkit-transform: translateY(-45px);
-                transform: translateY(-45px);
-                -webkit-animation-timing-function: ease-in;
-                animation-timing-function: ease-in;
-                opacity: 1;
-            }
-            24% {
-                opacity: 1;
-            }
-            40% {
-                -webkit-transform: translateY(-24px);
-                transform: translateY(-24px);
-                -webkit-animation-timing-function: ease-in;
-                animation-timing-function: ease-in;
-            }
-            65% {
-                -webkit-transform: translateY(-12px);
-                transform: translateY(-12px);
-                -webkit-animation-timing-function: ease-in;
-                animation-timing-function: ease-in;
-            }
-            82% {
-                -webkit-transform: translateY(-6px);
-                transform: translateY(-6px);
-                -webkit-animation-timing-function: ease-in;
-                animation-timing-function: ease-in;
-            }
-            93% {
-                -webkit-transform: translateY(-4px);
-                transform: translateY(-4px);
-                -webkit-animation-timing-function: ease-in;
-                animation-timing-function: ease-in;
-            }
-            25%,
-            55%,
-            75%,
-            87% {
-                -webkit-transform: translateY(0px);
-                transform: translateY(0px);
-                -webkit-animation-timing-function: ease-out;
-                animation-timing-function: ease-out;
-            }
-            100% {
-                -webkit-transform: translateY(0px);
-                transform: translateY(0px);
-                -webkit-animation-timing-function: ease-out;
-                animation-timing-function: ease-out;
-                opacity: 1;
-            }
-        }
-        
-        @keyframes bounce-top {
-            0% {
-                -webkit-transform: translateY(-45px);
-                transform: translateY(-45px);
-                -webkit-animation-timing-function: ease-in;
-                animation-timing-function: ease-in;
-                opacity: 1;
-            }
-            24% {
-                opacity: 1;
-            }
-            40% {
-                -webkit-transform: translateY(-24px);
-                transform: translateY(-24px);
-                -webkit-animation-timing-function: ease-in;
-                animation-timing-function: ease-in;
-            }
-            65% {
-                -webkit-transform: translateY(-12px);
-                transform: translateY(-12px);
-                -webkit-animation-timing-function: ease-in;
-                animation-timing-function: ease-in;
-            }
-            82% {
-                -webkit-transform: translateY(-6px);
-                transform: translateY(-6px);
-                -webkit-animation-timing-function: ease-in;
-                animation-timing-function: ease-in;
-            }
-            93% {
-                -webkit-transform: translateY(-4px);
-                transform: translateY(-4px);
-                -webkit-animation-timing-function: ease-in;
-                animation-timing-function: ease-in;
-            }
-            25%,
-            55%,
-            75%,
-            87% {
-                -webkit-transform: translateY(0px);
-                transform: translateY(0px);
-                -webkit-animation-timing-function: ease-out;
-                animation-timing-function: ease-out;
-            }
-            100% {
-                -webkit-transform: translateY(0px);
-                transform: translateY(0px);
-                -webkit-animation-timing-function: ease-out;
-                animation-timing-function: ease-out;
-                opacity: 1;
-            }
-        }
-        
-        .line {
-            background-image: linear-gradient(135deg, #E73D59 0%, #604AE6 100%);
-            height: 0.2rem;
-            width: 5rem;
-            margin-bottom: 5rem;
-            display: inline-block;
-        }
-        
-        .my-col {
-            border: .2rem solid #FFFFFF;
-            background-color: #FFFFFF;
-        }
-        
-        .box {
-            background: #ffffff;
-            border-radius: 0.93rem;
-            padding: 3.75rem 1.875rem;
-            transition: all .4s ease-in-out;
-        }
-        
-        .box h2 {
-            font-size: 1.25rem;
-            color: #3b566e;
-            font-weight: 600;
-            margin: 2.5rem 0 1.5rem;
-            padding: 0;
-        }
-        
-        .box p {
-            font-size: 0.94rem;
-            font-weight: 400;
-            color: #919aaf;
-            line-height: 1.625rem;
-        }
-        
-        .projects-text h2 {
-            color: #3b566e;
-        }
-        
-        .btn-circle {
-            width: 30px;
-            height: 30px;
-            padding: 6px 0px;
-            border-radius: 15px;
-            text-align: center;
-            font-size: 12px;
-            line-height: 1.42857;
-        }
-        
-        .btn-circle.btn-xl {
-            width: 95px;
-            height: 95px;
-            padding: 10px 16px;
-            border-radius: 60px;
-            font-size: 1rem;
-            line-height: 1.33;
-            font-weight: 600;
-        }
-        
-        .anailetisim {
-            background: #F9FAFF;
-            border-top: 6px solid #F9FAFF;
-            color: #496379;
-        }
-        
-        .anailetisim h2 {
-            font: 300 3rem 'Nunito Sans', sans-serif;
-        }
-        
-        .anailetisim .iletisimform input {
-            color: #795548;
-            font: 300 'Nunito Sans', sans-serif;
-            /* 1.6rem */
-            padding: 12px 18px;
-            border-radius: 8px;
-        }
-        
-        .anailetisim .iletisimform select {
-            background: #fff right 4px center no-repeat;
-            color: #496379;
-            font: 300 1.6rem 'Nunito Sans', sans-serif;
-            padding: 12px 18px;
-            border-radius: 8px;
-            -webkit-appearance: inherit;
-        }
-        
-        .anailetisim .iletisimbilgi table td {
-            vertical-align: top;
-            color: #496379;
-            font-weight: 300;
-            padding: 0 12px 40px 12px;
-        }
-        
-        .anailetisim h4 {
-            margin-bottom: 4.5rem;
-            /* font-size: 2.2rem; */
-        }
-        /* .form-control {
+
+
+#home {
+    background-image: url('../images/home/bg1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#my-carousel{
+    height: 100vh;
+}
+
+/* slider */
+.carousel-item {
+    height: 100vh;
+    min-height: 35rem;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+}
+
+.carousel-caption {
+    left: 20%;
+    top: 30%;
+}
+
+
+#my-slider-h2{
+    font-size: 2.2rem;
+}
+/* body */
+
+#about {
+    padding-top: 6.5%;
+   
+}
+
+.vision{
+    margin-top: 14px;
+}
+
+#contact {
+    padding-top: 6.5%;
+}
+
+#projects {
+    padding-top: 6.5%;
+
+}
+.box-about {
+    background: #ffffff;
+    border-radius: 0.93rem;
+    padding: 6rem 3rem;
+}
+
+.box:hover {
+    -webkit-animation: bounce-top 1.9s both;
+    animation: bounce-top 1.9s both;
+}
+
+
+@-webkit-keyframes bounce-top {
+    0% {
+        -webkit-transform: translateY(-45px);
+        transform: translateY(-45px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+        opacity: 1;
+    }
+
+    24% {
+        opacity: 1;
+    }
+
+    40% {
+        -webkit-transform: translateY(-24px);
+        transform: translateY(-24px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    65% {
+        -webkit-transform: translateY(-12px);
+        transform: translateY(-12px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    82% {
+        -webkit-transform: translateY(-6px);
+        transform: translateY(-6px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    93% {
+        -webkit-transform: translateY(-4px);
+        transform: translateY(-4px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    25%,
+    55%,
+    75%,
+    87% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    100% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+        opacity: 1;
+    }
+}
+
+@keyframes bounce-top {
+    0% {
+        -webkit-transform: translateY(-45px);
+        transform: translateY(-45px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+        opacity: 1;
+    }
+
+    24% {
+        opacity: 1;
+    }
+
+    40% {
+        -webkit-transform: translateY(-24px);
+        transform: translateY(-24px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    65% {
+        -webkit-transform: translateY(-12px);
+        transform: translateY(-12px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    82% {
+        -webkit-transform: translateY(-6px);
+        transform: translateY(-6px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    93% {
+        -webkit-transform: translateY(-4px);
+        transform: translateY(-4px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    25%,
+    55%,
+    75%,
+    87% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    100% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+        opacity: 1;
+    }
+}
+
+
+
+.line {
+    background-image: linear-gradient(135deg, #E73D59 0%, #604AE6 100%);
+    height: 0.2rem;
+    width: 5rem;
+    margin-bottom: 5rem;
+    display: inline-block;
+}
+
+
+.box {
+    background-color: #FFFFFF;
+    border: .2rem solid #FFFFFF; 
+    border-radius: 0.93rem;
+    padding: 3.75rem 1.875rem;
+    transition: all .4s ease-in-out;
+
+}
+
+.box h2 {
+    font-size: 1.25rem;
+    color: #3b566e;
+    font-weight: 600;
+    margin: 2.5rem 0 1.5rem;
+    padding: 0;
+}
+
+.box p {
+    font-size: 0.94rem;
+    font-weight: 400;
+    color: #919aaf;
+    line-height: 1.625rem;
+}
+
+.projects h2 {
+    color: #3b566e;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
+.btn-circle.btn-xl {
+    width: 95px;
+    height: 95px;
+    padding: 10px 16px;
+    border-radius: 60px;
+    font-size: 1rem;
+    line-height: 1.33;
+    font-weight: 600;
+}
+
+
+
+.anailetisim {
+    background: #F9FAFF;
+    border-top: 6px solid #F9FAFF;
+    color: #496379;
+}
+
+.anailetisim h2 {
+    font: 300 3rem 'Nunito Sans', sans-serif;
+}
+
+.anailetisim .iletisimform input {
+    color: #795548;
+    font: 300 'Nunito Sans', sans-serif;
+    /* 1.6rem */
+    padding: 12px 18px;
+    border-radius: 8px;
+}
+
+.anailetisim .iletisimform select {
+    background: #fff right 4px center no-repeat;
+    color: #496379;
+    font: 300 1.6rem 'Nunito Sans', sans-serif;
+    padding: 12px 18px;
+    border-radius: 8px;
+    -webkit-appearance: inherit;
+}
+
+.anailetisim .iletisimbilgi table td {
+    vertical-align: top;
+    color: #496379;
+    font-weight: 300;
+    padding: 0 12px 40px 12px;
+}
+
+.anailetisim h4 {
+    margin-bottom: 4.5rem;
+    /* font-size: 2.2rem; */
+}
+
+/* .form-control {
     font-size: 1.6rem;
 } */
         
