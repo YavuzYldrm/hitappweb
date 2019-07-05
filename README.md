@@ -30,3 +30,14 @@ npm run watch // JS Dosyalarındaki değişimlerde otomatik günceller
 npm start
 ```
 
+## Docker Kullanımı
+
+Docker imaj oluşturma:
+```
+docker build --rm -f "dockerfile" -t hitsoft/hitappengine-web:latest .
+```
+
+Docker imajını başlatma:
+```
+docker run --rm -d -p 3000:3000/tcp hitsoft/hitappengine-web:latest
+```
