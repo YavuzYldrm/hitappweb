@@ -607,3 +607,6 @@ input[type=number]::-webkit-outer-spin-button {
             background-color: #e7f3fe;
             border-left: 6px solid #2196F3;
           }
+          .btn-pointer{
+              cursor: pointer;
+          }
