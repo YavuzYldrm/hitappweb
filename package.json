@@ -6,10 +6,11 @@
         "node": "10.x"
     },
     "scripts": {
-        "start": "./node_modules/.bin/nodemon ./bin/www",
-        "build": "./node_modules/.bin/parcel build ./public/recommendation/scripts/main.js -d ./public/recommendation/scripts/ --no-minify --no-source-maps --out-file bundle.js",
-        "watch": "./node_modules/.bin/parcel watch ./public/recommendation/scripts/main.js -d ./public/recommendation/scripts/ --out-file bundle.js",
-        "sync": "./node_modules/.bin/browser-sync start --proxy localhost:3000 --files public",
+        "start": "nodemon ./bin/www",
+        "dev": "concurrently -k true \"npm:watch\" \"npm:start\"",
+        "build": "parcel build ./public/recommendation/scripts/main.js -d ./public/recommendation/scripts/ --no-source-maps --out-file bundle.js",
+        "watch": "parcel watch ./public/recommendation/scripts/main.js -d ./public/recommendation/scripts/ --out-file bundle.js",
+        "sync": "browser-sync start --proxy localhost:3000 --files ./public/recommendation/templates",
         "test": "mocha --timeout 10000"
     },
     "dependencies": {
@@ -34,7 +35,13 @@
         "browser-sync": "^2.26.7",
         "chai": "^4.2.0",
         "chai-http": "^4.3.0",
+        "concurrently": "^4.1.1",
         "mocha": "^6.1.4",
         "parcel-bundler": "^1.12.3"
+    },
+    "alias": {
+        "parcel": "parcel",
+        "nodemon": "nodemon",
+        "browser-sync": "browser-sync"
     }
 }
