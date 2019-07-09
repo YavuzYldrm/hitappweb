@@ -1,9 +1,9 @@
 export default (app) => {
-    
+
     app.controller('AccountRegisterController', RegisterController);
 
-    RegisterController.$inject = ['$window'];
-    function RegisterController($window) {
+    //RegisterController.$inject = ['$window'];
+    function RegisterController(AccountRegisterService, $window, $cookies, $rootScope, $location) {
         const RegisterCtrl = this;
 
         const keys = {
@@ -16,36 +16,46 @@ export default (app) => {
 
         RegisterCtrl.disableButton = false;
 
-        RegisterCtrl.userName = "";
-        RegisterCtrl.locale = null;
-        RegisterCtrl.birthyear = 2019;
-        RegisterCtrl.gender = null;
-        RegisterCtrl.registerDate = null;
-        RegisterCtrl.location = null;
+        RegisterCtrl.user = {
+            username: "",
+            password: "",
+            locale: null,
+            birthyear: 2000,
+            gender: null,
+            registerDate: null,
+            location: null,
+        };
 
         RegisterCtrl.checkBirthYear = function () {
             const currentYear = new Date().getFullYear();
-            if (RegisterCtrl.birthyear >= currentYear) {
-                RegisterCtrl.birthyear = 2000;
+            if (RegisterCtrl.user.birthyear >= currentYear) {
+                RegisterCtrl.user.birthyear = 2000;
             }
         }
 
-        RegisterCtrl.getResult = function () {
-            RegisterCtrl.rentRange = null;
+        RegisterCtrl.register = () => {
             RegisterCtrl.loader = true;
             RegisterCtrl.disableButton = true;
 
-            RegisterCtrl.response = PredictService.getResult(RegisterCtrl.detail);
-            RegisterCtrl.response.then(function (response) {
-                RegisterCtrl.rentRange = response.data[0];
-                $window.scrollTo(0, 0);
-                RegisterCtrl.loader = false;
-                RegisterCtrl.disableButton = false;
-            }, function (response) {
-                console.log(response.status);
-                RegisterCtrl.loader = false;
-                RegisterCtrl.disableButton = false;
-            })
-        }
+            AccountRegisterService.getRegisterResult(RegisterCtrl.user).then(response => {
+                if (response != undefined && response.data.success) {
+                    RegisterCtrl.loader = false;
+                    RegisterCtrl.disableButton = false;
+
+                    var date = new Date();
+                    date.setDate(date.getDate() + 1);
+                    $cookies.put('token', response.data.data.token, { 'expires': date });
+                    $rootScope.isAuthenticated = true;
+
+                    $location.path('/profile');
+                }
+                else {
+                    RegisterCtrl.loader = false;
+                    RegisterCtrl.disableButton = false;
+                }
+            }).catch((err) => {
+                console.log(err);
+            });
+        };
     }
 };
