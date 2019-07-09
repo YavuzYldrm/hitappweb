@@ -7,7 +7,7 @@
     },
     "scripts": {
         "start": "nodemon ./bin/www",
-        "dev": "concurrently -k true \"npm:watch\" \"npm:start\"",
+        "dev": "concurrently -k true --kill-others-on-fail true -s all \"npm:watch\" \"npm:start\"",
         "build": "parcel build ./public/recommendation/scripts/main.js -d ./public/recommendation/scripts/ --no-source-maps --out-file bundle.js",
         "watch": "parcel watch ./public/recommendation/scripts/main.js -d ./public/recommendation/scripts/ --out-file bundle.js",
         "sync": "browser-sync start --proxy localhost:3000 --files ./public/recommendation/templates",
@@ -29,7 +29,8 @@
         "jquery": "^3.4.1",
         "ng-resource": "^1.3.2",
         "nodemon": "^1.19.1",
-        "popper.js": "^1.14.7"
+        "popper.js": "^1.14.7",
+        "serve-favicon": "^2.5.0"
     },
     "devDependencies": {
         "browser-sync": "^2.26.7",
