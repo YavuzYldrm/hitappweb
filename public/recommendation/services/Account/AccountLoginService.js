@@ -14,11 +14,6 @@ export default (app) => {
                 method: 'POST',
                 url: url + '/login',
                 data: user
-            }).then(response => {
-                return response;
-            }).catch(err => {
-                console.log(err);
-                return null;
             });
         };
     };
