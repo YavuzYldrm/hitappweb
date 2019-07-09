@@ -20,8 +20,6 @@ masterController(app);
 // Initialze services
 masterService(app);
 
-app.value('loginRedirectUrl', '/');
-
 // Configure Routes
 app.config(['$routeProvider', '$locationProvider', ($routeProvider, $locationProvider) => {
     $routeProvider
@@ -63,7 +61,7 @@ app.config(['$httpProvider', function($httpProvider) {
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
 }]);
 
-app.run(function($rootScope, $window, $location, $http, $cookies, $route, loginRedirectUrl) {
+app.run(function($rootScope, $window, $location, $http, $cookies, $route) {
     $rootScope.isAuthenticated = null;
     $rootScope.checkAuth = () => {
         var token = $cookies.get('token');
@@ -72,7 +70,7 @@ app.run(function($rootScope, $window, $location, $http, $cookies, $route, loginR
         } else {
             $http.defaults.headers.common['Authorization'] = 'Bearer ' + token;
 
-            const url = process.env.API_URL || 'http://192.168.5.55:5000/api/v1'; 
+            const url = process.env.API_URL || 'http://127.0.0.1:5000/api/v1'; 
 
             $http({
                 method: 'GET',
@@ -102,7 +100,6 @@ app.run(function($rootScope, $window, $location, $http, $cookies, $route, loginR
                 // Save referrer
                 // loginRedirectUrl = referrer;
                 $rootScope.url = referrer;
-                console.log('Referrer:' + loginRedirectUrl);
 
                 // Redirect to login page.
                 $location.path('/login');
