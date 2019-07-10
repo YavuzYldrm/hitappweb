@@ -593,7 +593,7 @@ input[type=number]::-webkit-outer-spin-button {
         .pProfile{
             font-size:1.2em;
             text-align:left;
-            weight:500px;
+            font-weight:500px;
         }
 
         .pPhone{

@@ -98,8 +98,8 @@
                     </ul>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                    <button type="button" class="btn btn-primary">Kaydet</button>
                 </div>
             </div>
         </div>
@@ -116,13 +116,40 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img ng-src="" />
-                    <hr>
-                    <h4 class="float-right">Etiketler</h4>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-5">
+                                    <h4>Activity-name</h4>
+                                    <p>Activity - description</p></div>
+                            <div class="col-md-6 ml-auto">
+                                <img src="recommendation/images/icons/activity.jpg" alt="Activity"
+                                    class="img-thumbnail">
+                            </div>
+                        </div>
+                        <div class="row">   
+                            <div class="col-md-5  mx-auto"><h4>Etiketler</h4></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 ml-auto">.col-md-6 .ml-auto</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-9">
+                                Level 1: .col-sm-9
+                                <div class="row">
+                                    <div class="col-8 col-sm-6">
+                                        Level 2: .col-8 .col-sm-6
+                                    </div>
+                                    <div class="col-4 col-sm-6">
+                                        Level 2: .col-4 .col-sm-6
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                    <button type="button" class="btn btn-primary">Kaydet</button>
                 </div>
             </div>
         </div>
@@ -226,7 +253,7 @@
                     <div class="position-relative m-4">
                         <input class="form-control rounded-1 p-3 font-karla bg-light" type="text" name="search"
                             placeholder="Etkinlik Arama" ng-model="EventCtrl.searchValue" />
-                        <img src="/images/icons/search.png" class="input-icon position-absolute my-auto"
+                        <img src="recommendation/images/icons/search.png" class="input-icon position-absolute my-auto"
                             style="right: 5%; top: 25%;">
                     </div>
 
@@ -245,9 +272,10 @@
                                 <tr ng-repeat="(x,y) in EventCtrl.searchEvent(false)" value="{{x}}">
                                     <th class="d-flex justify-content-between align-items-center" scope="row">{{y}}
                                         <span>
-                                            <div class="btn-pointer" data-toggle="modal" data-target="#detailModal" href="#detailModal" ng-modal="(x,y)"> <img
+                                            <div class="btn-pointer" data-toggle="modal" data-target="#detailModal"
+                                                href="#detailModal" ng-modal="(x,y)"> <img
                                                     src="recommendation/images/icons/info.png"></div>
-                                                    
+
 
                                             <!-- <button type="button" class="btn btn-info m-0" data-toggle="modal"
                                                 data-target="#detailModal" ng-if="isAuthenticated">
