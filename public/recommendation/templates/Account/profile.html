@@ -10,13 +10,13 @@
                                 <div role="tabpanel" class="tab-pane fade show active pProfile" id="profile">
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <label class="pLabel pName">İsim: </label>
+                                                    <label class="pLabel pName">İsim: {{AccountCtrl.name}}</label>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <p class="pInfo">  </p> 
                                                 </div>
                                                 <div class="col-md-2">
-                                                    <label class="pLabel">Soyisim:</label>
+                                                    <label class="pLabel">Soyisim: {{AccountCtrl.surname}}</label>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <p></p>
@@ -24,13 +24,13 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <label  class="pLabel">Email:</label>
+                                                    <label  class="pLabel">Email: {{AccountCtrl.email}}</label>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <p></p>
                                                 </div>
                                                 <div class="col-md-2">
-                                                    <label  class="pLabel pPhone">Telefon:</label>
+                                                    <label  class="pLabel pPhone">Telefon: {{AccountCtrl.phone}}</label>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <p></p>
@@ -38,7 +38,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-4">
-                                                    <label  class="pLabel">Cüzdan Adresi:</label>
+                                                    <label  class="pLabel">Cüzdan Adresi: {{AccountCtrl.wallet.address}}</label>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <p></p>
@@ -46,7 +46,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-4">
-                                                    <label  class="pLabel">Bakiye:  </label>
+                                                    <label  class="pLabel">Bakiye: {{AccountCtrl.wallet.balance}}</label>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <p></p>
