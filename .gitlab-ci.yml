@@ -17,11 +17,15 @@ build:
   artifacts:
     paths:
       - node_modules/
+  only:
+  - master
 
 test:
   stage: test
   script: npm test
-
+  only:
+  - master
+  
 staging:
   stage: deploy
   script:
