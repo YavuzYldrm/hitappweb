@@ -38,8 +38,8 @@ app.config(['$routeProvider', '$locationProvider', ($routeProvider, $locationPro
         needAuthentication: true
     })
 
-    .when("/attend", {
-            templateUrl: "recommendation/templates/Event/attend.html",
+    .when("/eventList", {
+            templateUrl: "recommendation/templates/Event/eventList.html",
             controller: "EventAttendController as EventCtrl",
             needAuthentication: true
         })

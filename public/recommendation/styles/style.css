@@ -593,7 +593,7 @@ input[type=number]::-webkit-outer-spin-button {
         .pProfile{
             font-size:1.2em;
             text-align:left;
-            weight:500px;
+            font-weight:500px;
         }
 
         .pPhone{
@@ -603,3 +603,10 @@ input[type=number]::-webkit-outer-spin-button {
         .pName{
             text-align:left;
         }
+        .info {
+            background-color: #e7f3fe;
+            border-left: 6px solid #2196F3;
+          }
+          .btn-pointer{
+              cursor: pointer;
+          }
