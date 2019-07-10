@@ -36,13 +36,13 @@
                             <a class="nav-link nav-sections" style="color: rgba(255, 255, 255,1);" ng-href="#">Anasayfa</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-sections" style="color: rgba(255, 255, 255,1);" href="#about">Hakkımızda</a>
+                            <a class="nav-link nav-sections" style="color: rgba(255, 255, 255,1);" href="#about" ng-if="!isAuthenticated">Hakkımızda</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-sections" style="color: rgba(255, 255, 255,1);" href="#projects">Çalışmalarımız</a>
+                            <a class="nav-link nav-sections" style="color: rgba(255, 255, 255,1);" href="#projects" ng-if="!isAuthenticated">Çalışmalarımız</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-sections" style="color: rgba(255, 255, 255,1);" href="#contact">İletişim</a>
+                            <a class="nav-link nav-sections" style="color: rgba(255, 255, 255,1);" href="#contact" ng-if="!isAuthenticated">İletişim</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link nav-sections" style="color: rgba(255, 255, 255,1);" ng-href="/#!/eventList" ng-if="isAuthenticated">Vitrin</a>
