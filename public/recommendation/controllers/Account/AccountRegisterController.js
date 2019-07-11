@@ -22,7 +22,6 @@ export default (app) => {
             locale: null,
             birthyear: 2000,
             gender: null,
-            registerDate: null,
             location: null,
         };
 
