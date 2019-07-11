@@ -12,7 +12,7 @@ export default (app) => {
         RegisterSrvc.getRegisterResult = (user) => {
             return $http({
                 method: 'POST',
-                url: url + '/register',
+                url: url + '/account',
                 data: user
             });
         };
