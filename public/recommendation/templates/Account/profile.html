@@ -1,4 +1,4 @@
-<main>
+<main ng-init="AccountCtrl.getDetails()">
     <section class="min-vh-100">
         <div class="container">
             <div class="row justify-content-center mt-4">
@@ -10,7 +10,7 @@
                                 <div role="tabpanel" class="tab-pane fade show active pProfile" id="profile">
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <label class="pLabel pName">İsim: {{AccountCtrl.name}}</label>
+                                                    <label class="pLabel pName">İsim: {{AccountCtrl.details.name}}</label>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <p class="pInfo">  </p> 
@@ -38,7 +38,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-4">
-                                                    <label  class="pLabel">Cüzdan Adresi: {{AccountCtrl.wallet.address}}</label>
+                                                    <label  class="pLabel">Cüzdan Adresi: {{AccountCtrl.wallet}}</label>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <p></p>
@@ -46,7 +46,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-4">
-                                                    <label  class="pLabel">Bakiye: {{AccountCtrl.wallet.balance}}</label>
+                                                    <label  class="pLabel">Bakiye: {{AccountCtrl.balance}}</label>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <p></p>
