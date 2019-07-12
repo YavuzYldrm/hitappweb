@@ -1,30 +1,15 @@
 export default (app) => {
-
     app.controller('AccountFriendsController', AccountFriendsController);
 
-    AccountFriendsController.$inject = ['$window'];
-    function AccountFriendsController($window) {
+    function AccountFriendsController(AccountFriendService, $window) {
         const AccountCtrl = this;
 
-        AccountCtrl.users = {
-            151534919: "ALİ",
-            265212492: "VELİ",
-            2238882361: "CEMİL",
-            1776192: "AHMET",
-            23465780: "BÜLENT",
-            20018153: "TAHA",
-            15390083: "ŞAFAK",
-            7514340: "BERKAY",
-            50521271: "FATİH",
-            2034510440: "MAHMUT",
-            2664817652: "CANLI"
-        };
-
-        AccountCtrl.friends = {};
+        AccountCtrl.friends = [];
+        AccountCtrl.search = "";
+        AccountCtrl.searchResults = [];
 
         AccountCtrl.setFriendStatus = () => {
             var el = $(event.target);
-            console.log(el);
             el.attr('data-clicked', 1);
             el.text("Çıkar");
             el.attr('data-clicked', "1");
@@ -32,28 +17,69 @@ export default (app) => {
             el.removeClass("btn-success");
         };
 
-        AccountCtrl.isFriend = (key) => {
-            return AccountCtrl.friends[key] == undefined;
-        }
-
-        AccountCtrl.addFriend = (key) => {
-            AccountCtrl.friends[key] = AccountCtrl.users[key];
-        };
-        AccountCtrl.removeFriend = (key) => {
-            delete AccountCtrl.friends[key];
+        AccountCtrl.getFriends = () => {
+            AccountFriendService.getFriends().then(response => {
+                AccountCtrl.friends = response.data.data['friends'];
+            });
         };
 
         AccountCtrl.searchUser = () => {
-            var result = {};
-            angular.forEach(AccountCtrl.users, (value, key) => {
-                if (AccountCtrl.searchValue == "")
-                    return;
+            AccountFriendService.searchUser(AccountCtrl.search).then(response => {
+                AccountCtrl.searchResults = response.data.data['results'];
+                console.log(AccountCtrl.searchResults);
+            });
+        };
 
-                if (value.includes(String(AccountCtrl.searchValue).toUpperCase())) {
-                    result[key] = value;
+        AccountCtrl.setFriend = (person_id, operation) => {
+            AccountFriendService.setFriend(person_id, operation).then(response => {
+                if (operation == 'add') {
+                    var obj = getSearchUserObject(person_id);
+                    AccountCtrl.friends.push(obj);
+
+                    var index = AccountCtrl.searchResults.indexOf(obj);
+                    if (index > -1)
+                        AccountCtrl.searchResults.splice(index, 1);
+                }
+                else if (operation == 'remove') {
+                    var obj = getFriendsUserObject(person_id);
+
+                    var index = AccountCtrl.friends.indexOf(obj);
+                    if (index > -1)
+                        AccountCtrl.friends.splice(index, 1);
                 }
             });
-            return result;
         };
+
+        function getSearchUserObject(id) {
+            return AccountCtrl.searchResults.filter(obj=>obj.id == id)[0];
+        }
+
+        function getFriendsUserObject(id) {
+            return AccountCtrl.friends.filter(obj=>obj.id == id)[0];
+        }
+
+        // AccountCtrl.isFriend = (key) => {
+        //     return AccountCtrl.friends[key] == undefined;
+        // }
+
+        // AccountCtrl.addFriend = (key) => {
+        //     AccountCtrl.friends[key] = AccountCtrl.users[key];
+        // };
+        // AccountCtrl.removeFriend = (key) => {
+        //     delete AccountCtrl.friends[key];
+        // };
+
+        // AccountCtrl.searchUser = () => {
+        //     var result = {};
+        //     angular.forEach(AccountCtrl.users, (value, key) => {
+        //         if (AccountCtrl.searchValue == "")
+        //             return;
+
+        //         if (value.includes(String(AccountCtrl.searchValue).toUpperCase())) {
+        //             result[key] = value;
+        //         }
+        //     });
+        //     return result;
+        // };
     };
 };

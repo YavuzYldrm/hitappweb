@@ -1,4 +1,4 @@
-<main>
+<main ng-init="AccountCtrl.getFriends()">
     <section class="min-vh-100">
         <div class="container">
             <div class="row justify-content-center mt-4">
@@ -6,46 +6,39 @@
                     <div class="bg-white shadow-sm p-5">
                         <h2 class="text-black text-center font-unica text-uppercase mb-4">Arkadaş Ekle</h2>
                         <div class="form-group w-50 mx-auto">
-                            <div class="position-relative">
-                                <input class="form-control rounded-1 font-karla bg-light" type="text" name="search"
-                                    placeholder="Arama" ng-model="AccountCtrl.searchValue" />
-                                <img src="/images/icons/search.png" class="input-icon position-absolute my-auto"
-                                    style="right: 5%; top: 25%;">
+                            <div class="d-flex flex-row">
+                                <input class="form-control rounded-1 bg-light font-karla" type="text" name="search"
+                                    placeholder="Arama" ng-model="AccountCtrl.search" />
+                                <img src="recommendation/images/icons/search.png" class="input-icon my-auto mx-2 bounce-top"
+                                    ng-click="AccountCtrl.searchUser()" style="cursor: pointer">
                             </div>
                         </div>
                         <div class="form-group">
                             <ul id="listOrg_list" class="list-group">
-                                <li class="list-group-item" ng-repeat="(x,y) in AccountCtrl.searchUser()">
+                                <li class="list-group-item" ng-repeat="user in AccountCtrl.searchResults"
+                                    ng-if="user.isFriend == false">
                                     <div class="d-flex align-items-center">
                                         <span class="mr-auto p-1 flex-column">
-                                            <div class="p-2 lead">{{y}}</div>
+                                            <div class="p-2 lead">{{user.name}}</div>
                                         </span>
                                         <button class="btn btn-success h-100 mr-2"
-                                            ng-if="AccountCtrl.isFriend(x)"
-                                            ng-click="AccountCtrl.addFriend(x)">Ekle</button>
-                                        <button class="btn btn-danger h-100 mr-2"
-                                            ng-if="!AccountCtrl.isFriend(x)"
-                                            ng-click="AccountCtrl.removeFriend(x)">Çıkar</button>
-
+                                            ng-click="AccountCtrl.setFriend(user.id,'add')">Ekle</button>
                                 </li>
                             </ul>
                         </div>
                     </div>
 
-
                     <div class="bg-white shadow-sm p-5">
                         <h2 class="text-black text-center font-unica text-uppercase mb-4">Arkadaşlarım</h2>
                         <div class="form-group">
                             <ul class="list-group">
-                                <li class="list-group-item" ng-repeat="(x,y) in AccountCtrl.friends">
+                                <li class="list-group-item" ng-repeat="friend in AccountCtrl.friends">
                                     <div class="d-flex align-items-center">
                                         <span class="mr-auto p-1 flex-column">
-                                            <div class="p-2 lead">{{y}}</div>
+                                            <div class="p-2 lead">{{friend.name}}</div>
                                         </span>
-                                        <button class="btn btn-success h-100 mr-2" ng-if="AccountCtrl.isFriend(x)"
-                                            ng-click="AccountCtrl.addFriend(x)">Ekle</button>
-                                        <button class="btn btn-danger h-100 mr-2" ng-if="!AccountCtrl.isFriend(x)"
-                                            ng-click="AccountCtrl.removeFriend(x)">Çıkar</button>
+                                        <button class="btn btn-danger h-100 mr-2"
+                                            ng-click="AccountCtrl.setFriend(friend.id,'remove')">Çıkar</button>
                                 </li>
                             </ul>
                         </div>
