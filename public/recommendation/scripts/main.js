@@ -31,14 +31,12 @@ app.config(['$routeProvider', '$locationProvider', ($routeProvider, $locationPro
             controller: "AccountFriendsController as AccountCtrl",
             needAuthentication: true
         })
-
-    .when("/profile", {
-        templateUrl: "recommendation/templates/Account/profile.html",
-        controller: "AccountProfileController as AccountCtrl",
-        needAuthentication: true
-    })
-
-    .when("/eventList", {
+        .when("/profile", {
+            templateUrl: "recommendation/templates/Account/profile.html",
+            controller: "AccountProfileController as AccountCtrl",
+            needAuthentication: true
+        })
+        .when("/eventList", {
             templateUrl: "recommendation/templates/Event/eventList.html",
             controller: "EventAttendController as EventCtrl",
             needAuthentication: true
@@ -56,12 +54,12 @@ app.config(['$routeProvider', '$locationProvider', ($routeProvider, $locationPro
         .otherwise({ redirectTo: "/" });
 }])
 
-app.config(['$httpProvider', function($httpProvider) {
+app.config(['$httpProvider', function ($httpProvider) {
     $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
 }]);
 
-app.run(function($rootScope, $window, $location, $http, $cookies, $route) {
+app.run(function ($rootScope, $window, $location, $http, $cookies, $route) {
     $rootScope.isAuthenticated = null;
     $rootScope.checkAuth = () => {
         var token = $cookies.get('token');
@@ -70,7 +68,7 @@ app.run(function($rootScope, $window, $location, $http, $cookies, $route) {
         } else {
             $http.defaults.headers.common['Authorization'] = 'Bearer ' + token;
 
-            const url = process.env.API_URL || 'http://127.0.0.1:5000/api/v1'; 
+            const url = process.env.API_URL || 'http://127.0.0.1:5000/api/v1';
 
             $http({
                 method: 'GET',
@@ -79,12 +77,12 @@ app.run(function($rootScope, $window, $location, $http, $cookies, $route) {
                 $rootScope.isAuthenticated = response.data.success;
                 return response.data.success;
             })
-            .catch((err) => {
-                console.log(err);
-                $rootScope.isAuthenticated = false;
-                $cookies.remove('token');
-                return false;
-            });
+                .catch((err) => {
+                    console.log(err);
+                    $rootScope.isAuthenticated = false;
+                    $cookies.remove('token');
+                    return false;
+                });
         }
     };
     $rootScope.logout = () => {
@@ -109,7 +107,7 @@ app.run(function($rootScope, $window, $location, $http, $cookies, $route) {
 });
 
 
-$.urlParam = function(name) {
+$.urlParam = function (name) {
     var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
     if (results == null) {
         return null;
