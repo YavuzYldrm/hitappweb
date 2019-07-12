@@ -4,12 +4,20 @@ export default (app) => {
     function AccountProfileController(AccountProfileService, $cookies) {
         const AccountCtrl = this;
 
-        AccountCtrl.details = {};
+        AccountCtrl.details = {
+            "balance":"Bekleniyor..."
+        };
 
         AccountCtrl.getDetails = () => {
             AccountProfileService.getAccountDetails().then((response) => {
                 AccountCtrl.details = response.data.data.details;
-                console.log(AccountCtrl.details);
+                AccountCtrl.details['balance'] = "Bekleniyor...";
+            }).then(AccountCtrl.getWalletBalance);
+        };
+
+        AccountCtrl.getWalletBalance = () => {
+            AccountProfileService.getWalletBalance(AccountCtrl.details.wallet).then(response => {
+                AccountCtrl.details.balance = response.data['balance'];
             });
         };
     };

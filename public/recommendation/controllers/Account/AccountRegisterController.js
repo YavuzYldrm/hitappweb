@@ -44,6 +44,7 @@ export default (app) => {
                     var date = new Date();
                     date.setDate(date.getDate() + 1);
                     $cookies.put('token', response.data.data.token, { 'expires': date });
+                    $cookies.put('mnemonic', response.data.data.libra_mnemonic);
                     $rootScope.isAuthenticated = true;
 
                     $location.path('/profile');
