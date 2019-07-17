@@ -14,8 +14,14 @@ export default (app) => {
             message: null
         };
 
+        AccountCtrl.form = {
+            isInvalid: false,
+            errorMessage: ""
+        };
+
         AccountCtrl.login = () => {
-            AccountCtrl.loginStatus.failed = false;
+            AccountCtrl.form.isInvalid = false;
+            AccountCtrl.form.errorMessage = "";
 
             AccountLoginService.getLoginResult(AccountCtrl.user).then(response => {
                 if (response.data != undefined && response.data.success) {
@@ -33,11 +39,12 @@ export default (app) => {
                         $location.path('/');
                 }
                 else {
-                    AccountCtrl.loginStatus.failed = true
-                    AccountCtrl.loginStatus.message = response.data.message
+                    AccountCtrl.form.isInvalid = true;
+                    AccountCtrl.form.errorMessage = response.data.message;
                 }
             }).catch(err => {
-                console.warn("Authentication error");
+                AccountCtrl.form.isInvalid = true;
+                AccountCtrl.form.errorMessage = err.data.message
             });
         };
 

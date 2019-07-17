@@ -1,10 +1,10 @@
 export default (app) => {
 
-    app.controller('AccountRegisterController', RegisterController);
+    app.controller('AccountRegisterController', AccountRegisterController);
 
     //RegisterController.$inject = ['$window'];
-    function RegisterController(AccountRegisterService, $window, $cookies, $rootScope, $location) {
-        const RegisterCtrl = this;
+    function AccountRegisterController(AccountRegisterService, $window, $cookies, $rootScope, $location) {
+        const AccountCtrl = this;
 
         const keys = {
             "locale": ["id_ID", "en_US", "ka_GE", "es_LA", "fr_FR", "ar_AR", "en_GB", "pt_BR", "th_TH", "vi_VN"],
@@ -12,11 +12,11 @@ export default (app) => {
             "gender": ["Erkek", "Kadın"]
         };
 
-        RegisterCtrl.keys = keys;
+        AccountCtrl.keys = keys;
 
-        RegisterCtrl.disableButton = false;
+        AccountCtrl.disableButton = false;
 
-        RegisterCtrl.user = {
+        AccountCtrl.user = {
             username: "",
             password: "",
             locale: null,
@@ -25,21 +25,26 @@ export default (app) => {
             location: null,
         };
 
-        RegisterCtrl.checkBirthYear = function () {
+        AccountCtrl.form = {
+            isInvalid: false,
+            errorMessage: ""
+        };
+
+        AccountCtrl.checkBirthYear = function () {
             const currentYear = new Date().getFullYear();
-            if (RegisterCtrl.user.birthyear >= currentYear) {
-                RegisterCtrl.user.birthyear = 2000;
+            if (AccountCtrl.user.birthyear >= currentYear) {
+                AccountCtrl.user.birthyear = 2000;
             }
         }
 
-        RegisterCtrl.register = () => {
-            RegisterCtrl.loader = true;
-            RegisterCtrl.disableButton = true;
+        AccountCtrl.register = () => {
+            AccountCtrl.form.isInvalid = false;
+            AccountCtrl.form.errorMessage = "";
 
-            AccountRegisterService.getRegisterResult(RegisterCtrl.user).then(response => {
+            AccountRegisterService.getRegisterResult(AccountCtrl.user).then(response => {
                 if (response != undefined && response.data.success) {
-                    RegisterCtrl.loader = false;
-                    RegisterCtrl.disableButton = false;
+                    AccountCtrl.loader = false;
+                    AccountCtrl.disableButton = false;
 
                     var date = new Date();
                     date.setDate(date.getDate() + 1);
@@ -50,11 +55,12 @@ export default (app) => {
                     $location.path('/profile');
                 }
                 else {
-                    RegisterCtrl.loader = false;
-                    RegisterCtrl.disableButton = false;
+                    AccountCtrl.form.isInvalid = true;
+                    AccountCtrl.form.errorMessage = err.data.message;
                 }
             }).catch((err) => {
-                console.log(err);
+                AccountCtrl.form.isInvalid = true;
+                AccountCtrl.form.errorMessage = err.data.message;
             });
         };
     }
