@@ -3,18 +3,21 @@
         <div class="container">
             <div class="row justify-content-center ">
                 <div class="col-8">
-                    <form class="bg-white shadow-sm p-5">
+                    <form name="registerForm" class="bg-white shadow-sm p-5">
                         <h2 class="text-center font-unica text-uppercase mb-4">Kayıt Ol</h2>
                         <div class="form-group">
-                            <input class="form-control rounded-0 font-karla bg-light" type="text"
+                            <input class="form-control rounded-0 font-karla bg-light" type="text" name="username"
                                 placeholder="Kullanıcı Adı" required ng-model="AccountCtrl.user.username"/>
                         </div>
                         <div class="form-group">
-                            <input class="form-control rounded-0 font-karla bg-light" type="password"
+                            <input class="form-control rounded-0 font-karla bg-light" type="password" name="password" minlength="6" maxlength="12"
                                 placeholder="Şifre" required ng-model="AccountCtrl.user.password"/>
+                                    <small id="passwordHelpInline" class="text-muted pl-2">
+                                        Şifre 6-12 karakter arası uzunluğunda olmalıdır.
+                                    </small>
                         </div>
                         <div class="form-group">
-                            <input class="form-control rounded-0 font-karla bg-light" type="number"
+                            <input class="form-control rounded-0 font-karla bg-light" type="number" name="roomNumber"
                                 placeholder="Oda Numarası" required ng-model="AccountCtrl.roomNumber" />
                         </div>
                         <div class="form-group">
@@ -32,19 +35,18 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <input class="form-control rounded-0 font-karla bg-light" type="number"
+                            <input class="form-control rounded-0 font-karla bg-light" type="number" onkeydown="return (event.keyCode !== 69 && event.keyCode !== 189)" min="1" name="stayTime"
                                 placeholder="Konaklama Süresi" required ng-model="AccountCtrl.stayTime" />
                         </div>
                         <div class="form-group">
-                            <input class="form-control rounded-0 font-karla bg-light" type="number"
-                                placeholder="Konum" required ng-model="AccountCtrl.location" />
+                            <input class="form-control rounded-0 font-karla bg-light" type="number" onkeydown="return (event.keyCode !== 69 && event.keyCode !== 189)" min="1900" name="birthyear"
+                                placeholder="Doğum yılı" required ng-model="AccountCtrl.birthDate" />
                         </div>
                         <div class="form-group">
-                            <input class="form-control rounded-0 font-karla bg-light" type="number"
-                                placeholder="Doğum tarihi" required ng-model="AccountCtrl.birthDate" />
+                            <div class="form-control alert-danger" ng-if="AccountCtrl.form.isInvalid">{{AccountCtrl.form.errorMessage}}</div>
                         </div>
                         <button
-                            class="btn btn-primary submit-btn rounded-0 font-karla text-uppercase btn-block mt-4 p-2" ng-click="AccountCtrl.register()">Kayıt</button>
+                            class="btn btn-primary submit-btn rounded-0 font-karla text-uppercase btn-block mt-4 p-2" ng-disabled="registerForm.$invalid" ng-click="AccountCtrl.register()">Kayıt</button>
                         <div class="text-center mt-4">
                             <a class="submit-text font-karla" ng-href="/#!/login">
                                 <p>Giriş</p>
