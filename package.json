@@ -8,7 +8,7 @@
     "scripts": {
         "start": "nodemon ./bin/www",
         "dev": "concurrently -k true --kill-others-on-fail true -s all \"npm:watch\" \"npm:start\"",
-        "build": "parcel build ./public/recommendation/scripts/main.js -d ./public/recommendation/scripts/ --no-source-maps --out-file bundle.js",
+        "build": "parcel build ./public/recommendation/scripts/main.js -d ./public/recommendation/scripts/ --no-minify --no-source-maps --out-file bundle.js",
         "watch": "parcel watch ./public/recommendation/scripts/main.js -d ./public/recommendation/scripts/ --out-file bundle.js",
         "sync": "browser-sync start --proxy localhost:3000 --files ./public/recommendation/templates",
         "test": "mocha --timeout 10000"
