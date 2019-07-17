@@ -88,7 +88,7 @@ npm run watch // JavaScript dosyalarındaki değişimlerde otomatik günceller
 
 Unit testleri çalıştırma:
 ```
-npm run test
+npm test
 ```
 
 
