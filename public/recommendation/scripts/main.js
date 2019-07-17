@@ -25,6 +25,7 @@ app.config(['$routeProvider', '$locationProvider', ($routeProvider, $locationPro
     $routeProvider
         .when("/", { templateUrl: "recommendation/templates/home.html" })
         .when("/login", { templateUrl: "recommendation/templates/Account/login.html", controller: "AccountLoginController as AccountCtrl" })
+        .when("/account/update", { templateUrl: "recommendation/templates/Account/update.html", controller: "AccountUpdateController as AccountCtrl" })
         .when("/register", { templateUrl: "recommendation/templates/Account/register.html", controller: "AccountRegisterController as AccountCtrl" })
         .when("/friends", {
             templateUrl: "recommendation/templates/Account/friends.html",
@@ -87,7 +88,6 @@ app.run(function ($rootScope, $window, $location, $http, $cookies, $route) {
     };
     $rootScope.logout = () => {
         $cookies.remove('token');
-        var token = $cookies.get('token');
         $window.location.href = '/';
     };
 
