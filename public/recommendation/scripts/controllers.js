@@ -3,6 +3,7 @@ export default (app) => {
     require('../controllers/Account/AccountRegisterController').default(app);
     require('../controllers/Account/AccountFriendsController').default(app);
     require('../controllers/Account/AccountProfileController').default(app);
+    require('../controllers/Account/AccountUpdateController').default(app);
 
     require('../controllers/Event/EventAttendController').default(app);
     require('../controllers/Event/EventPredictController').default(app);
