@@ -1,41 +1,9 @@
 export default (app) => {
     app.controller('EventAttendController', EventAttendController);
 
-    EventAttendController.$inject = ['$window'];
-    function EventAttendController($window) {
+    function EventAttendController(EventAttendService, $window) {
         const EventCtrl = this;
 
-        const events = {
-            1361307272: "SPA",
-            955398943: "HAVUZ",
-            1600413013: "KAYAK",
-            2877501688: "BİNİCİLİK",
-            2529072432: "GOLF",
-            3583332424: "ATV",
-            907302600: "TELEFERİK",
-            507707719: "HAMAM",
-            1927775201: "LUNAPARK",
-            1532377761: "BASKETBOL"
-        };
-
-        const users = {
-            151534919: "ALİ",
-            265212492: "VELİ",
-            2238882361: "CEMİL",
-            1776192: "AHMET",
-            23465780: "BÜLENT",
-            20018153: "TAHA",
-            15390083: "ŞAFAK",
-            7514340: "BERKAY",
-            50521271: "FATİH",
-            2034510440: "MAHMUT",
-            2664817652: "CANLI"
-        };
-
-        //EventCtrl.events = events;
-        EventCtrl.users = users;
-
-        EventCtrl.events = {};
         EventCtrl.form = {};
         EventCtrl.form.invited = {};
 
@@ -94,11 +62,24 @@ export default (app) => {
             return EventCtrl.form.invited[userId] != undefined;
         };
 
-        EventCtrl.submit = () => {
-            EventCtrl.loader = true;
-            EventCtrl.disableButton = true;
-
-            console.log(EventCtrl.events);
+        EventCtrl.getEvents = () => {
+            EventAttendService.getEvents().then(response => {
+                EventCtrl.events = response.data.data;
+                console.log(EventCtrl.events);
+            });
         };
+
+        $('#recommendationModal').on('show.bs.modal', function (e) {
+            const event = EventCtrl.events.filter(o => o.event_id == eventId)[0];
+        });        
+
+        $('#detailModal').on('show.bs.modal', function (e) {
+            var eventId = $(e.relatedTarget).data('id');
+            console.log(eventId);
+
+            const event = EventCtrl.events.filter(o => o.event_id == eventId)[0];
+            $(e.currentTarget).find('#detailModalTitle').text(event.event_name);
+            $(e.currentTarget).find('#detailModalDescription').text(event.country + ", " + event.city);
+        });
     };
 }
