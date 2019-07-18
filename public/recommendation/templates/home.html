@@ -1,53 +1,65 @@
 <main id="homePage">
     <!-- home- carousel-->
+    <!-- npm run sync-->
     <section id="home" class="align-items-center">
-
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active h-50">
-                    <img src="recommendation/images/home/slider1.png" class="d-block">
-                    <div class="carousel-caption text-left d-none d-md-block">
-                        <h2 class="display-4">Hitsoft ArGe</h2>
-                        <p class="lead">Yapay Zeka, Blockchain ve danışmanlık alanlarında<br> hizmet
-                            vermekte olan bir Ar-Ge merkeziyiz.
-                        </p>
+        <div class="container">
+            <div id="carouselExampleIndicators" class="carousel slide p-3" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row mx-0 align-items-center h-100">
+                            <div class="col-sm-10 col-md-10 col-lg-4 offset-2 pt-4 my-auto p-0">
+                                <div class="text-white">
+                                    <h2 class="display-5">Hitsoft ArGe</h2>
+                                    <p class="lead">Yapay Zeka, Blockchain ve danışmanlık alanlarında<br> hizmet
+                                        vermekte olan bir Ar-Ge merkeziyiz.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-5 p-0">
+                                <img src="recommendation/images/home/slider1.png" class="img-fluid mx-auto d-block">
+                            </div>
+                            <div class="offset-md-4 offset-lg-4">
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-                <div class="carousel-item h-50">
-                    <img src="recommendation/images/home/slider2.png" class="d-block">
-                    <div class="carousel-caption text-left d-none d-md-block">
-                        <h2 class="display-4">Etkinlik Öneri Sistemi</h2>
-                        <p class="lead">Kayıtlı otel müşterilerine en uygun <br>
-                            etkinlik öneren uygulamadır.
-                        </p>
-                        <a href="#">
-                            <a class="btn btn-success btn-rounded shadow" id="btn-demo" ng-href="/#!/attend">
-                                Öneri sistemini dene
-                            </a>
-                        </a>
+                    <div class="carousel-item">
+                        <div class="row mx-0 align-items-center my-auto h-100">
+                            <div class="col-sm-10 col-md-10 col-lg-4 offset-2 pt-4 my-auto p-0">
+                                <div class="text-white">
+                                    <h2 class="display-5">Etkinlik Öneri Sistemi</h2>
+                                    <p class="lead">Kayıtlı otel müşterilerine en uygun <br>
+                                        etkinlik öneren uygulamadır.
+                                    </p>
+                                    <a class="btn btn-success btn-rounded shadow" id="btn-demo" ng-href="/#!/eventList">
+                                        Öneri sistemini dene
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-10 col-lg-5 p-0">
+                                <img src="recommendation/images/home/slider2.png" class="img-fluid mx-auto d-block">
+                            </div>
+                            <div class="offset-lg-4 offset-md-2">
+                            </div>
+                        </div>
                     </div>
+
                 </div>
-                <!--   Slide three 
-                <div class="carousel-item" id="my-carousel" style="background-image: url('bc il3.png')">
-                <div class="carousel-caption d-none text-left d-md-block">
-                    <h2 class="display-4" id="my-slider-h2">Blockchain</h2>
-                    <p class="lead">This is a description for the third slide.</p>
-                </div>
-                </div> -->
+                <a class="carousel-control-prev" role="button"
+                    onclick="$('#carouselExampleIndicators').carousel('prev');" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" role="button"
+                    onclick="$('#carouselExampleIndicators').carousel('next');" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
         </div>
     </section>
 
@@ -62,7 +74,7 @@
             <div class="row d-flex justify-content-center ">
                 <div class="col-lg-7 col-md-12 col-sm-12 mb-md-4">
                     <div class="box shadow bounce-top text-center">
-                        <h2 id="my-h2">Biz Kimiz?</h2>
+                        <h2>Biz Kimiz?</h2>
                         <p class="text-left">İşletmelerin verimliliğini ve izlenebilirliğini arttırmak, dijital dönüşüm
                             yolculuklarına güç katmak
                             vizyonu ile hareket eden Hitsoft 2001 yılında kurulmuştur. 2013 yılında Dünya'nın lider
@@ -131,7 +143,11 @@
             <div class="row ">
                 <div class="col-lg-4 col-md-4 col-sm-12">
                     <div class="box shadow bounce-top ">
+<<<<<<< HEAD
                         <div style=" min-height:1.28rem"><img src="recommendation/images/home/img3.jpg" id="ai-img">
+=======
+                        <div style=" min-height:1.28rem"><img src="recommendation/images/home/img3.jpg" id="ai-img" class="d-block img-fluid mx-auto">
+>>>>>>> develop
                         </div>
                         <h2>Yapay zeka </h2>
                         <p></p>
@@ -144,7 +160,8 @@
                 <div class="col-lg-4 col-md-4 ">
                     <div class="box shadow bounce-top ">
                         <div style="min-height:1.28rem">
-                            <img src="recommendation/images/home/img2.jpg" alt="feature-huobi" id="blockchain-img">
+                            <img src="recommendation/images/home/img2.jpg" alt="feature-huobi" id="blockchain-img"
+                                class="d-block img-fluid mx-auto">
                         </div>
                         <h2>Blockchain</h2>
                         <p></p>
@@ -157,7 +174,8 @@
                 <div class="col-lg-4 col-md-4 ">
                     <div class="box shadow bounce-top ">
                         <div style="min-height:1.28rem">
-                            <img src="recommendation/images/home/img1.jpg" alt="feature-huobi" id="consulting-img">
+                            <img src="recommendation/images/home/img1.jpg" alt="feature-huobi" id="consulting-img"
+                                class="d-block img-fluid mx-auto">
                         </div>
                         <h2>Danışmanlık</h2>
                         <p></p>

@@ -1,9 +1,8 @@
 export default (app) => {
 
-    app.controller('AccountRegisterController', AccountRegisterController);
+    app.controller('AccountUpdateController', AccountUpdateController);
 
-    //RegisterController.$inject = ['$window'];
-    function AccountRegisterController(AccountRegisterService, $window, $cookies, $rootScope, $location) {
+    function AccountUpdateController(AccountUpdateService, $window, $cookies, $rootScope, $location) {
         const AccountCtrl = this;
 
         const keys = {

@@ -1,14 +1,18 @@
+require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 const compression = require('compression')
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
+const favicon = require('serve-favicon')
 
 var indexRouter = require('./routes/index');
 var gameRouter = require('./routes/game');
 
 var app = express();
+
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
 app.use(express.json());
 app.use(compression());

@@ -7,12 +7,12 @@ export default (app) => {
     function AccountLoginService($http) {
         const LoginSrvc = this;
 
-        LoginSrvc.baseUrl = 'https://ml-tbt-hitappengine-api.herokuapp.com/api/v1';
+        const url = process.env.API_URL || 'http://127.0.0.1:5000/api/v1'; 
 
-        LoginSrvc.getLoginResult = function (user, response) {
+        LoginSrvc.getLoginResult = function (user) {
             return $http({
                 method: 'POST',
-                url: LoginSrvc.baseUrl + '/login',
+                url: url + '/login',
                 data: user
             });
         };

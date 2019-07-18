@@ -3,12 +3,11 @@ body {
     font-size: 16px;
     margin: auto;
     height: 100%;
+    width: 100%;
 }
 
 html {
-    position: relative;
     scroll-behavior: smooth;
-    
 }
 
 * {
@@ -24,138 +23,103 @@ body {
 }
 
 body {
-  margin-top: 70px;
+    margin-top: 70px;
 }
 
-.section-title > h1{
-  font-family: Poppins;
-  font-weight: 600;
-  line-height: 36px;
-  font-size: 2.5em;
-  text-align: center;
-  color: #323C5A;
-  position: relative;
+.section-title>h1 {
+    font-family: Poppins;
+    font-weight: 600;
+    line-height: 36px;
+    font-size: 2.5em;
+    text-align: center;
+    color: #323C5A;
+    position: relative;
 }
 
-.section-title > h1::after {
-  content: "";
-  background-color: #F89A1D;
-  position: absolute;
-  height: 6px;
-  right: 48%;
-  bottom: -20px;
-  width: 48px;
+.section-title>h1::after {
+    content: "";
+    background-color: #F89A1D;
+    position: absolute;
+    height: 6px;
+    right: 48%;
+    bottom: -20px;
+    width: 48px;
 }
 
 .section-desc-content {
-  font-family: Work Sans;
-  font-weight: 300;
-  line-height: 1.5em;
-  font-size: 1.1em;
-  text-align: center;
-  color: #323C5A;
-  padding: 0px 100px;
-  padding-top: 50px;
+    font-family: Work Sans;
+    font-weight: 300;
+    line-height: 1.5em;
+    font-size: 1.1em;
+    text-align: center;
+    color: #323C5A;
+    padding: 0px 100px;
+    padding-top: 50px;
 }
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .section-3-img {
-  text-align: center;
-  margin-top: 10px;
+    text-align: center;
+    margin-top: 10px;
 }
 
 .predict-main-sec {
-  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #C4E2F3;
-  background-repeat: no-repeat;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #C4E2F3;
+    background-repeat: no-repeat;
 }
 
 .ng-touched .ng-valid {
-  border: 2px green solid;
+    border: 2px green solid;
 }
 
 .ng-touched .ng-invalid {
-  border: 2px red solid;
+    border: 2px red solid;
 }
 
 .my-loader {
-  position: absolute;
-  top: 45%;
-  left: 45%;
-  z-index: 1000;
-  width: 95vw;
-  height: 90vh;
-  justify-content: center;
-  align-items: center;
-}
-.my-loader {
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #323C5A; /* Blue */
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  animation: spin 0.8s linear infinite;
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    z-index: 1000;
+    width: 95vw;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
 }
 
+.my-loader {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid #323C5A;
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 0.8s linear infinite;
+}
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
-
-/* ********************************************************** */
-/* Responsive view styling starts */
-
-/***###*** MEDIA QUERIES ***###***/
-
-/********** Large devices only **********/
-@media (min-width: 1200px) {
-}
-
-/********** Medium devices only **********/
-@media (min-width: 992px) and (max-width: 1199px) {
-
-}
-
-/********** Small devices only **********/
-@media (min-width: 768px) and (max-width: 991px) {
-
-}
-
 /********** Extra small devices only **********/
+
 @media (max-width: 767px) {
-  .section-title > h1 {
-    font-size: 1.6em;
-  }
-
+    .section-title>h1 {
+        font-size: 1.6em;
+    }
 }
-
-@media (max-width: 577px) {
-
-}
-
-/********** Large Mobile devices only **********/
-@media (max-width: 450px) {
-}
-
-/********** Medium Mobile devices only **********/
-@media (max-width: 380px) {
-}
-
-/********** small Mobile devices only (eg: Iphone 4, ) **********/
-@media (max-width: 330px) {
-}
-
-/* Responsive view styling ends */
-/* ********************************************************** */
-
-
-
 /* REGISTER STYLES */
+
 .font-unica {
     font-family: 'Unica One', cursive;
 }
@@ -166,6 +130,14 @@ input[type=number]::-webkit-outer-spin-button {
 
 .submit-btn {
     background-color: #008575;
+    font-size: 1em;
+    letter-spacing: 0.15em;
+    font-weight: 700;
+}
+
+.submit-btn:disabled {
+    background-color: #003d36;
+    color: gray;
     font-size: 1em;
     letter-spacing: 0.15em;
     font-weight: 700;
@@ -187,39 +159,38 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .input-icon {
-    width:1.1em;
-    height:1.1em;
+    width: 1.1em;
+    height: 1.1em;
 }
 
 .rounded-1 {
     border-radius: 1em;
 }
-
-
-
 /* --------------------------------------------------- */
-
 /* navigation bar */
+
 #my-navbar {
     overflow: hidden;
     padding: 0.6rem 0;
     background-color: rgba(249, 250, 255, 0);
-    background-image: linear-gradient(135deg, #604AE6  0%, #E73D59  100%);
+    background-image: linear-gradient(135deg, #604AE6 0%, #E73D59 100%);
     transition: background-color 1s ease 0s;
     color: white;
     font-weight: 600;
     font-size: 15px;
 }
 
+.nav-link {
+    cursor: pointer;
+}
 
 .nav-sections {
-    margin-left: 1.88rem;
-    
+    margin-left: 1rem;
 }
 
 .scrolled-nav-bar {
     background-color: rgba(249, 250, 255, 1);
-} 
+}
 
 .container .navbar-toggler {
     font-size: 2rem
@@ -227,26 +198,26 @@ input[type=number]::-webkit-outer-spin-button {
 
 #sign-in {
     margin-right: 1.5rem;
-    color:white;
+    color: white;
 }
-
 /* navigation button */
- .my-btn {
+
+.my-btn {
     position: relative;
     border-radius: 0.75rem;
     font-size: 0.88rem;
     border-color: #5AADDD;
     font-weight: 600;
-}   
+}
 
-#btn-projects{position: relative;
+#btn-projects {
+    position: relative;
     border-radius: 1.2rem;
     font-size: 0.8rem;
     border-color: #5AADDD;
     font-weight: 600;
-
 }
-/*
+        /*
 .btn-outline-primary {
     color: #8446C0 !important;
     background-color: white !important;
@@ -546,84 +517,108 @@ input[type=number]::-webkit-outer-spin-button {
 /* .form-control {
     font-size: 1.6rem;
 } */
-
-#btn-demo{
-    margin-top: 150px;
-    margin-left: 60px;
-    text-transform: uppercase;
-    font-size: 1.1rem;
-   /* padding: 7px 25px; */
-    margin-right: 20px;
-    border: 1px solid #5C12E7;
-    background-color: white;
-    color: #5C12E7;
-}
-
-#btn-demo:hover{
-    background-color: #634AE4 !important;
-    color: white;
-}
-
-.btn-gonder {
-    border-color: #5AADDD;
-    background-color: #95CB0E;
-    margin-top: 2rem;
-    border-radius: 1.2rem;
-}
-
-.btn-gonder:hover {
-    background-color: #5AADDD;
-    transition: background-color .5s ease 0s;
-}
-
-
-#my-footer {
-    background-color: #5AADDD;
-    color: rgb(255, 255, 255);
-    font-size: 1rem;
-    padding: 1.4rem 0;
-
-}
-
-.footer-header {
-    font-size: 1rem;
-}
-
-#logo-footer {
-    height: 50%;
-    width: 50%;
-}
-
-@media only screen and (max-width: 480px) {}
-
-@media only screen and (max-width: 768px) {
-    .img-responsive {
-        display: none;
-    }
-    .btn-gonder{
-        margin-bottom: 1.25rem;
-    }
-}
-
-@media only screen and (max-width: 1024px) {}
-
-@media only screen and (max-width: 1600px) {}
-
-@media only screen and (min-width: 1601px) {}
-
-@media (min-width: 768px) {}
-
-@media (max-width: 767.98px) {
-    .box {
-        margin-bottom: 30px;
-    }
-   /* #vision{
+        
+        #btn-demo {
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            border: 1px solid #5C12E7;
+            background-color: white;
+            color: #5C12E7;
+        }
+        
+        #btn-demo:hover {
+            background-color: #634AE4 !important;
+            color: white;
+        }
+        
+        .btn-gonder {
+            border-color: #5AADDD;
+            background-color: #95CB0E;
+            margin-top: 2rem;
+            border-radius: 1.2rem;
+        }
+        
+        .btn-gonder:hover {
+            background-color: #5AADDD;
+            transition: background-color .5s ease 0s;
+        }
+        
+        #my-footer {
+            background-color: #5AADDD;
+            color: rgb(255, 255, 255);
+            font-size: 1rem;
+            padding: 1.4rem 0;
+        }
+        
+        .footer-header {
+            font-size: 1rem;
+        }
+        
+        #logo-footer {
+            height: 50%;
+            width: 50%;
+        }
+        
+        @media only screen and (max-width: 480px) {}
+        
+        @media only screen and (max-width: 768px) {
+            .img-responsive {
+                display: none;
+            }
+            .btn-gonder {
+                margin-bottom: 1.25rem;
+            }
+        }
+        
+        @media only screen and (max-width: 1024px) {}
+        
+        @media only screen and (max-width: 1600px) {}
+        
+        @media only screen and (min-width: 1601px) {}
+        
+        @media (min-width: 768px) {}
+        
+        @media (max-width: 767.98px) {
+            .box {
+                margin-bottom: 30px;
+            }
+            /* #vision{
       
     }   */
+            [ng-click],
+            [data-ng-click],
+            [x-ng-click] {
+                cursor: pointer;
+            }
+        }
 
-[ng-click],
-[data-ng-click],
-[x-ng-click] {
-    cursor: pointer;
-}
-}
+        .pLabel{
+            margin-bottom: 1.6em;
+            
+            
+        }
+        
+        .pInfo{
+            font-style: italic;
+        }
+
+        .pProfile{
+            font-size:1.2em;
+            text-align:left;
+            font-weight:500px;
+        }
+
+        .pPhone{
+            margin-bottom:2em;
+        }
+
+        .pName{
+            text-align:left;
+        }
+        .info {
+            background-color: #e7f3fe;
+            border-left: 6px solid #2196F3;
+          }
+          .btn-pointer{
+              cursor: pointer;
+          }

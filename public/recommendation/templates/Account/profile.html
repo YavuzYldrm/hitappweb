@@ -1,0 +1,54 @@
+<main ng-init="AccountCtrl.getDetails()">
+    <section class="min-vh-100">
+        <div class="container">
+            <div class="row justify-content-center mt-4">
+                <div class="col-10">
+                    <div class="bg-white shadow-sm p-5">
+                        <h2 class="text-black text-center font-unica text-uppercase mb-4"><u>Profil Bilgileri</u></h2>
+                        <div class="form-group">
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade show active pProfile" id="profile">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label class="pLabel pName">İsim: {{AccountCtrl.details.name}}</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="pLabel">Cinsiyet: {{AccountCtrl.details.gender}}</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label class="pLabel">Location: {{AccountCtrl.details.location}}</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="pLabel pPhone">Zaman Dilimi:
+                                                {{AccountCtrl.details.timezone}}</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label class="pLabel">Cüzdan Adresi: {{AccountCtrl.details.wallet}}</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label class="pLabel">Bakiye: {{AccountCtrl.details.balance}}</label>
+                                            <label class="pLabel"
+                                                ng-if="AccountCtrl.details['balance'] != 'Bekleniyor...'">Libra</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="ml-auto col-md-2">
+                                            <a class="btn btn-info text-white px-4 py-2" ng-href="/#!/account/update">
+                                                Güncelle
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+</main>

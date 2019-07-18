@@ -1,0 +1,11 @@
+{
+    "ignoreRoot": [
+        "node_modules",
+        "package.json",
+        "package-lock.json",
+        "nodemon.json",
+        "public",
+        ".gitlab-ci.yml",
+        "README.md"
+    ]
+}
