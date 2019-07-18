@@ -1,7 +1,7 @@
-<main class="min-vh-100">
+<main class="min-vh-100" ng-init="EventCtrl.getEvents()">
     <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="recommendationModal" tabindex="-1" role="dialog" aria-labelledby="recommendationModal"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -92,14 +92,13 @@
                             </div>
                         </li>
                         <hr>
-                        <p class="info"><strong>Not:</strong>Yapılan öneriler %70 başarı oranı ile
+                        <p class="info"><strong>Not:</strong> Yapılan öneriler %70 başarı oranı ile
                             gerçekleştirilmektedir.</p>
 
                     </ul>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                    <button type="button" class="btn btn-primary">Kaydet</button>
                 </div>
             </div>
         </div>
@@ -107,29 +106,29 @@
     <!--   Detail modal     -->
     <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
         aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+                    <h5 class="modal-title font-unica" id="detailModalTitle"></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <div class="container-fluid">
+                <div class="modal-body p-3">
+                    <div class="container">
                         <div class="row">
                             <div class="col-md-5">
-                                <h4>Activity-name</h4>
-                                <p>Activity - description</p>
+                                <p id="detailModalDescription"></p>
                             </div>
                             <div class="col-md-6 ml-auto">
                                 <img src="recommendation/images/icons/activity.jpg" alt="Activity"
                                     class="img-thumbnail">
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row mt-4">
                             <div class="col-md-11 text-center mx-auto">
                                 <h4>Etiketler</h4>
+                                <hr>
                             </div>
                         </div>
                         <div class="row">
@@ -155,7 +154,6 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                    <button type="button" class="btn btn-primary">Kaydet</button>
                 </div>
             </div>
         </div>
@@ -260,7 +258,7 @@
                         <input class="form-control rounded-1 p-3 font-karla bg-light" type="text" name="search"
                             placeholder="Etkinlik Arama" ng-model="EventCtrl.searchValue" />
                         <img src="recommendation/images/icons/search.png" class="input-icon position-absolute my-auto"
-                            style="right: 5%; top: 25%;">
+                            style="right: 2%; top: 25%;">
                     </div>
 
                     <div class="form-group">
@@ -275,24 +273,24 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr ng-repeat="(x,y) in EventCtrl.searchEvent(false)" value="{{x}}">
-                                    <th class="d-flex justify-content-between align-items-center" scope="row">{{y}}
+                                <tr ng-repeat="event in EventCtrl.events" value="{{x}}">
+                                    <th class="d-flex justify-content-between align-items-center" scope="row">
+                                        {{event.event_name}}
                                         <span>
-                                            <div class="btn-pointer" data-toggle="modal" data-target="#detailModal"
-                                                href="#detailModal" ng-modal="(x,y)"> <img
-                                                    src="recommendation/images/icons/info.png"></div>
-
-
+                                            <div class="btn-pointer" data-toggle="modal" data-target="#detailModal" data-id="{{event.event_id}}"
+                                                href="#detailModal" ng-modal="(x,y)">
+                                                <img src="recommendation/images/icons/info.png">
+                                            </div>
                                             <!-- <button type="button" class="btn btn-info m-0" data-toggle="modal"
                                                 data-target="#detailModal" ng-if="isAuthenticated">
                                                 Detay
                                             </button> -->
                                         </span>
                                     </th>
-                                    <td>{{event.name}}</td>
-                                    <td>{{event.name}}</td>
-                                    <td>{{event.name}}</td>
-                                    <td>{{event.name}}</td>
+                                    <td>{{event.owner_id}}</td>
+                                    <td>{{event.start_time}}</td>
+                                    <td>{{event.city}}</td>
+                                    <td>{{event.country}}</td>
                                     <!-- <td>{{event.interest}}</td> -->
                                 </tr>
                             </tbody>
@@ -303,7 +301,7 @@
     </section>
     <!-- suggestion button -->
     <button type="button" class="btn btn-primary btn-circle btn-xl position-fixed" style="right: 60px; bottom:40px; "
-        data-toggle="modal" data-target="#exampleModalCenter2" ng-if="isAuthenticated">
+        data-toggle="modal" data-target="#recommendationModal" ng-if="isAuthenticated">
         Öneri al
     </button>
 </main>
