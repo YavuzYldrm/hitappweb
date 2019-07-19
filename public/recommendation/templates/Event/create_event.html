@@ -6,8 +6,8 @@
                     <form class="bg-white shadow-sm p-5" role="form" action="/register" method="post">
                         <h2 class="text-center font-unica text-uppercase mb-4">Etkinlik Oluştur</h2>
                         <div class="form-group">
-                            <input class="form-control rounded-0 font-karla bg-light" type="text" name="eventName"
-                                placeholder="Etkinlik Adı" required ng-model="EventCtrl.eventName" required>
+                            <input class="form-control rounded-0 font-karla bg-light" type="text" name="activityName"
+                                placeholder="Etkinlik Adı" required ng-model="EventCtrl.activityName" required>
                         </div>
                         <div class="form-group">
                             <select class="form-control rounded-0 font-karla bg-light" name="promoter" placeholder="Orgazinatör Adı"
@@ -44,11 +44,8 @@
                                 placeholder="Açıklama" required ng-model="EventCtrl.description"></textarea>
                         </div>
                         <div class="form-group">
-                            <select class="form-control rounded-0 font-karla bg-light" name="participantType" placeholder="Katılımcı Türü"
-                                ng-model="EventCtrl.participantType" ng-options="x for x in EventCtrl.keys.participantType">
-                                <option value="" disabled selected>Etiket Ekle</option>
-                                
-                            </select>
+                            <input class="form-control rounded-0 font-karla bg-light" type="text" name="activityAdd"
+                                placeholder="Etiket Ekle" required ng-model="EventCtrl.activityAdd" required>
                         </div>
                         
                         <div class="form-group">

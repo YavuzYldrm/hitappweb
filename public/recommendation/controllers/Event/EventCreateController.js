@@ -20,6 +20,7 @@ export default (app) => {
 
         EventCtrl.keys = keys;
 
+        EventCtrl.activityName = null;
         EventCtrl.eventName = null;
         EventCtrl.userName = null;
         EventCtrl.startTime = null;
