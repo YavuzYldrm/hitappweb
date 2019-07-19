@@ -12,79 +12,7 @@
                 </div>
                 <div class="modal-body">
                     <ul class="list-group">
-                        <li class="list-group-item d-flex justify-content-between align-items-center">1 &ensp;-
-                            &ensp;Teleferik
-                            <div>
-                                <button type="button" class="btn btn-outline-danger btn-sm m-0">Katıl</button>
-                                <button type="button" class="btn btn-outline-primary btn-sm m-0 ">Davet Et</button>
-                                <button type="button" class="btn btn-outline-info btn-sm m-0 ">Detay</button>
-                            </div>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">2 &ensp;-
-                            &ensp;Spa
-                            <div>
-                                <button type="button" class="btn btn-outline-danger btn-sm m-0">Katıl</button>
-                                <button type="button" class="btn btn-outline-primary btn-sm m-0 ">Davet Et</button>
-                                <button type="button" class="btn btn-outline-info btn-sm m-0 ">Detay</button>
-                            </div>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">3 &ensp;-
-                            &ensp;Basketbol
-                            <div>
-                                <button type="button" class="btn btn-outline-danger btn-sm m-0">Katıl</button>
-                                <button type="button" class="btn btn-outline-primary btn-sm m-0 ">Davet Et</button>
-                                <button type="button" class="btn btn-outline-info btn-sm m-0 ">Detay</button>
-                            </div>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">4 &ensp;-
-                            &ensp;Golf
-                            <div>
-                                <button type="button" class="btn btn-outline-danger btn-sm m-0">Katıl</button>
-                                <button type="button" class="btn btn-outline-primary btn-sm m-0 ">Davet Et</button>
-                                <button type="button" class="btn btn-outline-info btn-sm m-0 ">Detay</button>
-                            </div>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">5 &ensp;-
-                            &ensp;ATV
-                            <div>
-                                <button type="button" class="btn btn-outline-danger btn-sm m-0">Katıl</button>
-                                <button type="button" class="btn btn-outline-primary btn-sm m-0 ">Davet Et</button>
-                                <button type="button" class="btn btn-outline-info btn-sm m-0 ">Detay</button>
-                            </div>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">6 &ensp;-
-                            &ensp;Binicilik
-                            <div>
-                                <button type="button" class="btn btn-outline-danger btn-sm m-0">Katıl</button>
-                                <button type="button" class="btn btn-outline-primary btn-sm m-0 ">Davet Et</button>
-                                <button type="button" class="btn btn-outline-info btn-sm m-0 ">Detay</button>
-                            </div>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">7 &ensp;-
-                            &ensp;Lunapark
-                            <div>
-                                <button type="button" class="btn btn-outline-danger btn-sm m-0">Katıl</button>
-                                <button type="button" class="btn btn-outline-primary btn-sm m-0 ">Davet Et</button>
-                                <button type="button" class="btn btn-outline-info btn-sm m-0 ">Detay</button>
-                            </div>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">8 &ensp;-
-                            &ensp;Havuz
-                            <div>
-                                <button type="button" class="btn btn-outline-danger btn-sm m-0">Katıl</button>
-                                <button type="button" class="btn btn-outline-primary btn-sm m-0 ">Davet Et</button>
-                                <button type="button" class="btn btn-outline-info btn-sm m-0 ">Detay</button>
-                            </div>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">9 &ensp;-
-                            &ensp;Hamam
-                            <div>
-                                <button type="button" class="btn btn-outline-danger btn-sm m-0">Katıl</button>
-                                <button type="button" class="btn btn-outline-primary btn-sm m-0 ">Davet Et</button>
-                                <button type="button" class="btn btn-outline-info btn-sm m-0 ">Detay</button>
-                            </div>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">10 - &ensp;Kayak
+                        <li class="list-group-item d-flex justify-content-between align-items-center" ng-repeat="event in EventCtrl.predictions">{{event.event_name}}
                             <div>
                                 <button type="button" class="btn btn-outline-danger btn-sm m-0">Katıl</button>
                                 <button type="button" class="btn btn-outline-primary btn-sm m-0 ">Davet Et</button>
@@ -292,7 +220,7 @@
                                     <td>{{event.start_time}}</td>
                                     <td>{{event.city}}</td>
                                     <td>{{event.country}}</td>
-                                    <td><button class="button btn-success" ng-click="isJoin()">Katıl</button></td>
+                                    <td><button class="button btn-success" ng-click="EventCtrl.attendEvent(event.event_id)">Katıl</button></td>
                                     <!-- <td>{{event.interest}}</td> -->
                                 </tr>
                             </tbody>
@@ -303,7 +231,7 @@
     </section>
     <!-- suggestion button -->
     <button type="button" class="btn btn-primary btn-circle btn-xl position-fixed" style="right: 60px; bottom:40px; "
-        data-toggle="modal" data-target="#recommendationModal" ng-if="isAuthenticated">
+        data-toggle="modal" data-target="#recommendationModal" href="#recommendationModal" ng-if="isAuthenticated">
         Öneri al
     </button>
 </main>

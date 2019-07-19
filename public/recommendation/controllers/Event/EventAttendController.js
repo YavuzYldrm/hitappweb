@@ -24,19 +24,10 @@ export default (app) => {
             return EventCtrl.events[key] != undefined;
         };
 
-        EventCtrl.attendEvent = (key) => {
-            EventCtrl.events[key] = {
-                name: events[EventCtrl.form.eventId],
-                status: EventCtrl.form.opinion,
-                interest: EventCtrl.form.interest == true ? "İlgili" : "İlgili Değil",
-                invited: EventCtrl.form.invited,
-            };
-
-            // Clear form
-            EventCtrl.form.event = null;
-            EventCtrl.form.opinion = null;
-            EventCtrl.form.interest = null;
-            EventCtrl.form.invited = {};
+        EventCtrl.attendEvent = (event_id) => {
+            EventAttendService.attendEvent(event_id).then(response => {
+                console.log(response.data);
+            });
         };
      
         EventCtrl.unattendEvent = (key) => {
@@ -70,7 +61,10 @@ export default (app) => {
         };
 
         $('#recommendationModal').on('show.bs.modal', function (e) {
-            const event = EventCtrl.events.filter(o => o.event_id == eventId)[0];
+            EventAttendService.getPredictions().then(response => {
+                EventCtrl.predictions = response.data.data;
+                console.log(EventCtrl.predictions);
+            });
         });        
 
         $('#detailModal').on('show.bs.modal', function (e) {
