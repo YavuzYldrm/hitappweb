@@ -44,8 +44,11 @@
                                 placeholder="Açıklama" required ng-model="EventCtrl.description"></textarea>
                         </div>
                         <div class="form-group">
-                            <input class="form-control rounded-0 font-karla bg-light" type="text" name="eventName"
-                                placeholder="Etkinlik Ekle" required ng-model="EventCtrl.eventName" />
+                            <select class="form-control rounded-0 font-karla bg-light" name="participantType" placeholder="Katılımcı Türü"
+                                ng-model="EventCtrl.participantType" ng-options="x for x in EventCtrl.keys.participantType">
+                                <option value="" disabled selected>Etiket Ekle</option>
+                                
+                            </select>
                         </div>
                         
                         <div class="form-group">
@@ -75,11 +78,11 @@
                         </div>
 
                         <button
-                            class="btn btn-primary submit-btn rounded-0 font-karla text-uppercase btn-block mt-4 p-2"
+                            class="btn btn-danger submit-btn rounded-0 font-karla text-uppercase btn-block mt-4 p-2"
                             type="submit">Bilet Ekle</button>
                         
                         <button
-                            class="btn btn-primary submit-btn rounded-0 font-karla text-uppercase btn-block mt-4 p-2"
+                            class="btn btn-primary submit-btn rounded-0 font-karla text-uppercase btn-block mt-4 p-2" ng-disabled="registerForm.$invalid"
                             type="submit">Oluştur</button>
                     </form>
                 </div>
