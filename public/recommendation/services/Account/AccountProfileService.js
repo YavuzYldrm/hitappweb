@@ -22,6 +22,8 @@ export default (app) => {
             });
         };
 
+        // $http() Promise Döndürür https://developer.mozilla.org/tr/docs/Web/JavaScript/Reference/Global_Objects/Promise
+        // https://docs.angularjs.org/api/ng/service/$http
         AccountSrvc.getWalletBalance = (address) => {
             return $http({
                 method: 'POST',
