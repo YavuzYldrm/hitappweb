@@ -47,7 +47,7 @@ export default (app) => {
                     AccountCtrl.disableButton = false;
 
                     var date = new Date();
-                    date.setDate(date.getDate() + 1);
+                    date.setDate(date.getDate() + 1); // Set token expiration to 1 day
                     $cookies.put('token', response.data.data.token, { 'expires': date });
                     $cookies.put('mnemonic', response.data.data.libra_mnemonic);
                     $rootScope.isAuthenticated = true;
@@ -56,7 +56,7 @@ export default (app) => {
                 }
                 else {
                     AccountCtrl.form.isInvalid = true;
-                    AccountCtrl.form.errorMessage = err.data.message;
+                    AccountCtrl.form.errorMessage = "Başarısız.";
                 }
             }).catch((err) => {
                 AccountCtrl.form.isInvalid = true;

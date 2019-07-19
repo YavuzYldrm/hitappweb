@@ -15,6 +15,8 @@ export default (app) => {
             }).then(AccountCtrl.getWalletBalance);
         };
 
+        // AccountProfileService.getWalletBalance promise döndürür.
+        // Promise kullanımı promise.then(Bittiğinde Çalışacak fonksiyon).catch(err => hata objesi)
         AccountCtrl.getWalletBalance = () => {
             AccountProfileService.getWalletBalance(AccountCtrl.details.wallet).then(response => {
                 AccountCtrl.details.balance = response.data['balance'];

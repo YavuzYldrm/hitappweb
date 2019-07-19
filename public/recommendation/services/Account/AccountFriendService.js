@@ -7,6 +7,7 @@ export default (app) => {
 
         const url = process.env.API_URL || 'http://127.0.0.1:5000/api/v1';
 
+        // $http.defaults.headers.common['Authorization'] Kullanıcı tokenini request içine koy.
         AccountSrvc.getFriends = function () {
             const token = $cookies.get('token');
             if (!token) {
