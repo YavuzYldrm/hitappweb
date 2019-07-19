@@ -42,6 +42,11 @@ app.config(['$routeProvider', '$locationProvider', ($routeProvider, $locationPro
             controller: "EventAttendController as EventCtrl",
             needAuthentication: true
         })
+        .when("/create-event", {
+            templateUrl: "recommendation/templates/Event/create_event.html",
+            controller: "EventCreateController as EventCtrl",
+            needAuthentication: true
+        })
         .when("/create", {
             templateUrl: "recommendation/templates/Event/create.html",
             controller: "EventCreateController as EventCtrl",
