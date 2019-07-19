@@ -12,6 +12,10 @@ export default (app) => {
             "city": ["Sihanoukville", "Palo Alto", "New  York", "Chelsea", "Trenton", "Mobile", "Seattle", "Madison", "Washington", "Atlanta"],
             "state": ["Kampot", "CA", "NY", "MA", "ON", "AL", "WA", "WI", "DC", "GA"],
             "country": ["Cambodia", "United States", "Canada", "Pakistan", "Indonesia", "Mexico", "Spain", "Sweden", "Armenia", "Serbia"],
+            "promoter": ["	CoActive Marketing", "Concept One ", "Zipatoni", "Mars Advertising","Wunderman"],
+            "participantType": ["Öğrenci", "Normal", "Vip"],
+            "ticketPurchaseType": ["İnternet", "Kasadan"],
+            "ticketPurchaseTime": ["Erken alım", "Normal alım"],
         };
 
         EventCtrl.keys = keys;
@@ -19,6 +23,10 @@ export default (app) => {
         EventCtrl.eventName = null;
         EventCtrl.userName = null;
         EventCtrl.startTime = null;
+        EventCtrl.promoter = null;
+        EventCtrl.participantType = null;
+        EventCtrl.ticketPurchaseType = null;
+        EventCtrl.ticketPurchaseTime = null;
         EventCtrl.city = null;
         EventCtrl.state = null;
         EventCtrl.zip = null;
